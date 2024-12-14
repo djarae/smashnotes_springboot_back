@@ -1,4 +1,4 @@
-package com.example.smashnotes_back;
+package com.example.smashnotest_back;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

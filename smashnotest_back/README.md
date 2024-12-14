@@ -1,5 +1,11 @@
+# smashnotes_springboot_back
+Backend para aplicacion mobile y desktop de smash notes
+
 #Para solucionar error ejecucion:
 https://www.youtube.com/watch?v=O5bnhSwd_ac
+
+# Para instalar dependendencias lo mas facil es re-crear desde 0
+usando spring initializer
 
 post y get ismplehttps://www.arquitecturajava.com/spring-getmapping-postmapping-etc/
 

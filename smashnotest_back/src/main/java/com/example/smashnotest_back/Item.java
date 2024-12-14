@@ -1,4 +1,4 @@
-package com.example.smashnotes_back;
+package com.example.smashnotest_back;
 
 public class Item {
     private int itemNo;

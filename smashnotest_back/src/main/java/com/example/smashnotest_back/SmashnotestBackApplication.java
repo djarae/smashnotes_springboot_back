@@ -1,16 +1,12 @@
-package com.example.smashnotes_back;
+package com.example.smashnotest_back;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SmashnotesBackApplication {
-
+public class SmashnotestBackApplication {
 	public static void main(String[] args) {
-
-		SpringApplication.run(SmashnotesBackApplication.class, args);
+		SpringApplication.run(SmashnotestBackApplication.class, args);
 		System.out.println("squirtle");
-
 	}
-
 }
