@@ -15,31 +15,23 @@ public class Item {
     public int getItemNo(){
         return itemNo;
     }
-
-    public void getItemNo(int itemNo){
+    public void setItemNo(int itemNo){
         this.itemNo=itemNo;
 
     }
 
-
-
     public String getItemDesc(){
         return itemDesc;
     }
-
     public void setItemDesc(String itemDesc){
         this.itemDesc=itemDesc;
     }
-
     public float getItemprice(){
         return itemprice;
     }
-
     public void setItemPrice(float itemPrice){
         this.itemprice=itemPrice;
     }
-
-
 
     }
 

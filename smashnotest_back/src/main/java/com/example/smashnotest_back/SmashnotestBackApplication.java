@@ -7,6 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SmashnotestBackApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SmashnotestBackApplication.class, args);
-		System.out.println("squirtle");
+		System.out.println("Inicio la aplicacion de super smash bros registro");
 	}
 }

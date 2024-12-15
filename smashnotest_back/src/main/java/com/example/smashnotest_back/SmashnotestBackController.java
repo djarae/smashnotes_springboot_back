@@ -13,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("apiSmash")
 public class SmashnotestBackController {
+
     @GetMapping
     public ResponseEntity<String> smashnotesBackGet() throws SQLException {
         System.out.println("Komoo aqui se codifica");
