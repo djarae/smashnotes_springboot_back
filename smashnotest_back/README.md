@@ -19,3 +19,6 @@ https://www.youtube.com/watch?v=SyoEVbeEFEQ
 
 # Serializar objetos a json y enviarlos por get
 https://medium.com/@bubu.tripathy/json-serialization-and-deserialization-in-java-2a3f08266b70
+
+# Tipos de commit
+https://midu.dev/buenas-practicas-escribir-commits-git/
