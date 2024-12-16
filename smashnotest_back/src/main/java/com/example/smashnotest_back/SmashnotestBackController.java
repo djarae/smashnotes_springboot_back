@@ -70,7 +70,6 @@ public class SmashnotestBackController {
 
     @GetMapping("/GetListEscenarios")
     public String GetListEscenarios() throws SQLException, JsonProcessingException {
-        Escenario escenario = new Escenario();
         System.out.println("get list escenario inicio");
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -80,8 +79,6 @@ public class SmashnotestBackController {
         }
         //Creamos la conexion
         String url="jdbc:mysql://localhost:3306/smashbd";
-       //String url="jdbc:mysql://localhost:3306/db-productos";
-
         String user="root";
         String password="";
         Connection con= null;
@@ -93,24 +90,9 @@ public class SmashnotestBackController {
             System.out.println("Error en la conexion" + e);
         }
         Statement s = con.createStatement();
-        //3 ejecuta sql
-        //ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM producto");
         ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM escenario");
 
-
-
-
-        //7- Recorrer el Resulset
-        while (rs.next()) {
-            //System.out.println (rs.getInt ("Id") + " " + rs.getString (2)+  " " + rs.getDate(3));
-            System.out.println (rs.getInt("id"));
-            System.out.println (rs.getString("nombre"));
-        }
-        System.out.println("get list escenario listo");
-
-
-
-        //4 Instanciamos un listado de escenarios
+        // Instanciamos un listado de escenarios
         ResultSet rs2 = s.executeQuery ( "SELECT id, nombre FROM escenario");
         List<Escenario> escenarioList = new ArrayList<>();
         while (rs2.next()) {
@@ -122,16 +104,14 @@ public class SmashnotestBackController {
             System.out.println (rs2.getInt("id"));
             System.out.println (rs2.getString("nombre"));
         };
-
+        //Testeamos que funcione
         System.out.println("Inicio de listar escenarios xclase");
-
         for (Escenario escenariox: escenarioList) {
             System.out.println(escenariox.getId());
             System.out.println(escenariox.getNombre());
         }
         System.out.println("Fin de listar escenarios");
-
-     //   return new ResponseEntity<String>("Hola  Metapod!", HttpStatus.OK);
+     // Serializamos el objeto a json para enviarlo
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(escenarioList);
         return json;

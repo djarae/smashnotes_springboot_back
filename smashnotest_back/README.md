@@ -16,3 +16,6 @@ https://stackoverflow.com/questions/51367466/accept-arbitrary-json-as-requestbod
 clases y contreoladores(rutas son al mismo time
 ). Es obligacion usarlos. Las rutas y demas dan igual
 https://www.youtube.com/watch?v=SyoEVbeEFEQ
+
+# Serializar objetos a json y enviarlos por get
+https://medium.com/@bubu.tripathy/json-serialization-and-deserialization-in-java-2a3f08266b70
