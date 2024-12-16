@@ -1,7 +1,18 @@
 package com.example.smashnotest_back;
+
+import java.sql.*;
+
 public class Escenario {
     private int id;
     private String nombre;
+
+    public Escenario(){
+        super();
+        this.id=0;
+        this.nombre="";
+    }
+
+
     public Escenario(int id, String nombre){
         super();
         this.id=id;
@@ -19,4 +30,6 @@ public class Escenario {
     public void setNombre(String nombre){
         this.nombre=nombre;
     }
+
+
 }
