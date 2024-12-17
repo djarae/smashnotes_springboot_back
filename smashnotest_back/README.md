@@ -1,3 +1,9 @@
+# REGLA UNIVERSAL
+Todo lo que se pueda codificar en el backend, se codifica en el backend
+ , el front solo recibe la informacion limpia y procesada.
+
+# Utilice SQL en lugar de JPA ORM para ir full SQL y tener full practica en ello
+
 # smashnotes_springboot_back
 Backend para aplicacion mobile y desktop de smash notes
 
@@ -22,3 +28,11 @@ https://medium.com/@bubu.tripathy/json-serialization-and-deserialization-in-java
 
 # Tipos de commit
 https://midu.dev/buenas-practicas-escribir-commits-git/
+
+
+# JOINS
+https://www.laescueladelsql.com/sql-ejemplos-de-uso-del-join/
+
+
+# Insert con JDBC
+https://teamtreehouse.com/community/how-do-you-create-a-statement-and-execute-a-query-using-java-and-sql

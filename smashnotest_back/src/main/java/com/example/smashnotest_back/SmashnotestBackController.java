@@ -12,9 +12,91 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//Nota 17-12-2024: Ideas para ordenar codigo. Mover la conexion a otro archivo. El SQL a otras carpetas
+ // e importarlo. Algunas funciones tambien y solo retornar, esto se volvio monolitico
+
 @RestController
 @RequestMapping("apiSmash")
 public class SmashnotestBackController {
+
+    @GetMapping("/GetListRegistros")
+    public String GetListRegistros() throws SQLException, JsonProcessingException {
+        System.out.println("get list escenario inicio");
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("driver found / Encontrado");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Driver not found / no encontrado" + e);
+        }
+        //Creamos la conexion
+        String url="jdbc:mysql://localhost:3306/smashbd";
+        String user="root";
+        String password="";
+        Connection Conexion= null;
+        //Nos conectamos y testeamos la conexion
+        try {
+            Conexion= DriverManager.getConnection(url,user,password);
+            System.out.println("Conexion exitosa");
+        } catch (SQLException e) {
+            System.out.println("Error en la conexion" + e);
+        }
+        Statement s = Conexion.createStatement();
+
+        // Instanciamos un listado de escenarios
+        ResultSet rs = s.executeQuery ( "SELECT R.id as id,\n" +
+                "R.idPersonajeEmisor as idPersonajeEmisor,\n" +
+                "PE.nombre as nombrePersonajeEmisor,\n" +
+                "R.idPersonajeReceptor as idPersonajeReceptor,\n" +
+                "PR.nombre as nombrePersonajeReceptor,\n" +
+                "R.idMovimiento as idMovimiento,\n" +
+                "M.nombre as nombreMovimiento,\n" +
+                "E.nombre as nombreEscenario,\n" +
+                "R.idPosicionEscenario as idPosicionEscenario,\n" +
+                "POS.nombre as nombrePosicionEscenario,\n" +
+                "R.porcentajeKO as  porcentajeKO\n" +
+                "FROM registro R\n" +
+                "INNER JOIN personaje PE ON   R.idPersonajeEmisor=PE.id \n" +
+                "INNER JOIN personaje PR ON   R.idPersonajeReceptor=PR.id \n" +
+                "INNER JOIN movimiento M ON  R.idMovimiento=M.id\n" +
+                "INNER JOIN posicionescenario POS ON R.idPosicionEscenario=POS.id\n" +
+                "INNER JOIN escenario E ON POS.idEscenario=E.id");
+        List<Registro> registroList = new ArrayList<>();
+        while (rs.next()) {
+            System.out.println ("agregamos data al listado de ojbetos de escenario");
+            Registro itemRegistro = new Registro(
+                    rs.getInt("id"),
+                    rs.getInt("idPersonajeEmisor"),
+                    rs.getString("nombrePersonajeEmisor"),
+                    rs.getInt("idPersonajeReceptor"),
+                    rs.getString("nombrePersonajeReceptor"),
+                    rs.getInt("idMovimiento"),
+                    rs.getString("nombreMovimiento"),
+                    rs.getString("nombreEscenario"),
+                    rs.getInt("idPosicionEscenario"),
+                    rs.getString("nombrePosicionEscenario"),
+                    rs.getInt("porcentajeKo")
+                    );
+            registroList.add(itemRegistro);
+            System.out.println (rs.getInt("id"));
+            System.out.println (rs.getInt("idPersonajeEmisor"));
+            System.out.println (rs.getString("nombrePersonajeEmisor"));
+
+        };
+        //Testeamos que funcione
+        System.out.println("Inicio de listar escenarios xclase");
+        for (Registro  registrox: registroList) {
+            System.out.println(registrox.getId());
+            System.out.println(registrox.getIdPersonajeEmisor());
+            System.out.println(registrox.getNombrePersonajeEmisor());
+        }
+        System.out.println("Fin de listar escenarios");
+        // Serializamos el objeto a json para enviarlo
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(registroList);
+        return json;
+    }
+
+
     @GetMapping("/GetListEscenarios")
     public String GetListEscenarios() throws SQLException, JsonProcessingException {
         System.out.println("get list escenario inicio");
@@ -215,6 +297,77 @@ public class SmashnotestBackController {
         return json;
     }
 
+    @PostMapping(value = "/PostRegistro" )
+    @ResponseBody
+    public String PostRegistro(@RequestBody Registro registro) throws SQLException {
+        System.out.println("valor del body");
+        System.out.println(registro.getId());
+        System.out.println(registro.getIdPersonajeEmisor());
+        System.out.println(registro.getIdPersonajeReceptor());
+        System.out.println(registro.getIdMovimiento());
+        System.out.println(registro.getIdPosicionEscenario());
+        System.out.println(registro.getPorcentajeKO());
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("driver found / Encontrado");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Driver not found / no encontrado" + e);
+        }
+        //Creamos la conexion
+        String url="jdbc:mysql://localhost:3306/smashbd";
+        String user="root";
+        String password="";
+        Connection Conexion= null;
+        //Nos conectamos y testeamos la conexion
+        try {
+            Conexion= DriverManager.getConnection(url,user,password);
+            System.out.println("Conexion exitosa");
+        } catch (SQLException e) {
+            System.out.println("Error en la conexion" + e);
+        }
+        Statement stmt = Conexion.createStatement();
+
+        stmt.executeUpdate("INSERT INTO registro(id" +
+                ", idPersonajeEmisor, " +
+                "idPersonajeReceptor," +
+                " idMovimiento, " +
+                "idPosicionEscenario," +
+                " porcentajeKO) VALUES ("+ registro.getId()+ "," +
+                "  "+registro.getIdPersonajeEmisor()+"  ," +
+                ""+registro.getIdPersonajeReceptor()+"," +
+                ""+registro.getIdMovimiento()+"," +
+                ""+registro.getIdPosicionEscenario()+"" +
+                ","+registro.getPorcentajeKO()+")");
+
+
+        return "Buterfree ok";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -235,9 +388,7 @@ public class SmashnotestBackController {
     @PostMapping(value = "holapost" )
     @ResponseBody
     public String holaPost() {
-
         return "has hecho una peticion post";
-
     }
 
     @PostMapping(value = "holapostBody" )
