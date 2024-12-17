@@ -327,7 +327,7 @@ public class SmashnotestBackController {
             System.out.println("Error en la conexion" + e);
         }
         Statement stmt = Conexion.createStatement();
-
+        //Por ahora solo agregare data de PS2 en posicion central del escenario
         stmt.executeUpdate("INSERT INTO registro(id" +
                 ", idPersonajeEmisor, " +
                 "idPersonajeReceptor," +
@@ -337,8 +337,10 @@ public class SmashnotestBackController {
                 "  "+registro.getIdPersonajeEmisor()+"  ," +
                 ""+registro.getIdPersonajeReceptor()+"," +
                 ""+registro.getIdMovimiento()+"," +
-                ""+registro.getIdPosicionEscenario()+"" +
+                "4" +
                 ","+registro.getPorcentajeKO()+")");
+
+
 
 
         return "Buterfree ok";
