@@ -96,7 +96,6 @@ public class SmashnotestBackController {
         return json;
     }
 
-
     @GetMapping("/GetListEscenarios")
     public String GetListEscenarios() throws SQLException, JsonProcessingException {
         System.out.println("get list escenario inicio");
@@ -297,6 +296,8 @@ public class SmashnotestBackController {
         return json;
     }
 
+    //Aqui SPRINGBOOT aplica un patròn adaptador de forma automatica, debido a que
+    //convierte el JSON que se envio a la clase "Registro"
     @PostMapping(value = "/PostRegistro" )
     @ResponseBody
     public String PostRegistro(@RequestBody Registro registro) throws SQLException {
