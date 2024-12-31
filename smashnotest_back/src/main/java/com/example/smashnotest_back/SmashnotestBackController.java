@@ -18,6 +18,15 @@ import java.util.List;
 @RestController
 @RequestMapping("apiSmash")
 public class SmashnotestBackController {
+    //Ruta de testing , importante para comprobar que funciona app sin conexion bd:
+    @GetMapping(value = "/tLocalDeploy" )
+    public String testLocalDeploy() {
+        return "Hola!Empoleon:ruta => http://127.0.0.1:8080/apiSmash/tLocalDeploy";
+    }
+    @GetMapping(value = "/tCloudDeploy" )
+    public String testCloudDeploy() {
+        return "Hola!Torterra:ruta=>http://INGRESARRUTACLOUD:8080/apiSmash/tloudDeploy";
+    }
 
     @GetMapping("/GetListRegistros")
     public String GetListRegistros() throws SQLException, JsonProcessingException {
@@ -383,8 +392,7 @@ public class SmashnotestBackController {
 
 
 
-
-
+    // Rutasd de ejemplo
 
 
 
