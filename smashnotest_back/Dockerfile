@@ -6,7 +6,7 @@ WORKDIR /app
 COPY . .
 # Build aplication (maven o gradle) (Skipeamos test unitarios)
 # RUN ./mvnw clean package -DskipTests
-RUN ./mvnw clean package
+RUN ./smashnotest_back/mvnw clean package -DskipTests
 
 
 
