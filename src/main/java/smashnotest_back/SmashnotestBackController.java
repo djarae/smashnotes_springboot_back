@@ -18,7 +18,7 @@ public class SmashnotestBackController {
     }
     @GetMapping(value = "/tCloudDeploy" )
     public String testCloudDeploy() {
-        return "Hola!Torterra:ruta=>http://INGRESARRUTACLOUD:8080/apiSmash/tloudDeploy";
+        return "Hola!Torterra:ruta=>http://https://smashnotes-springboot-back.onrender.com/apiSmash/tCloudDeploy";
     }
 
 
