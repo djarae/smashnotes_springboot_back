@@ -1,10 +1,10 @@
-package smashnotes_springboot_back;
+package com.example.smashnotest_back;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SmashnotesSpringbootBackApplicationTests {
+class SmashnotestBackApplicationTests {
 
 	@Test
 	void contextLoads() {
