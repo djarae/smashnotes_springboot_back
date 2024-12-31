@@ -5,7 +5,7 @@ WORKDIR /app
 # Copy app code
 COPY . .
 # Build aplication (maven o gradle) (Skipeamos test unitarios)
- RUN ./mvnw clean package -DskipTests
+RUN ./mvnw clean package -DskipTests
 
 
 
@@ -16,13 +16,13 @@ FROM eclipse-temurin:21-jre
 WORKDIR /app
 
 # Copy the war file from the builder stage
-COPY --from=builder /app/target/*.war app.war
+COPY --from=builder /app/target/*.jar app.jar
 
 # Expose the port the app will run on
 EXPOSE 8080
 
 # Command to run the application
-ENTRYPOINT ["java","-jar","app.war"]
+ENTRYPOINT ["java","-jar","app.jar"]
 
 
 

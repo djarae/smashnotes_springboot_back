@@ -1,4 +1,4 @@
-package com.example.smashnotest_back;
+package smashnotest_back;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
