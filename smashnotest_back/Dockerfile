@@ -1,29 +1,23 @@
-# Stage 1 : build aplication
-FROM eclipse-temurin:21-jdk AS builder
-# Set working directori
+# Importing JDK and copying required files
+FROM openjdk:21-jdk AS build
 WORKDIR /app
-# Copy app code
-COPY . .
-# Build aplication (maven o gradle) (Skipeamos test unitarios)
-# RUN ./mvnw clean package -DskipTests
-RUN ./smashnotest_back/mvnw clean package -DskipTests
+COPY pom.xml .
+COPY src src
 
+# Copy Maven wrapper
+COPY mvnw .
+COPY .mvn .mvn
 
+# Set execution permission for the Maven wrapper
+RUN chmod +x ./mvnw
+RUN ./mvnw clean package -DskipTests
 
-# Stage 2 : Run the aplication
-FROM eclipse-temurin:21-jre
+# Stage 2: Create the final Docker image using OpenJDK 19
+FROM openjdk:21-jdk
+VOLUME /tmp
 
-# Set the working directory
-WORKDIR /app
-
-# Copy the war file from the builder stage
-COPY --from=builder /app/target/*.jar app.jar
-
-# Expose the port the app will run on
+# Copy the JAR from the build stage
+COPY --from=build /app/target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
 EXPOSE 8080
-
-# Command to run the application
-ENTRYPOINT ["java","-jar","app.jar"]
-
-
 
