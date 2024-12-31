@@ -5,7 +5,8 @@ WORKDIR /app
 # Copy app code
 COPY . .
 # Build aplication (maven o gradle) (Skipeamos test unitarios)
-RUN ./mvnw clean package -DskipTests
+# RUN ./mvnw clean package -DskipTests
+RUN ./mvnw clean package
 
 
 
