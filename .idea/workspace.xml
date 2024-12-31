@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82c1dc06-6e45-4899-8dd2-307b67f0cc36" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readmeHardStudy29-31DIC24.md" beforeDir="false" afterPath="$PROJECT_DIR$/readmeHardStudy29-31DIC24.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" afterDir="false" />
-    </list>
+    <list default="true" id="82c1dc06-6e45-4899-8dd2-307b67f0cc36" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
