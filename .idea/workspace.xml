@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82c1dc06-6e45-4899-8dd2-307b67f0cc36" name="Changes" comment="" />
+    <list default="true" id="a3e17958-efd7-4fdc-91e0-358c64d144e4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readmeHardStudy29-31DIC24.md" beforeDir="false" afterPath="$PROJECT_DIR$/readmeHardStudy29-31DIC24.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,63 +26,30 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
-  <component name="ProjectId" id="2qyhAPZwt4T9kFV3ZixE6Xp9R26" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2r0DIijkzkAY5RaytT6aJCr7V3X" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Maven.smashnotest_back [spring-boot:run].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/dieoj/OneDrive/Documentos/REPOSITORIOS/smashnotes_springboot_back"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="smashnotest_back [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="cmdOptions" />
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="spring-boot:run" />
-              </list>
-            </option>
-            <option name="multimoduleDir" />
-            <option name="pomFileName" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="projectsCmdOptionValues">
-              <list />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="82c1dc06-6e45-4899-8dd2-307b67f0cc36" name="Changes" comment="" />
-      <created>1735640578913</created>
+      <changelist id="a3e17958-efd7-4fdc-91e0-358c64d144e4" name="Changes" comment="" />
+      <created>1735687020747</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1735640578913</updated>
+      <updated>1735687020747</updated>
     </task>
     <servers />
   </component>

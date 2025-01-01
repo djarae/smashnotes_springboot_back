@@ -8,7 +8,6 @@ public class SmashnotestBackApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmashnotestBackApplication.class, args);
-		System.out.println("Funciona JAR. Test 4" );
 	}
 
 }
