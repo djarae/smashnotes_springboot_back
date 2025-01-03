@@ -1,46 +1,28 @@
-package smashnotest_back;
+package smashnotest_back.controllers;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.sql.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RequestBody;
+
+
+import smashnotest_back.configs.BDConfig;
+import smashnotest_back.model.Personaje;
+import smashnotest_back.model.Registro;
+
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 @RestController
 @RequestMapping("apiSmash")
 public class SmashnotestBackController {
-    //Datos:
-    //Datos a conexion a produccion
-    public String url = "jdbc:postgresql://ep-shrill-cell-a5wddks2.us-east-2.aws.neon.tech:5432/neondb";public String user="neondb_owner";public String password="x2umTeFRS8bA";
-    //Datos a conexion a desarrollo
-  // String url="jdbc:mysql://localhost:3306/smashbd";String user="root";String password="";
-    public Connection  Conexion= null;
-
     //Constructor:
     public  SmashnotestBackController()
     {
-        System.out.println("Inicio conexion bd");
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("driver found / Encontrado");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Driver not found / no encontrado" + e);
-        }
-
-        //Nos conectamos y testeamos la conexion
-        try {
-            Conexion= DriverManager.getConnection(url,user,password);
-            System.out.println("Conexion exitosa");
-        } catch (SQLException e) {
-            System.out.println("Error en la conexion" + e);
-        }
+        BDConfig.ConexionDB();
     }
+
     //Ruta de testing , importante para comprobar que funciona app sin conexion bd:
     @GetMapping(value = "/tLocalDeploy" )
     public String testLocalDeploy() {
@@ -52,7 +34,7 @@ public class SmashnotestBackController {
     }
     @GetMapping("/GetListRegistros")
     public String GetListRegistros() throws SQLException, JsonProcessingException {
-        Statement s = Conexion.createStatement();System.out.println("get list escenario inicio");
+        Statement s = BDConfig.Conexion.createStatement();System.out.println("get list escenario inicio");
         // Instanciamos un listado de escenarios
         ResultSet rs = s.executeQuery ( "SELECT R.id as id,\n" +
                 "R.idPersonajeEmisor as idPersonajeEmisor,\n" +
@@ -100,7 +82,7 @@ public class SmashnotestBackController {
     }
     @GetMapping("/GetListPersonajes")
     public String GetListPersonajes() throws SQLException, JsonProcessingException {
-        Statement s = Conexion.createStatement();
+        Statement s = BDConfig.Conexion.createStatement();
         ResultSet rs = s.executeQuery ( "SELECT id, echo, nombre FROM personaje");
         List<Personaje> personajeList = new ArrayList<>();
         while (rs.next()) {

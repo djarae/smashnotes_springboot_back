@@ -1,21 +1,14 @@
-package smashnotest_back;
+package smashnotest_back.model;
 
-import java.sql.*;
-
-public class Escenario {
+public class Personaje {
     private int id;
+    private int echo;
     private String nombre;
 
-    public Escenario(){
-        super();
-        this.id=0;
-        this.nombre="";
-    }
-
-
-    public Escenario(int id, String nombre){
+    public Personaje(int id,int echo, String nombre){
         super();
         this.id=id;
+        this.echo=echo;
         this.nombre=nombre;
     }
     public int getId(){
@@ -24,12 +17,16 @@ public class Escenario {
     public void setId(int id){
         this.id=id;
     }
+    public int getEcho(){
+        return echo;
+    }
+    public void setEcho(int id){
+        this.echo=echo;
+    }
     public String getNombre(){
         return nombre;
     }
     public void setNombre(String nombre){
         this.nombre=nombre;
     }
-
-
 }

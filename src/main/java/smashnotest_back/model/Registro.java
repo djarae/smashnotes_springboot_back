@@ -1,4 +1,4 @@
-package smashnotest_back;
+package smashnotest_back.model;
 public class Registro
 {
     private int id;

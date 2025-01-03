@@ -1,15 +1,20 @@
-package smashnotest_back;
+package smashnotest_back.model;
 
-public class Movimiento {
+public class Escenario {
     private int id;
     private String nombre;
-    private String abreviatura;
 
-    public Movimiento(int id, String nombre,String abreviatura){
+    public Escenario(){
+        super();
+        this.id=0;
+        this.nombre="";
+    }
+
+
+    public Escenario(int id, String nombre){
         super();
         this.id=id;
         this.nombre=nombre;
-        this.abreviatura=abreviatura;
     }
     public int getId(){
         return id;
@@ -23,10 +28,6 @@ public class Movimiento {
     public void setNombre(String nombre){
         this.nombre=nombre;
     }
-    public String getAbreviatura(){
-        return abreviatura;
-    }
-    public void setAbreviatura(String abreviatura){
-        this.abreviatura=abreviatura;
-    }
+
+
 }

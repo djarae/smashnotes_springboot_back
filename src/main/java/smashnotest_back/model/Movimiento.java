@@ -1,15 +1,15 @@
-package smashnotest_back;
+package smashnotest_back.model;
 
-public class Personaje {
+public class Movimiento {
     private int id;
-    private int echo;
     private String nombre;
+    private String abreviatura;
 
-    public Personaje(int id,int echo, String nombre){
+    public Movimiento(int id, String nombre,String abreviatura){
         super();
         this.id=id;
-        this.echo=echo;
         this.nombre=nombre;
+        this.abreviatura=abreviatura;
     }
     public int getId(){
         return id;
@@ -17,16 +17,16 @@ public class Personaje {
     public void setId(int id){
         this.id=id;
     }
-    public int getEcho(){
-        return echo;
-    }
-    public void setEcho(int id){
-        this.echo=echo;
-    }
     public String getNombre(){
         return nombre;
     }
     public void setNombre(String nombre){
         this.nombre=nombre;
+    }
+    public String getAbreviatura(){
+        return abreviatura;
+    }
+    public void setAbreviatura(String abreviatura){
+        this.abreviatura=abreviatura;
     }
 }

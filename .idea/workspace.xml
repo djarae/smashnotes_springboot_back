@@ -5,19 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3e17958-efd7-4fdc-91e0-358c64d144e4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/BDConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/PersonajeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/RegistroController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/queries/PersonajeQueries.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/queries/RegistroQueries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SqlRespaldo31-DIC-2024.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readmeHardStudy29-31DIC24.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/Escenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Escenario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/Item.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/Movimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Movimiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/Personaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Personaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/PosicionEscenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/PosicionEscenario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Registro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
