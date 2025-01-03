@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3e17958-efd7-4fdc-91e0-358c64d144e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/BDConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/PersonajeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/RegistroController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/queries/PersonajeQueries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/queries/RegistroQueries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/Escenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Escenario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/Movimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Movimiento.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/Personaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Personaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/PosicionEscenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/PosicionEscenario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Registro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,15 +37,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.smashnotest_back [spring-boot:run].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/dieoj/OneDrive/Documentos/REPOSITORIOS/smashnotes_springboot_back"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.smashnotest_back [spring-boot:run].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dieoj/OneDrive/Documentos/REPOSITORIOS/smashnotes_springboot_back&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="smashnotest_back [spring-boot:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
       <MavenSettings>
