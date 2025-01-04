@@ -36,23 +36,24 @@ public class SmashnotestBackController {
     public String GetListRegistros() throws SQLException, JsonProcessingException {
         Statement s = BDConfig.Conexion.createStatement();System.out.println("get list escenario inicio");
         // Instanciamos un listado de escenarios
-        ResultSet rs = s.executeQuery ( "SELECT R.id as id,\n" +
-                "R.idPersonajeEmisor as idPersonajeEmisor,\n" +
-                "PE.nombre as nombrePersonajeEmisor,\n" +
-                "R.idPersonajeReceptor as idPersonajeReceptor,\n" +
-                "PR.nombre as nombrePersonajeReceptor,\n" +
-                "R.idMovimiento as idMovimiento,\n" +
-                "M.nombre as nombreMovimiento,\n" +
-                "E.nombre as nombreEscenario,\n" +
-                "R.idPosicionEscenario as idPosicionEscenario,\n" +
-                "POS.nombre as nombrePosicionEscenario,\n" +
-                "R.porcentajeKO as  porcentajeKO\n" +
-                "FROM registro R\n" +
-                "INNER JOIN personaje PE ON   R.idPersonajeEmisor=PE.id \n" +
-                "INNER JOIN personaje PR ON   R.idPersonajeReceptor=PR.id \n" +
-                "INNER JOIN movimiento M ON  R.idMovimiento=M.id\n" +
-                "INNER JOIN posicionescenario POS ON R.idPosicionEscenario=POS.id\n" +
-                "INNER JOIN escenario E ON POS.idEscenario=E.id");
+        ResultSet rs = s.executeQuery ( " SELECT R.id as id,\n" +
+                "                R.idPersonajeEmisor as idPersonajeEmisor,\n" +
+                "               PE.nombre as nombrePersonajeEmisor,\n" +
+                "                R.idPersonajeReceptor as idPersonajeReceptor, \n" +
+                "                PR.nombre as nombrePersonajeReceptor, \n" +
+                "                R.idMovimiento as idMovimiento, \n" +
+                "                M.nombre as nombreMovimiento, \n" +
+                "                E.id as idEscenario, \n" +
+                "                E.nombre as nombreEscenario, \n" +
+                "                R.idPosicion as idPosicion, \n" +
+                "                POS.nombre as nombrePosicion, \n" +
+                "                R.porcentajeKO as  porcentajeKO \n" +
+                "                FROM registro R \n" +
+                "                INNER JOIN personaje PE ON   R.idPersonajeEmisor=PE.id  \n" +
+                "                INNER JOIN personaje PR ON   R.idPersonajeReceptor=PR.id  \n" +
+                "                INNER JOIN movimiento M ON  R.idMovimiento=M.id \n" +
+                "                INNER JOIN escenario E ON R.idEscenario=E.id\n" +
+                "                INNER JOIN posicion POS ON R.idPosicion=POS.id ");
         List<Registro> registroList = new ArrayList<>();
         while (rs.next()) {
             System.out.println ("agregamos data al listado de ojbetos de escenario");
@@ -64,16 +65,13 @@ public class SmashnotestBackController {
                     rs.getString("nombrePersonajeReceptor"),
                     rs.getInt("idMovimiento"),
                     rs.getString("nombreMovimiento"),
+                    rs.getInt("idEscenario"),
                     rs.getString("nombreEscenario"),
-                    rs.getInt("idPosicionEscenario"),
-                    rs.getString("nombrePosicionEscenario"),
+                    rs.getInt("idPosicion"),
+                    rs.getString("nombrePosicion"),
                     rs.getInt("porcentajeKo")
             );
             registroList.add(itemRegistro);
-            System.out.println (rs.getInt("id"));
-            System.out.println (rs.getInt("idPersonajeEmisor"));
-            System.out.println (rs.getString("nombrePersonajeEmisor"));
-
         };
         //Serializamos el objeto a json para enviarlo:
         ObjectMapper mapper = new ObjectMapper();

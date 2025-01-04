@@ -8,9 +8,10 @@ public class Registro
     private String nombrePersonajeReceptor;
     private int idMovimiento;
     private String nombreMovimiento;
+    private int idEscenario;
     private String nombreEscenario;
-    private int idPosicionEscenario;
-    private String nombrePosicionEscenario;
+    private int idPosicion;
+    private String nombrePosicion;
     private int porcentajeKO;
 
     //Esta clase deberia tener mas data por el uso de JOIN para el listado de registros
@@ -22,9 +23,10 @@ public class Registro
             String nombrePersonajeReceptor,
             int idMovimiento,
             String nombreMovimiento,
+            int idEscenario,
             String nombreEscenario,
-            int idPosicionEscenario,
-            String nombrePosicionEscenario,
+            int idPosicion,
+            String nombrePosicion,
             int porcentajeKO)
 
     {
@@ -36,9 +38,10 @@ public class Registro
                 this.nombrePersonajeReceptor=nombrePersonajeReceptor;
                 this.idMovimiento=idMovimiento;
                 this.nombreMovimiento=nombreMovimiento;
+                this.idEscenario=idEscenario;
                 this.nombreEscenario=nombreEscenario;
-                this.idPosicionEscenario=idPosicionEscenario;
-                this.nombrePosicionEscenario=nombrePosicionEscenario;
+                this.idPosicion=idPosicion;
+                this.nombrePosicion=nombrePosicion;
                 this.porcentajeKO=porcentajeKO;}
 
     public int getId(){
@@ -83,25 +86,30 @@ public class Registro
     public void setNombreMovimiento(String nombreMovimiento){
         this.nombreMovimiento=nombreMovimiento;
     }
+    public int getIdEscenario(){
+        return idEscenario;
+    }
+    public void setIdEscenario(int idEscenario){
+        this.idEscenario=idEscenario;
+    }
     public String getNombreEscenario(){
         return nombreEscenario;
     }
     public void setNombreEscenario(String nombreEscenario){
         this.nombreEscenario=nombreEscenario;
     }
-    public int getIdPosicionEscenario(){
-        return idPosicionEscenario;
+    public int getIdPosicion(){
+        return idPosicion;
     }
-    public void setIdPosicionEscenario(int idPosicionEscenario){
-        this.idPosicionEscenario=idPosicionEscenario;
+    public void setIdPosicion(int idPosicion){
+        this.idPosicion=idPosicion;
     }
-    public String getNombrePosicionEscenario(){
-        return nombrePosicionEscenario;
+    public String getNombrePosicion(){
+        return nombrePosicion;
     }
-    public void setNombrePosicionEscenario(String nombrePosicionEscenario){
-        this.nombrePosicionEscenario=nombrePosicionEscenario;
+    public void setNombrePosicion(String nombrePosicion){
+        this.nombrePosicion=nombrePosicion;
     }
-
     public int getPorcentajeKO(){
         return porcentajeKO;
     }

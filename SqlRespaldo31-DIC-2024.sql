@@ -159,16 +159,12 @@ CREATE TABLE registro (
 
 
 INSERT INTO registro (id, idPersonajeEmisor, idPersonajeReceptor, idMovimiento, idPosicionEscenario, porcentajeKO) VALUES
-(1, 35, 63, 7, 4, 98),
-(2, 35, 36, 7, 4, 100),
-(3, 35, 73, 7, 4, 111),
-(4, 35, 66, 7, 4, 114),
-(5, 35, 74, 7, 4, 119),
-(6, 0, 0, 0, 4, 0),
-(7, 0, 0, 0, 4, 0),
-(8, 0, 0, 0, 4, 0),
-(9, 0, 0, 0, 4, 0),
-(10, 75, 0, 0, 4, 0);
+(1, 35, 63, 7, 1,1, 98),
+(2, 35, 36, 7, 1, 1, 100),
+(3, 35, 73, 7, 1, 1, 111),
+(4, 35, 66, 7, 1, 1, 114),
+(5, 35, 74, 7, 1, 1, 119)
+
 
 
 ALTER TABLE escenario
