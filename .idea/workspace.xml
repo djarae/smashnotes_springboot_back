@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a3e17958-efd7-4fdc-91e0-358c64d144e4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SqlRespaldo31-DIC-2024.sql" beforeDir="false" afterPath="$PROJECT_DIR$/SqlRespaldo31-DIC-2024.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Registro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/queries/RegistroQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/queries/RegistroQueries.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
