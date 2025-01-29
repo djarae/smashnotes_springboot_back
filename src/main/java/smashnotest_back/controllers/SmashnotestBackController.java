@@ -22,7 +22,6 @@ public class SmashnotestBackController {
     {
         BDConfig.ConexionDB();
     }
-
     //Ruta de testing , importante para comprobar que funciona app sin conexion bd:
     @GetMapping(value = "/tLocalDeploy" )
     public String testLocalDeploy() {
