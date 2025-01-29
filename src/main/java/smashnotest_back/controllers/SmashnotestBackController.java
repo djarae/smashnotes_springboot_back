@@ -31,10 +31,13 @@ public class SmashnotestBackController {
     public String testCloudDeploy() {
         return "Hola11 !Torterra:ruta=>http://https://smashnotes-springboot-back.onrender.com/apiSmash/tCloudDeploy";
     }
+
+
+
     @GetMapping("/GetListRegistros")
     public String GetListRegistros() throws SQLException, JsonProcessingException {
         Statement s = BDConfig.Conexion.createStatement();System.out.println("get list escenario inicio");
-        // Instanciamos un listado de escenarios
+        //SQL: Obtenemos la data
         ResultSet rs = s.executeQuery ( " SELECT R.id as id,\n" +
                 "                R.idPersonajeEmisor as idPersonajeEmisor,\n" +
                 "               PE.nombre as nombrePersonajeEmisor,\n" +
@@ -53,6 +56,7 @@ public class SmashnotestBackController {
                 "                INNER JOIN movimiento M ON  R.idMovimiento=M.id \n" +
                 "                INNER JOIN escenario E ON R.idEscenario=E.id\n" +
                 "                INNER JOIN posicion POS ON R.idPosicion=POS.id ");
+        //Creamos el JSON 
         List<Registro> registroList = new ArrayList<>();
         while (rs.next()) {
             System.out.println ("agregamos data al listado de ojbetos de escenario");
@@ -72,11 +76,12 @@ public class SmashnotestBackController {
             );
             registroList.add(itemRegistro);
         };
-        //Serializamos el objeto a json para enviarlo:
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(registroList);
         return json;
     }
+
+
     @GetMapping("/GetListPersonajes")
     public String GetListPersonajes() throws SQLException, JsonProcessingException {
         Statement s = BDConfig.Conexion.createStatement();
