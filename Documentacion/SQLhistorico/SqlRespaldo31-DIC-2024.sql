@@ -125,6 +125,10 @@ INSERT INTO personaje (id, echo, nombre) VALUES
 (82, 1, 'Sora');
 
 
+
+
+
+
 CREATE TABLE posicionescenario (
   id int NOT NULL,
   nombre varchar(30) NOT NULL,

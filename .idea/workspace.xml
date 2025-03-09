@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3e17958-efd7-4fdc-91e0-358c64d144e4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SqlRespaldo31-DIC-2024.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Documentacion/SQLhistorico/SqlRespaldo31-DIC-2024.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readmeHardStudy29-31DIC24.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentacion/1-Readmes/readmeHardStudy29-31DIC24.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/BDConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/BDConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,9 +59,15 @@
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion\SQLhistorico" />
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion\1-Readmes" />
+      <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion\SQLhistorico" />
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion\Simbologias" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="smashnotest_back" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="RunManager">
