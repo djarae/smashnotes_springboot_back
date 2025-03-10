@@ -109,7 +109,7 @@ public class SmashnotestBackController {
     public String GetListEscenarios() throws SQLException, JsonProcessingException {
         Statement s = BDConfig.Conexion.createStatement();
         System.out.println("Seleccionamos stages con diferentes techos");
-        ResultSet rs = s.executeQuery ( "SELECT * FROM `escenario` WHERE id=5 or id=1 or id=2");
+        ResultSet rs = s.executeQuery ( "SELECT id,nombre FROM `escenario` WHERE id=5 or id=1 or id=2");
         List<Escenario> escenarioList = new ArrayList<>();
         while (rs.next()) {
             Escenario itemEscenario = new Escenario(
