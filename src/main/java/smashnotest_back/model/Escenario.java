@@ -10,7 +10,6 @@ public class Escenario {
         this.nombre="";
     }
 
-
     public Escenario(int id, String nombre){
         super();
         this.id=id;
@@ -28,6 +27,4 @@ public class Escenario {
     public void setNombre(String nombre){
         this.nombre=nombre;
     }
-
-
 }

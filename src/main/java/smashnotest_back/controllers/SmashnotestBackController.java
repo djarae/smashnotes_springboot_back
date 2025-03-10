@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 import smashnotest_back.configs.BDConfig;
+import smashnotest_back.model.Escenario;
 import smashnotest_back.model.Personaje;
 import smashnotest_back.model.Registro;
 
@@ -102,6 +103,28 @@ public class SmashnotestBackController {
         String json = mapper.writeValueAsString(personajeList);
         return json;
     }
+
+
+    @GetMapping("/GetListEscenarios")
+    public String GetListEscenarios() throws SQLException, JsonProcessingException {
+        Statement s = BDConfig.Conexion.createStatement();
+        ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM escenario");
+        List<Escenario> escenarioList = new ArrayList<>();
+        while (rs.next()) {
+            System.out.println ("agregamos data al listado de ojbetos de escenario");
+            Escenario itemEscenario = new Escenario(
+                    rs.getInt("id"),
+                    rs.getString("nombre"));
+            escenarioList.add(itemEscenario);
+            System.out.println (rs.getInt("id"));
+            System.out.println (rs.getString("nombre"));
+        };
+        // Serializamos el objeto a json para enviarlo
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(escenarioList);
+        return json;
+    }
+
 }
 
 
