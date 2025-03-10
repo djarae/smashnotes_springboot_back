@@ -108,16 +108,14 @@ public class SmashnotestBackController {
     @GetMapping("/GetListEscenarios")
     public String GetListEscenarios() throws SQLException, JsonProcessingException {
         Statement s = BDConfig.Conexion.createStatement();
-        ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM escenario");
+        System.out.println("Seleccionamos stages con diferentes techos");
+        ResultSet rs = s.executeQuery ( "SELECT * FROM `escenario` WHERE id=5 or id=1 or id=2");
         List<Escenario> escenarioList = new ArrayList<>();
         while (rs.next()) {
-            System.out.println ("agregamos data al listado de ojbetos de escenario");
             Escenario itemEscenario = new Escenario(
                     rs.getInt("id"),
                     rs.getString("nombre"));
             escenarioList.add(itemEscenario);
-            System.out.println (rs.getInt("id"));
-            System.out.println (rs.getString("nombre"));
         };
         // Serializamos el objeto a json para enviarlo
         ObjectMapper mapper = new ObjectMapper();
