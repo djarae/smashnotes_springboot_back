@@ -108,7 +108,7 @@ public class SmashnotestBackController {
     @GetMapping("/GetListEscenarios")
     public String GetListEscenarios() throws SQLException, JsonProcessingException {
         Statement s = BDConfig.Conexion.createStatement();
-        ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM escenario where id=1 or id=2 or id=5");
+        ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM escenario where id=1 or id=2");
         List<Escenario> escenarioList = new ArrayList<>();
         while (rs.next()) {
             System.out.println ("agregamos data al listado de ojbetos de escenario");
