@@ -111,7 +111,7 @@ public class SmashnotestBackController {
         ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM escenario where id=1 or id=2");
         List<Escenario> escenarioList = new ArrayList<>();
         while (rs.next()) {
-            System.out.println ("agregamos data al listado de ojbetos de escenario");
+            System.out.println ("agregamos data al listado de ojbetos de escenario x");
             Escenario itemEscenario = new Escenario(
                     rs.getInt("id"),
                     rs.getString("nombre"));
