@@ -102,6 +102,7 @@ public class SmashnotestBackController {
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(personajeList);
         return json;
+
     }
 
 
