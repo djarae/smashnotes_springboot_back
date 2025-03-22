@@ -12,6 +12,8 @@ import smashnotest_back.model.Escenario;
 import smashnotest_back.model.Personaje;
 import smashnotest_back.model.Registro;
 
+import smashnotest_back.services.RegistroService;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +36,7 @@ public class SmashnotestBackController {
     }
 
 
-
+//No perdere tiempo haciendo modulos de escenarios ,personajes ,etc. por que eso lo hice en bd y son finitos. Solo registros
     @GetMapping("/GetListRegistros")
     public String GetListRegistros() throws SQLException, JsonProcessingException {
         Statement s = BDConfig.Conexion.createStatement();System.out.println("get list escenario inicio");
@@ -56,7 +58,9 @@ public class SmashnotestBackController {
                 "                INNER JOIN personaje PR ON   R.idPersonajeReceptor=PR.id  \n" +
                 "                INNER JOIN movimiento M ON  R.idMovimiento=M.id \n" +
                 "                INNER JOIN escenario E ON R.idEscenario=E.id\n" +
-                "                INNER JOIN posicion POS ON R.idPosicion=POS.id ");
+                "                INNER JOIN posicion POS ON R.idPosicion=POS.id " +
+                "   ORDER BY id");
+
         //Creamos el JSON 
         List<Registro> registroList = new ArrayList<>();
         while (rs.next()) {
@@ -108,16 +112,13 @@ public class SmashnotestBackController {
     @GetMapping("/GetListEscenarios")
     public String GetListEscenarios() throws SQLException, JsonProcessingException {
         Statement s = BDConfig.Conexion.createStatement();
-        ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM escenario where id=1 or id=2 or id=5");
+        ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM escenario where id=1 or id=2");
         List<Escenario> escenarioList = new ArrayList<>();
         while (rs.next()) {
-            System.out.println ("azgregamos data al listado de ojbetos de escenario");
             Escenario itemEscenario = new Escenario(
                     rs.getInt("id"),
                     rs.getString("nombre"));
             escenarioList.add(itemEscenario);
-            System.out.println (rs.getInt("id"));
-            System.out.println (rs.getString("nombre"));
         };
         // Serializamos el objeto a json para enviarlo
         ObjectMapper mapper = new ObjectMapper();

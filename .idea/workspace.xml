@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3e17958-efd7-4fdc-91e0-358c64d144e4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/PersonajeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/services/RegistroService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/BDConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/BDConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/RegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/RegistroController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/queries/PersonajeQueries.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/queries/RegistroQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/RegistroRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +121,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java</url>
-          <line>32</line>
+          <line>34</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
