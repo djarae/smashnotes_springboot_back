@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3e17958-efd7-4fdc-91e0-358c64d144e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/PersonajeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/services/RegistroService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/FoldersExplain.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/dtos/RegistroDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/RegistroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/RegistroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/queries/PersonajeQueries.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/queries/RegistroQueries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/RegistroRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/BDConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/Configs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/PersonajeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/RegistroController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/PosicionEscenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Posicion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Registro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/PersonajeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/RegistroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/RegistroRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/services/RegistroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/services/RegistroService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +68,8 @@
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\src\main\java\smashnotest_back" />
+      <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\src\main\java\smashnotest_back\documentation" />
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion\1-Readmes" />
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion\SQLhistorico" />
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion\Simbologias" />
@@ -120,8 +128,8 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java</url>
-          <line>34</line>
+          <url>file://$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java</url>
+          <line>28</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
