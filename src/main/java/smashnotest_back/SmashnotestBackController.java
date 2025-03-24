@@ -37,18 +37,18 @@ public class SmashnotestBackController {
             return RegistroService.GetRegistros();
         }
         @PostMapping("/Registro")
-        public String InsertRegistro(Registro registro) throws SQLException, JsonProcessingException {
+        public String InsertRegistro(@RequestBody Registro registro) throws SQLException, JsonProcessingException {
             RegistroService.InsertRegistro(registro);
-         return "OK";
+            return "OK";
         }
 
-        @PutMapping("/UpdateRegistro")
+        @PutMapping("/Registro")
         public String updateRegistro(@RequestBody Registro registro) throws SQLException, JsonProcessingException {
             RegistroService.updateService(registro);  // Llama al servicio de actualización
             return "Registro actualizado correctamente";  // Mensaje de éxito
         }
 
-        @DeleteMapping("/DeleteRegistro/{id}")
+        @DeleteMapping("/Registro/{id}")
         public String deleteRegistro(@PathVariable int id) throws SQLException, JsonProcessingException {
             RegistroService.deleteService(id);  // Llama al servicio de eliminación
             return "Registro eliminado correctamente";  // Mensaje de éxito

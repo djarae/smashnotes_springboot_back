@@ -38,18 +38,31 @@ public class RegistroRepository {
         return rs;
     }
 
-    public static String insertRegistro(Registro registro)throws SQLException{
+    public static String insertRegistro(Registro registro) throws SQLException {
+        System.out.println("registro");
+        System.out.println(registro);
+
+        // Establecemos la conexión y la declaración SQL
         Statement s = Configs.Conexion.createStatement();
-        String sql = "INSERT INTO registro (idPersonajeEmisor, idPersonajeReceptor, idMovimiento, idEscenario, idPosicion, porcentajeKO) " +
-                "VALUES (" + registro.getIdPersonajeEmisor() + ", " +
+        // Creamos la consulta SQL
+        String sql = "INSERT INTO registro (id, idPersonajeEmisor, idPersonajeReceptor, idMovimiento, idEscenario, idPosicion, porcentajeKO) " +
+                "VALUES ((SELECT MAX(id)+1 from registro), " + 35 + ", " +
                 registro.getIdPersonajeReceptor() + ", " +
-                registro.getIdMovimiento() + ", " +
+                16 + ", " +
                 registro.getIdEscenario() + ", " +
-                registro.getIdPosicion() + ", " +
+                1 + ", " +
                 registro.getPorcentajeKO() + ")";
-        s .executeQuery(sql);  // Ejecuta la consulta SQL
-        return "0";
-    };
+
+        // Ejecutamos la consulta con executeUpdate() para una operación de inserción
+        int rowsAffected = s.executeUpdate(sql); // Esto debería devolver la cantidad de filas afectadas.
+
+        // Retornamos el mensaje si se ha insertado correctamente
+        if (rowsAffected > 0) {
+            return "OK"; // Se insertó correctamente
+        } else {
+            return "Error al insertar el registro"; // Algo falló
+        }
+    }
 
 
     public static String updateRegistro(Registro registro) throws SQLException {
