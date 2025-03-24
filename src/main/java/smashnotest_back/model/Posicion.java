@@ -1,13 +1,13 @@
 package smashnotest_back.model;
 
-public class PosicionEscenario {
+public class Posicion {
     private int id;
     private String nombre;
     private int verticalHorizontal;
     private int idPosicionComun;
     private int idEscenario;
 
-    public PosicionEscenario(int id,String nombre,int verticalHorizontal,int idPosicionComun,int idEscenario){
+    public Posicion(int id, String nombre, int verticalHorizontal, int idPosicionComun, int idEscenario){
         super();
         this.id=id;
         this.nombre=nombre;

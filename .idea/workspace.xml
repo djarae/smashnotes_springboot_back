@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a3e17958-efd7-4fdc-91e0-358c64d144e4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/BDConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/BDConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/Configs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/RegistroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/RegistroRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +45,7 @@
     &quot;Maven.smashnotest_back [spring-boot:run].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop__2025__03__21&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/nidok/OneDrive/Documentos/REPOSITORIOS/smashnotes_springboot_back&quot;,
@@ -57,6 +59,8 @@
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\src\main\java\smashnotest_back" />
+      <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\src\main\java\smashnotest_back\documentation" />
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion\1-Readmes" />
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion\SQLhistorico" />
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion\Simbologias" />
@@ -110,16 +114,5 @@
       <updated>1735687020747</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/smashnotest_back/controllers/SmashnotestBackController.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
