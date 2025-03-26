@@ -39,8 +39,7 @@ public class RegistroRepository {
     }
 
     public static String insertRegistro(Registro registro) throws SQLException {
-        System.out.println("registro");
-        System.out.println(registro);
+
 
         // Establecemos la conexión y la declaración SQL
         Statement s = Configs.Conexion.createStatement();
@@ -66,6 +65,15 @@ public class RegistroRepository {
 
 
     public static String updateRegistro(Registro registro) throws SQLException {
+        System.out.println("registro update ");
+        System.out.println("getId: " + registro.getId());
+        System.out.println("getIdPersonajeEmisor: " + registro.getIdPersonajeEmisor());
+        System.out.println("getIdPersonajeReceptor: " + registro.getIdPersonajeReceptor());
+        System.out.println("getIdMovimiento: " + registro.getIdMovimiento());
+        System.out.println("getIdEscenario: " + registro.getIdEscenario());
+        System.out.println("getIdPosicion: " + registro.getIdPosicion());
+        System.out.println("getPorcentajeKO: " + registro.getPorcentajeKO());
+
         Statement s = Configs.Conexion.createStatement();
         String sql = "UPDATE registro SET " +
                 "idPersonajeEmisor = " + registro.getIdPersonajeEmisor() + ", " +

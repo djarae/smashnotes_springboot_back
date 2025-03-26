@@ -39,6 +39,8 @@ public class RegistroService {
         return "Registro insertado correctamente";
     }
     public static String updateService(Registro registro) throws SQLException, JsonProcessingException {
+        System.out.println("Entreo al update reg service !!!!!!!!!!!!! vale_");
+        System.out.println(registro.getPorcentajeKO());
         RegistroRepository.updateRegistro(registro);  // Llama al método update del repositorio
         return "Registro actualizado correctamente";  // Mensaje de éxito
     }

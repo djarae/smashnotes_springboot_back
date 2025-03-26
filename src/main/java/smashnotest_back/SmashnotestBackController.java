@@ -44,6 +44,8 @@ public class SmashnotestBackController {
 
         @PutMapping("/Registro")
         public String updateRegistro(@RequestBody Registro registro) throws SQLException, JsonProcessingException {
+            System.out.println("Entreo al update registtro vale_");
+            System.out.println(registro.getPorcentajeKO());
             RegistroService.updateService(registro);  // Llama al servicio de actualización
             return "Registro actualizado correctamente";  // Mensaje de éxito
         }
