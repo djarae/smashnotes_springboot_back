@@ -16,7 +16,27 @@ public class RegistroRepository {
 
         Statement s = Configs.Conexion.createStatement();System.out.println("get list escenario inicio");
         //SQL: Obtenemos la data
-        ResultSet rs = s.executeQuery ( " SELECT R.id as id,\n" +
+        String sql ="SELECT R.id as id,\n" +
+                "                R.idPersonajeEmisor as idPersonajeEmisor,\n" +
+                "               PE.nombre as nombrePersonajeEmisor,\n" +
+                "                R.idPersonajeReceptor as idPersonajeReceptor, \n" +
+                "                PR.nombre as nombrePersonajeReceptor, \n" +
+                "                R.idMovimiento as idMovimiento, \n" +
+                "                M.nombre as nombreMovimiento, \n" +
+                "                E.id as idEscenario, \n" +
+                "                E.nombre as nombreEscenario, \n" +
+                "                R.idPosicion as idPosicion, \n" +
+                "                POS.nombre as nombrePosicion, \n" +
+                "                R.porcentajeKO as  porcentajeKO \n" +
+                "                FROM registro R \n" +
+                "                INNER JOIN personaje PE ON   R.idPersonajeEmisor=PE.id  \n" +
+                "                INNER JOIN personaje PR ON   R.idPersonajeReceptor=PR.id  \n" +
+                "                INNER JOIN movimiento M ON  R.idMovimiento=M.id \n" +
+                "                INNER JOIN escenario E ON R.idEscenario=E.id\n" +
+                "                INNER JOIN posicion POS ON R.idPosicion=POS.id " +
+                "   ORDER BY id";
+        System.out.println("sql"+sql);
+        ResultSet rs = s.executeQuery ( "SELECT R.id as id,\n" +
                 "                R.idPersonajeEmisor as idPersonajeEmisor,\n" +
                 "               PE.nombre as nombrePersonajeEmisor,\n" +
                 "                R.idPersonajeReceptor as idPersonajeReceptor, \n" +
@@ -39,7 +59,8 @@ public class RegistroRepository {
     }
 
     public static String insertRegistro(Registro registro) throws SQLException {
-
+        System.out.println("get id escenario");
+        System.out.println( registro.getIdEscenario());
 
         // Establecemos la conexión y la declaración SQL
         Statement s = Configs.Conexion.createStatement();

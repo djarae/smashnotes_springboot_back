@@ -44,8 +44,8 @@ public class SmashnotestBackController {
 
         @PutMapping("/Registro")
         public String updateRegistro(@RequestBody Registro registro) throws SQLException, JsonProcessingException {
-            System.out.println("Entreo al update registtro vale_");
-            System.out.println(registro.getPorcentajeKO());
+          //  System.out.println("Entreo al update registtro vale_");
+           // System.out.println(registro.getPorcentajeKO());
             RegistroService.updateService(registro);  // Llama al servicio de actualización
             return "Registro actualizado correctamente";  // Mensaje de éxito
         }
@@ -64,14 +64,14 @@ public class SmashnotestBackController {
             ResultSet rs = s.executeQuery ( "SELECT id, echo, nombre FROM personaje");
             List<Personaje> personajeList = new ArrayList<>();
             while (rs.next()) {
-                System.out.println ("agregamos data al listado de ojbetos de escenario");
+              //  System.out.println ("agregamos data al listado de ojbetos de escenario");
                 Personaje itemPersonaje = new Personaje(
                         rs.getInt("id"),
                         rs.getInt("echo"),
                         rs.getString("nombre"));
                 personajeList.add(itemPersonaje);
-                System.out.println (rs.getInt("id"));
-                System.out.println (rs.getString("nombre"));
+              //  System.out.println (rs.getInt("id"));
+               // System.out.println (rs.getString("nombre"));
             }
             // Serializamos el objeto a json para enviarlo
             ObjectMapper mapper = new ObjectMapper();
