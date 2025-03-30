@@ -56,7 +56,6 @@ public class SmashnotestBackController {
             return "Registro eliminado correctamente";  // Mensaje de éxito
         }
 
-
     //DataSources:
         @GetMapping("/Personajes")
         public String GetListPersonajes() throws SQLException, JsonProcessingException {
