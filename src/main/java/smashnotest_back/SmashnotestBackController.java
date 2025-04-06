@@ -27,8 +27,10 @@ public class SmashnotestBackController {
         }
         @GetMapping(value = "/tCloudDeploy" )
         public String testCloudDeploy() {
-            return "Hola11 !Torterra:ruta=> https://smashnotes-springboot-back-1.onrender.com/apiSmash/tCloudDeploy ";
+            return "Hola11 !Torterra:ruta=> https://smashnotes-springboot-back-1.onrender.com/apiSmash/tCloudDeploy";
         }
+
+
     //Auth:
 
     //Registros:

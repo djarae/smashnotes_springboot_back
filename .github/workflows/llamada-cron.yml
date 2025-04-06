@@ -1,0 +1,20 @@
+name: Llamar a tCloudDeploy cada 14 minutos
+
+on:
+  schedule:
+    - cron: "*/1 * * * *"  # Ejecuta cada minuto (UTC)
+  workflow_dispatch:       # Permite ejecución manual
+
+jobs:
+  llamar-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar si el minuto actual es múltiplo de 14
+        run: |
+          MIN=$(date -u +"%M")
+          if [ $((10#$MIN % 14)) -eq 0 ]; then
+            echo "Llamando a la API..."
+            curl -X GET https://smashnotes-springboot-back-1.onrender.com/apiSmash/tCloudDeploy
+          else
+            echo "No es un minuto divisible por 14 ($MIN), no se llama a la API."
+          fi
