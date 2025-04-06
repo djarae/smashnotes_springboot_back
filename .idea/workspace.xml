@@ -118,7 +118,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java</url>
-          <line>63</line>
+          <line>65</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
