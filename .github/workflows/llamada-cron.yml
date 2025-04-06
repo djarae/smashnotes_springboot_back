@@ -1,8 +1,8 @@
-name: Llamar a tCloudDeploy cada 10 minutos
+name: Llamar a tCloudDeploy cada 1 minutos
 
 on:
   schedule:
-    - cron: "*/10 * * * *"  # Ejecuta cada 10 minutos (UTC)
+    - cron: "*/1 * * * *"  # Ejecuta cada 1 minutos (UTC)
   workflow_dispatch:       # Permite ejecución manual
 
 jobs:
