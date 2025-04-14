@@ -14,6 +14,8 @@ public class RegistroService {
     public static String GetRegistros() throws SQLException, JsonProcessingException {
         ResultSet rs = RegistroRepository.getDataRegistro();
         List<RegistroDTO> registroList = new ArrayList<>();
+        System.out.println("registro  rs post query");
+        System.out.println(rs);
         while (rs.next()) {
             RegistroDTO itemRegistro = new RegistroDTO(
                     rs.getInt("id"),
@@ -27,11 +29,14 @@ public class RegistroService {
                     rs.getString("nombreEscenario"),
                     rs.getInt("idPosicion"),
                     rs.getString("nombrePosicion"),
+                    rs.getInt("rage"),
                     rs.getInt("porcentajeKo")
             );
             registroList.add(itemRegistro);
         };
         ObjectMapper mapper = new ObjectMapper();
+        System.out.println("registro dtolist post serializer");
+        System.out.println(registroList);
         return  mapper.writeValueAsString(registroList);
     };
     public static String InsertRegistro(Registro registro) throws SQLException, JsonProcessingException {

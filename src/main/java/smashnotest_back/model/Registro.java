@@ -7,6 +7,7 @@ public class Registro {
     private int idMovimiento;
     private int idEscenario;
     private int idPosicion;
+    private int rage;
     private int porcentajeKO;
 
     public Registro(
@@ -16,6 +17,7 @@ public class Registro {
             int idMovimiento,
             int idEscenario,
             int idPosicion,
+            int rage,
             int porcentajeKO) {
         this.id = id;
         this.idPersonajeEmisor = idPersonajeEmisor;
@@ -72,6 +74,14 @@ public class Registro {
 
     public void setIdPosicion(int idPosicion) {
         this.idPosicion = idPosicion;
+    }
+
+    public int getRage() {
+        return rage;
+    }
+
+    public void setRage(int porcentajeKO) {
+        this.rage = rage;
     }
 
     public int getPorcentajeKO() {

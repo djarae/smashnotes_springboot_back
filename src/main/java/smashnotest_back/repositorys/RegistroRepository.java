@@ -27,6 +27,7 @@ public class RegistroRepository {
                 "                E.nombre as nombreEscenario, \n" +
                 "                R.idPosicion as idPosicion, \n" +
                 "                POS.nombre as nombrePosicion, \n" +
+                "                R.rage as  rage, \n" +
                 "                R.porcentajeKO as  porcentajeKO \n" +
                 "                FROM registro R \n" +
                 "                INNER JOIN personaje PE ON   R.idPersonajeEmisor=PE.id  \n" +
@@ -36,25 +37,7 @@ public class RegistroRepository {
                 "                INNER JOIN posicion POS ON R.idPosicion=POS.id " +
                 "   ORDER BY id";
         System.out.println("sql"+sql);
-        ResultSet rs = s.executeQuery ( "SELECT R.id as id,\n" +
-                "                R.idPersonajeEmisor as idPersonajeEmisor,\n" +
-                "               PE.nombre as nombrePersonajeEmisor,\n" +
-                "                R.idPersonajeReceptor as idPersonajeReceptor, \n" +
-                "                PR.nombre as nombrePersonajeReceptor, \n" +
-                "                R.idMovimiento as idMovimiento, \n" +
-                "                M.nombre as nombreMovimiento, \n" +
-                "                E.id as idEscenario, \n" +
-                "                E.nombre as nombreEscenario, \n" +
-                "                R.idPosicion as idPosicion, \n" +
-                "                POS.nombre as nombrePosicion, \n" +
-                "                R.porcentajeKO as  porcentajeKO \n" +
-                "                FROM registro R \n" +
-                "                INNER JOIN personaje PE ON   R.idPersonajeEmisor=PE.id  \n" +
-                "                INNER JOIN personaje PR ON   R.idPersonajeReceptor=PR.id  \n" +
-                "                INNER JOIN movimiento M ON  R.idMovimiento=M.id \n" +
-                "                INNER JOIN escenario E ON R.idEscenario=E.id\n" +
-                "                INNER JOIN posicion POS ON R.idPosicion=POS.id " +
-                "   ORDER BY id");
+        ResultSet rs = s.executeQuery ( sql);
         return rs;
     }
 
