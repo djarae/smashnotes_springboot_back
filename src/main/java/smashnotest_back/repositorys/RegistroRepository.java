@@ -40,6 +40,7 @@ public class RegistroRepository {
         ResultSet rs = s.executeQuery ( sql);
         return rs;
     }
+    //aa
 
     public static String insertRegistro(Registro registro) throws SQLException {
         System.out.println("get id escenario");
