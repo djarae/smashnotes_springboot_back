@@ -1,18 +1,14 @@
 package smashnotest_back.repositorys;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 import smashnotest_back.configs.Configs;
 import smashnotest_back.model.Registro;
 
 //Colocare una carpeta para querys, para cumplir con el principio 5 de solid ,y en caso de que necesite cambiar de sql a mongo db
 public class RegistroRepository {
-
-    public static ResultSet  getDataRegistro()throws SQLException, JsonProcessingException {
+    public static ResultSet getDataRegistro()throws SQLException, JsonProcessingException {
 
         Statement s = Configs.Conexion.createStatement();System.out.println("get list escenario inicio");
         //SQL: Obtenemos la data
@@ -40,8 +36,6 @@ public class RegistroRepository {
         ResultSet rs = s.executeQuery ( sql);
         return rs;
     }
-    //aa
-
     public static String insertRegistro(Registro registro) throws SQLException {
         System.out.println("get id escenario");
         System.out.println( registro.getIdEscenario());
@@ -49,13 +43,16 @@ public class RegistroRepository {
         // Establecemos la conexión y la declaración SQL
         Statement s = Configs.Conexion.createStatement();
         // Creamos la consulta SQL
-        String sql = "INSERT INTO registro (id, idPersonajeEmisor, idPersonajeReceptor, idMovimiento, idEscenario, idPosicion, porcentajeKO) " +
-                "VALUES ((SELECT MAX(id)+1 from registro), " + 35 + ", " +
+        String sql = "INSERT INTO registro (id, idPersonajeEmisor, idPersonajeReceptor, idMovimiento, idEscenario, idPosicion, porcentajeKO,rage,di) " +
+                "VALUES ((SELECT MAX(id)+1 from registro), " +
+                registro.getIdPersonajeEmisor() + ", " +
                 registro.getIdPersonajeReceptor() + ", " +
-                16 + ", " +
+                registro.getIdMovimiento() + ", " +
                 registro.getIdEscenario() + ", " +
                 1 + ", " +
-                registro.getPorcentajeKO() + ")";
+                registro.getPorcentajeKO() + ", "+
+                registro.getRage()
+                +", true)";
 
         // Ejecutamos la consulta con executeUpdate() para una operación de inserción
         int rowsAffected = s.executeUpdate(sql); // Esto debería devolver la cantidad de filas afectadas.
@@ -67,8 +64,6 @@ public class RegistroRepository {
             return "Error al insertar el registro"; // Algo falló
         }
     }
-
-
     public static String updateRegistro(Registro registro) throws SQLException {
         System.out.println("registro update ");
         System.out.println("getId: " + registro.getId());
@@ -77,7 +72,9 @@ public class RegistroRepository {
         System.out.println("getIdMovimiento: " + registro.getIdMovimiento());
         System.out.println("getIdEscenario: " + registro.getIdEscenario());
         System.out.println("getIdPosicion: " + registro.getIdPosicion());
+        System.out.println("getRage: " + registro.getRage());
         System.out.println("getPorcentajeKO: " + registro.getPorcentajeKO());
+        System.out.println("antes de crear el sql");
 
         Statement s = Configs.Conexion.createStatement();
         String sql = "UPDATE registro SET " +
@@ -86,17 +83,17 @@ public class RegistroRepository {
                 "idMovimiento = " + registro.getIdMovimiento() + ", " +
                 "idEscenario = " + registro.getIdEscenario() + ", " +
                 "idPosicion = " + registro.getIdPosicion() + ", " +
-                "porcentajeKO = " + registro.getPorcentajeKO() + " " +
-                "WHERE id = " + registro.getId();
+                "porcentajeKO = " + registro.getPorcentajeKO() + ", " +
+                 "rage = " + registro.getRage() +
+                " WHERE id = " + registro.getId();
+        System.out.println("Antes de executeudatezzz");
         s.executeUpdate(sql);  // Ejecuta la actualización
         return "0";  // Retorna un código de éxito
     }
-
     public static String deleteRegistro(int id) throws SQLException {
         Statement s = Configs.Conexion.createStatement();
         String sql = "DELETE FROM registro WHERE id = " + id;
         s.executeUpdate(sql);  // Ejecuta la eliminación
         return "0";  // Retorna un código de éxito
     }
-
 }

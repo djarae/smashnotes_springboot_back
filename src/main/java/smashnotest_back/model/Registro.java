@@ -25,6 +25,7 @@ public class Registro {
         this.idMovimiento = idMovimiento;
         this.idEscenario = idEscenario;
         this.idPosicion = idPosicion;
+        this.rage=rage;
         this.porcentajeKO = porcentajeKO;
     }
 
