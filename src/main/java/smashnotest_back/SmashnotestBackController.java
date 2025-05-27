@@ -43,10 +43,27 @@ public class SmashnotestBackController {
     //Auth:
 
     //Registros:
-        @GetMapping("/Registros")
-        public String GetListRegistros() throws SQLException, JsonProcessingException {
-            return RegistroService.GetRegistros();
-        }
+    @GetMapping("/Registro")
+    public String GetListRegistros(@RequestParam(required = false)
+                                       String filtroEmisor,
+                                       String filtroReceptor,
+                                       String filtroRage,
+                                       String filtroPosicion,
+                                       String filtroStage,
+                                       String filtroMovimiento)
+            throws SQLException, JsonProcessingException {
+
+            System.out.println("filtroMovimiento");
+            System.out.println(filtroMovimiento);
+
+        return RegistroService.GetRegistros(
+                filtroEmisor,
+                filtroReceptor,
+                filtroRage,
+                filtroPosicion,
+                filtroStage,
+                filtroMovimiento);
+    }
 
         @PostMapping("/Registro")
         public String InsertRegistro(@RequestBody Registro registro) throws SQLException, JsonProcessingException {
@@ -93,7 +110,7 @@ public class SmashnotestBackController {
     @GetMapping("/Escenarios")
     public String GetListEscenarios() throws SQLException, JsonProcessingException {
         Statement s = Configs.Conexion.createStatement();
-        ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM escenario where id=1 or id=2");
+        ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM escenario where id=1 or id=2 or id=5");
         List<Escenario> escenarioList = new ArrayList<>();
         while (rs.next()) {
             Escenario itemEscenario = new Escenario(

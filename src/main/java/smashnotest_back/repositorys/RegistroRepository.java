@@ -3,12 +3,125 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
+import org.springframework.util.StringUtils;
 import smashnotest_back.configs.Configs;
 import smashnotest_back.model.Registro;
 
 //Colocare una carpeta para querys, para cumplir con el principio 5 de solid ,y en caso de que necesite cambiar de sql a mongo db
 public class RegistroRepository {
-    public static ResultSet getDataRegistro()throws SQLException, JsonProcessingException {
+    public static ResultSet getDataRegistro(
+            String filtroEmisor,
+            String filtroReceptor,
+            String filtroRage,
+            String filtroPosicion,
+            String filtroStage,
+            String filtroMovimiento) throws SQLException {
+        System.out.println("filtro emisor");System.out.println(filtroEmisor);
+        System.out.println("filtro receptor");System.out.println(filtroReceptor);
+        System.out.println("filtro rage");System.out.println(filtroRage);
+        System.out.println("filtro posicion");System.out.println(filtroPosicion);
+        System.out.println("filtro stage");System.out.println(filtroStage);
+       System.out.println("filtro mov");System.out.println(filtroMovimiento);
+
+//Creamos las variables auxiliares de filtro
+       String auxFiltroEmisor = filtroEmisor;
+        String auxFiltroReceptor = filtroReceptor;
+        String auxFiltroRage = filtroRage;
+        String auxFiltroPosicion = filtroPosicion;
+       String auxFiltroMovimiento=filtroMovimiento;
+        String auxFiltroStage=filtroStage;
+
+  //la creacion de filtros podria ser una funcion luego!
+   //Validamos si el filtro viene vacio!
+        //FILTRO EMISOR:
+        if (!StringUtils.hasText(auxFiltroEmisor)                // null, "", "   "
+                || "0".equals(auxFiltroEmisor.trim())            // "0"
+                || "undefined".equalsIgnoreCase(auxFiltroEmisor) // "undefined"
+                || "null".equalsIgnoreCase(auxFiltroEmisor)) {   // "null"
+
+            System.out.println("auxFiltroEmisor es nulo o vacío, se usa cláusula neutra");
+            auxFiltroEmisor = "PE.nombre = PE.nombre";
+        } else {
+            System.out.println("valor presente, se aplica filtro");
+            auxFiltroEmisor = "PE.nombre LIKE '%" + auxFiltroEmisor.trim() + "%'";
+        }
+
+        //FILTRO RECEPTOR
+        if (!StringUtils.hasText(auxFiltroReceptor)                // null, "", "   "
+                || "0".equals(auxFiltroReceptor.trim())            // "0"
+                || "undefined".equalsIgnoreCase(auxFiltroReceptor) // "undefined"
+                || "null".equalsIgnoreCase(auxFiltroReceptor)) {   // "null"
+            System.out.println("auxFiltroReceptor es nulo");
+            auxFiltroReceptor="PR.nombre=PR.nombre";
+        }else{
+            System.out.println("no es nulo se cambia");
+            auxFiltroReceptor = "PR.nombre LIKE '%" + filtroReceptor + "%'";
+
+            System.out.println(auxFiltroReceptor);
+        }
+
+        //FILTRO RAGE
+
+        if (!StringUtils.hasText(auxFiltroRage)                // null, "", "   "
+                || "0".equals(auxFiltroRage.trim())            // "0"
+                || "undefined".equalsIgnoreCase(auxFiltroRage) // "undefined"
+                || "null".equalsIgnoreCase(auxFiltroRage)) {   // "null"
+            System.out.println("auxFiltroRage es nulo");
+            auxFiltroRage="R.rage=R.rage";
+        }else{
+            System.out.println("no es nulo se cambia");
+            auxFiltroRage = "R.rage LIKE '%" + filtroRage + "%'";
+
+            System.out.println(auxFiltroRage);
+        }
+
+
+        //FILTRO POSICION
+        if (!StringUtils.hasText(auxFiltroPosicion)                // null, "", "   "
+                || "0".equals(auxFiltroPosicion.trim())            // "0"
+                || "undefined".equalsIgnoreCase(auxFiltroPosicion) // "undefined"
+                || "null".equalsIgnoreCase(auxFiltroPosicion)) {   // "null"
+            System.out.println("auxFiltroPosicion es nulo");
+            auxFiltroPosicion="POS.nombre=POS.nombre";
+        }else{
+            System.out.println("no es nulo se cambia");
+            auxFiltroPosicion = "POS.nombre LIKE '%" + filtroPosicion + "%'";
+
+            System.out.println(auxFiltroPosicion);
+        }
+
+
+        //filtro movimiento
+        if (!StringUtils.hasText(auxFiltroMovimiento)                // null, "", "   "
+                || "0".equals(auxFiltroMovimiento.trim())            // "0"
+                || "undefined".equalsIgnoreCase(auxFiltroMovimiento) // "undefined"
+                || "null".equalsIgnoreCase(auxFiltroMovimiento)) {   // "null"
+            System.out.println("auxFiltroMovimiento es nulo");
+           auxFiltroMovimiento="M.nombre=M.nombre";
+       }else{
+           System.out.println("no es nulo se cambia");
+           auxFiltroMovimiento = "M.nombre LIKE '%" + filtroMovimiento + "%'";
+
+           System.out.println(auxFiltroMovimiento);
+       }
+
+
+
+        //FILTRO stage
+        if (!StringUtils.hasText(auxFiltroStage)                // null, "", "   "
+                || "0".equals(auxFiltroStage.trim())            // "0"
+                || "undefined".equalsIgnoreCase(auxFiltroStage) // "undefined"
+                || "null".equalsIgnoreCase(auxFiltroStage)) {   // "null"
+            System.out.println("auxFiltroStage es nulo");
+            auxFiltroStage="E.nombre=E.nombre";
+        }else{
+            System.out.println("no es nulo se cambia");
+            auxFiltroStage = "E.nombre LIKE '%" + filtroStage+ "%'";
+
+            System.out.println(auxFiltroStage);
+        }
+
 
         Statement s = Configs.Conexion.createStatement();System.out.println("get list escenario inicio");
         //SQL: Obtenemos la data
@@ -31,7 +144,14 @@ public class RegistroRepository {
                 "                INNER JOIN movimiento M ON  R.idMovimiento=M.id \n" +
                 "                INNER JOIN escenario E ON R.idEscenario=E.id\n" +
                 "                INNER JOIN posicion POS ON R.idPosicion=POS.id " +
-                "   ORDER BY id";
+                "  WHERE "+ auxFiltroEmisor        + " and " +
+                            auxFiltroReceptor      + " and " +
+                            auxFiltroRage         + " and " +
+                            auxFiltroStage         + " and " +
+                            auxFiltroPosicion      + " and " +
+                "         "+auxFiltroMovimiento +
+
+                " ORDER BY id";
         System.out.println("sql"+sql);
         ResultSet rs = s.executeQuery ( sql);
         return rs;

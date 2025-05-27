@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3e17958-efd7-4fdc-91e0-358c64d144e4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/entity/Personaje2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/Personaje2Repository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/Configs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Registro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/RegistroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/RegistroRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/services/RegistroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/services/RegistroService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,9 +124,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/RegistroRepository.java</url>
-          <line>67</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

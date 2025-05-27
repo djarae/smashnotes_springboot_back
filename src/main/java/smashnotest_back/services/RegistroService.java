@@ -11,8 +11,24 @@ import smashnotest_back.dtos.RegistroDTO;
 import smashnotest_back.model.Registro;
 import smashnotest_back.repositorys.RegistroRepository;
 public class RegistroService {
-    public static String GetRegistros() throws SQLException, JsonProcessingException {
-        ResultSet rs = RegistroRepository.getDataRegistro();
+    public static String GetRegistros(
+            String filtroEmisor,
+            String filtroReceptor,
+            String filtroRage,
+            String filtroPosicion,
+            String filtroStage,
+            String filtroMovimiento) throws SQLException, JsonProcessingException {
+        System.out.println("filtro movimient");
+        System.out.println(filtroMovimiento);
+
+        ResultSet rs = RegistroRepository.getDataRegistro(
+                filtroEmisor,
+                filtroReceptor,
+                filtroRage,
+                filtroPosicion,
+                filtroStage,
+                filtroMovimiento);
+
         List<RegistroDTO> registroList = new ArrayList<>();
         System.out.println("registro  rs post query");
         System.out.println(rs);
