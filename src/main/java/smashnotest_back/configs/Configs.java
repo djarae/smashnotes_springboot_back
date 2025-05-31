@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public  class Configs {
     //Datos a conexion a produccion a
-     //public static String url = "jdbc:postgresql://ep-shrill-cell-a5wddks2.us-east-2.aws.neon.tech:5432/neondb"; public static String user="neondb_owner"; public static String password="x2umTeFRS8bA";
+     public static String url = "jdbc:postgresql://ep-nameless-mountain-a6a39ou0-pooler.us-west-2.aws.neon.tech:5432/dbsmash"; public static String user="dbsmash_owner"; public static String password="npg_BNqzCT5rV0Iu";
     //Datos a conexion a desarrollo x
-    public static String  url="jdbc:postgresql://localhost:5432/postgres"; public static String user="postgres"; public static String password="mipostgre345";
+    //public static String  url="jdbc:postgresql://localhost:5432/postgres"; public static String user="postgres"; public static String password="mipostgre345";
 
     //Coenxion render bd :
 //public static String url = "jdbc:postgresql://dpg-cvdnmd3v2p9s7393g3e0-a.ohio-postgres.render.com:5432/smashbd"; public static String user="smash_user"; public static String password="IeuiOxRa3Pod3Ivi7CCAEwHTNm6s6PDg";

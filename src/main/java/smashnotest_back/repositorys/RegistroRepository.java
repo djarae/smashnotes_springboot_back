@@ -62,16 +62,14 @@ public class RegistroRepository {
         }
 
         //FILTRO RAGE
-
         if (!StringUtils.hasText(auxFiltroRage)                // null, "", "   "
-                || "0".equals(auxFiltroRage.trim())            // "0"
                 || "undefined".equalsIgnoreCase(auxFiltroRage) // "undefined"
                 || "null".equalsIgnoreCase(auxFiltroRage)) {   // "null"
             System.out.println("auxFiltroRage es nulo");
             auxFiltroRage="R.rage=R.rage";
         }else{
             System.out.println("no es nulo se cambia");
-            auxFiltroRage = "R.rage LIKE '%" + filtroRage + "%'";
+            auxFiltroRage = "R.rage =" + filtroRage ;
 
             System.out.println(auxFiltroRage);
         }
