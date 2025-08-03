@@ -30,7 +30,7 @@ public class RegistroService {
                 filtroMovimiento);
 
         List<RegistroDTO> registroList = new ArrayList<>();
-        System.out.println("registro  rs post query");
+        System.out.println("registro <<<<asdas rs post query");
         System.out.println(rs);
         while (rs.next()) {
             RegistroDTO itemRegistro = new RegistroDTO(
@@ -46,13 +46,15 @@ public class RegistroService {
                     rs.getInt("idPosicion"),
                     rs.getString("nombrePosicion"),
                     rs.getInt("rage"),
+                    rs.getBoolean("di"),
                     rs.getInt("porcentajeKo")
             );
             registroList.add(itemRegistro);
         };
         ObjectMapper mapper = new ObjectMapper();
-        System.out.println("registro dtolist post serializer");
+        System.out.println("registro dtolist post serializeeeeeeeeeeeeeeeeeeeeeeeeeeeeer");
         System.out.println(registroList);
+        System.out.println(mapper.writeValueAsString(registroList));
         return  mapper.writeValueAsString(registroList);
     };
     public static String InsertRegistro(Registro registro) throws SQLException, JsonProcessingException {

@@ -8,6 +8,7 @@ public class Registro {
     private int idEscenario;
     private int idPosicion;
     private int rage;
+    private boolean di;
     private int porcentajeKO;
 
     public Registro(
@@ -18,6 +19,7 @@ public class Registro {
             int idEscenario,
             int idPosicion,
             int rage,
+            boolean di,
             int porcentajeKO) {
         this.id = id;
         this.idPersonajeEmisor = idPersonajeEmisor;
@@ -26,6 +28,7 @@ public class Registro {
         this.idEscenario = idEscenario;
         this.idPosicion = idPosicion;
         this.rage=rage;
+        this.di=di;
         this.porcentajeKO = porcentajeKO;
     }
 
@@ -84,6 +87,10 @@ public class Registro {
     public void setRage(int porcentajeKO) {
         this.rage = rage;
     }
+
+    public boolean getDi(){return this.di;}
+
+    public void setDi(boolean di){this.di=di;}
 
     public int getPorcentajeKO() {
         return porcentajeKO;

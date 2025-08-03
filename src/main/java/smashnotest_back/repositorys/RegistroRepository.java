@@ -135,6 +135,7 @@ public class RegistroRepository {
                 "                R.idPosicion as idPosicion, \n" +
                 "                POS.nombre as nombrePosicion, \n" +
                 "                R.rage as  rage, \n" +
+                "                R.di as  di, \n" +
                 "                R.porcentajeKO as  porcentajeKO \n" +
                 "                FROM registro R \n" +
                 "                INNER JOIN personaje PE ON   R.idPersonajeEmisor=PE.id  \n" +
@@ -150,8 +151,9 @@ public class RegistroRepository {
                 "         "+auxFiltroMovimiento +
 
                 " ORDER BY id";
-        System.out.println("sql"+sql);
+        System.out.println("sql4"+sql);
         ResultSet rs = s.executeQuery ( sql);
+        System.out.println("resuuuuuuuuuuuuuuuuuuult"+rs);
         return rs;
     }
     public static String insertRegistro(Registro registro) throws SQLException {
