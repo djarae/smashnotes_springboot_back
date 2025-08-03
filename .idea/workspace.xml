@@ -7,7 +7,6 @@
     <list default="true" id="a3e17958-efd7-4fdc-91e0-358c64d144e4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/configs/Configs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/RegistroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/repositorys/RegistroRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +48,10 @@
     &quot;Maven.smashnotest_back [spring-boot:run].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev__2025__04__13&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nidok/OneDrive/Documentos/REPOSITORIOS/smashnotes_springboot_back&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nidok/OneDrive/Documentos/REPOSITORIOS_DEPLOY/smashnotes_back&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -118,16 +117,5 @@
       <updated>1735687020747</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java</url>
-          <line>111</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

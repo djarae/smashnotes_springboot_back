@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 public  class Configs {
     //Datos a conexion a produccion a
+    // la siguiente db sigue estando en neon-deidad:
      public static String url = "jdbc:postgresql://ep-nameless-mountain-a6a39ou0-pooler.us-west-2.aws.neon.tech:5432/dbsmash"; public static String user="dbsmash_owner"; public static String password="npg_BNqzCT5rV0Iu";
     //Datos a conexion a desarrollo x
     //public static String  url="jdbc:postgresql://localhost:5432/postgres"; public static String user="postgres"; public static String password="mipostgre345";
