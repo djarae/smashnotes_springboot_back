@@ -159,6 +159,8 @@ public class RegistroRepository {
     public static String insertRegistro(Registro registro) throws SQLException {
         System.out.println("get id escenario");
         System.out.println( registro.getIdEscenario());
+        System.out.println("di vale");
+        System.out.println(registro.getDi());
 
         // Establecemos la conexión y la declaración SQL
         Statement s = Configs.Conexion.createStatement();
@@ -171,8 +173,9 @@ public class RegistroRepository {
                 registro.getIdEscenario() + ", " +
                 1 + ", " +
                 registro.getPorcentajeKO() + ", "+
-                registro.getRage()
-                +", true)";
+                registro.getRage() +","+
+                registro.getDi()+
+                ")";
 
         // Ejecutamos la consulta con executeUpdate() para una operación de inserción
         int rowsAffected = s.executeUpdate(sql); // Esto debería devolver la cantidad de filas afectadas.
