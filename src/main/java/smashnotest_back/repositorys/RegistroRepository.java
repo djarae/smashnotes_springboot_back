@@ -206,6 +206,7 @@ public class RegistroRepository {
                 "idMovimiento = " + registro.getIdMovimiento() + ", " +
                 "idEscenario = " + registro.getIdEscenario() + ", " +
                 "idPosicion = " + registro.getIdPosicion() + ", " +
+                "di = " + registro.getDi() + ", " +
                 "porcentajeKO = " + registro.getPorcentajeKO() + ", " +
                  "rage = " + registro.getRage() +
                 " WHERE id = " + registro.getId();
