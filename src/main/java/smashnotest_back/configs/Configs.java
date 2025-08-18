@@ -8,7 +8,7 @@ public class Configs {
     public static String url = "jdbc:postgresql://ep-nameless-mountain-a6a39ou0.us-west-2.aws.neon.tech:5432/dbsmash?sslmode=require";
     public static String user = "dbsmash_owner";
     public static String password = "npg_BNqzCT5rV0Iu";
-
+//a
     public static Connection Conexion = null;
 
     public static void ConexionDB() {
