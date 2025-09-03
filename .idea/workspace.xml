@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0b678c1c-d866-4ea3-8eae-7dd365ae89b6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Documentacion/MVVM-ReduxYPatronesEnTiposDeApps.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentacion/PatronAUsarHexagonalCleanSimple.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentacion/1-Readmes/IDEAS.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentacion/beforeAugust2025/1-Readmes/IDEAS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentacion/1-Readmes/Simbologia &amp; Informe.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Documentacion/beforeAugust2025/1-Readmes/Simbologia &amp; Informe.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentacion/1-Readmes/ideasTestUnitarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentacion/beforeAugust2025/1-Readmes/ideasTestUnitarios.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentacion/1-Readmes/readmeHardStudy29-31DIC24.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentacion/beforeAugust2025/1-Readmes/readmeHardStudy29-31DIC24.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentacion/ReadmeMaster.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentacion/beforeAugust2025/ReadmeMaster.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentacion/Simbologias/SimbologiaTbPersonaje.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentacion/beforeAugust2025/Simbologias/SimbologiaTbPersonaje.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentacion/Simbologias/SimbologiaTbPosicionEscenario.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentacion/beforeAugust2025/Simbologias/SimbologiaTbPosicionEscenario.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentacion/TiposAvances.md" beforeDir="false" afterPath="$PROJECT_DIR$/Documentacion/beforeAugust2025/TiposAvances.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/FoldersExplain.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/FoldersExplain.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/entity/Personaje2.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
