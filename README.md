@@ -9,11 +9,11 @@ Mejoras necesarias app sma:
 * 2- ABREVIATURAS para pjs,escenarios,posiciones,movs.
 * 3- DB: Pool de conoecciones en neon ,crear nueva db y conectar
 * 4- FILTRO: Crear filtro de di
-
+* 5- Cronjob cada 14 mins, probar! en render!
 
 
 #
-===============================================================================================================
+================================================================================================================
 01-09-2025
 # Esta api es para el front smashnotes_angular
 ================================================================================================================
