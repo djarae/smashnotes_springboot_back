@@ -5,9 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Configs {
-    public static String url = "jdbc:postgresql://ep-nameless-mountain-a6a39ou0.us-west-2.aws.neon.tech:5432/dbsmash?sslmode=require";
-    public static String user = "dbsmash_owner";
-    public static String password = "npg_BNqzCT5rV0Iu";
+    public static String url = "jdbc:postgresql://ep-spring-water-af90xnsw-pooler.c-2.us-west-2.aws.neon.tech:5432/neondb?sslmode=require&channelBinding=require";
+    public static String user = "neondb_owner";
+    public static String password = "npg_ioWd4GHDzj7J";
+
 //a
     public static Connection Conexion = null;
 
