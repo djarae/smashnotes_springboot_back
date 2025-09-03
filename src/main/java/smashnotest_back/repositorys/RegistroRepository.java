@@ -123,7 +123,7 @@ public class RegistroRepository {
 
         Statement s = Configs.Conexion.createStatement();System.out.println("get list escenario inicio");
         //SQL: Obtenemos la data
-        String sql ="SELECT R.id as id,\n" +
+        String sql ="SELECT DISTINCT R.id as id,\n" +
                 "                R.idPersonajeEmisor as idPersonajeEmisor,\n" +
                 "               PE.nombre as nombrePersonajeEmisor,\n" +
                 "                R.idPersonajeReceptor as idPersonajeReceptor, \n" +
@@ -151,6 +151,8 @@ public class RegistroRepository {
                 "         "+auxFiltroMovimiento +
 
                 " ORDER BY id";
+
+
         System.out.println("sql4"+sql);
         ResultSet rs = s.executeQuery ( sql);
         System.out.println("resuuuuuuuuuuuuuuuuuuult"+rs);
