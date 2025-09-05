@@ -12,6 +12,8 @@ public class RegistroDTO
     private String nombreEscenario;
     private int idPosicion;
     private String nombrePosicion;
+    private int rage;
+    private boolean di;
     private int porcentajeKO;
 
     //Esta clase deberia tener mas data por el uso de JOIN para el listado de registros
@@ -27,6 +29,8 @@ public class RegistroDTO
             String nombreEscenario,
             int idPosicion,
             String nombrePosicion,
+            int rage,
+            boolean di,
             int porcentajeKO)
 
     {
@@ -42,6 +46,8 @@ public class RegistroDTO
         this.nombreEscenario=nombreEscenario;
         this.idPosicion=idPosicion;
         this.nombrePosicion=nombrePosicion;
+        this.rage=rage;
+        this.di=di;
         this.porcentajeKO=porcentajeKO;}
 
     public int getId(){
@@ -109,6 +115,18 @@ public class RegistroDTO
     }
     public void setNombrePosicion(String nombrePosicion){
         this.nombrePosicion=nombrePosicion;
+    }
+    public int getRage(){
+        return rage;
+    }
+    public void setRage(int rage){
+        this.rage=rage;
+    }
+    public boolean getDi(){
+        return di;
+    }
+    public void setDi(boolean di){
+        this.di=di;
     }
     public int getPorcentajeKO(){
         return porcentajeKO;

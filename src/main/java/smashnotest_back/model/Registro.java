@@ -7,6 +7,8 @@ public class Registro {
     private int idMovimiento;
     private int idEscenario;
     private int idPosicion;
+    private int rage;
+    private boolean di;
     private int porcentajeKO;
 
     public Registro(
@@ -16,6 +18,8 @@ public class Registro {
             int idMovimiento,
             int idEscenario,
             int idPosicion,
+            int rage,
+            boolean di,
             int porcentajeKO) {
         this.id = id;
         this.idPersonajeEmisor = idPersonajeEmisor;
@@ -23,6 +27,8 @@ public class Registro {
         this.idMovimiento = idMovimiento;
         this.idEscenario = idEscenario;
         this.idPosicion = idPosicion;
+        this.rage=rage;
+        this.di=di;
         this.porcentajeKO = porcentajeKO;
     }
 
@@ -73,6 +79,18 @@ public class Registro {
     public void setIdPosicion(int idPosicion) {
         this.idPosicion = idPosicion;
     }
+
+    public int getRage() {
+        return rage;
+    }
+
+    public void setRage(int porcentajeKO) {
+        this.rage = rage;
+    }
+
+    public boolean getDi(){return this.di;}
+
+    public void setDi(boolean di){this.di=di;}
 
     public int getPorcentajeKO() {
         return porcentajeKO;
