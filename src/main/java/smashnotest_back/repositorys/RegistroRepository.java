@@ -122,7 +122,7 @@ public class RegistroRepository {
 
 
         Statement s = Configs.Conexion.createStatement();System.out.println("get list escenario inicio");
-        //SQL: Obtenemos la data
+        //SQL: Obtenemos la dataa
         String sql ="SELECT DISTINCT R.id as id,\n" +
                 "                R.idPersonajeEmisor as idPersonajeEmisor,\n" +
                 "                PE.nombre as nombrePersonajeEmisor,\n" +
