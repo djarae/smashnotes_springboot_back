@@ -125,9 +125,11 @@ public class RegistroRepository {
         //SQL: Obtenemos la data
         String sql ="SELECT DISTINCT R.id as id,\n" +
                 "                R.idPersonajeEmisor as idPersonajeEmisor,\n" +
-                "               PE.nombre as nombrePersonajeEmisor,\n" +
+                "                PE.nombre as nombrePersonajeEmisor,\n" +
+                "                PE.abreviatura as abreviaturaPersonajeEmisor, \n"+
                 "                R.idPersonajeReceptor as idPersonajeReceptor, \n" +
                 "                PR.nombre as nombrePersonajeReceptor, \n" +
+                "                PR.abreviatura as abreviaturaPersonajeReceptor, \n"+
                 "                R.idMovimiento as idMovimiento, \n" +
                 "                M.nombre as nombreMovimiento, \n" +
                 "                E.id as idEscenario, \n" +

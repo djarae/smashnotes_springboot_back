@@ -4,8 +4,10 @@ public class RegistroDTO
     private int id;
     private int idPersonajeEmisor;
     private String nombrePersonajeEmisor;
+    private String abreviaturaPersonajeEmisor;
     private int idPersonajeReceptor;
     private String nombrePersonajeReceptor;
+    private String abreviaturaPersonajeReceptor;
     private int idMovimiento;
     private String nombreMovimiento;
     private int idEscenario;
@@ -21,8 +23,10 @@ public class RegistroDTO
             int id,
             int idPersonajeEmisor,
             String nombrePersonajeEmisor,
+            String abreviaturaPersonajeEmisor,
             int idPersonajeReceptor,
             String nombrePersonajeReceptor,
+            String abreviaturaPersonajeReceptor,
             int idMovimiento,
             String nombreMovimiento,
             int idEscenario,
@@ -38,8 +42,10 @@ public class RegistroDTO
         this.id=id;
         this.idPersonajeEmisor=idPersonajeEmisor;
         this.nombrePersonajeEmisor=nombrePersonajeEmisor;
+        this.abreviaturaPersonajeEmisor =abreviaturaPersonajeEmisor;
         this.idPersonajeReceptor=idPersonajeReceptor;
         this.nombrePersonajeReceptor=nombrePersonajeReceptor;
+        this.abreviaturaPersonajeReceptor=abreviaturaPersonajeReceptor;
         this.idMovimiento=idMovimiento;
         this.nombreMovimiento=nombreMovimiento;
         this.idEscenario=idEscenario;
@@ -68,6 +74,12 @@ public class RegistroDTO
     public void setNombrePersonajeEmisor(String nombrePersonajeEmisor){
         this.nombrePersonajeEmisor=nombrePersonajeEmisor;
     }
+    public String getAbreviaturaPersonajeEmisor(){
+       return abreviaturaPersonajeEmisor;
+    }
+    public void setAbreviaturaPersonajeEmisor(String abreviaturaPersonajeEmisor){
+        this.abreviaturaPersonajeEmisor=abreviaturaPersonajeEmisor;
+    }
     public int getIdPersonajeReceptor(){
         return idPersonajeReceptor;
     }
@@ -79,6 +91,12 @@ public class RegistroDTO
     }
     public void setNombrePersonajeReceptor(String nombrePersonajeReceptor){
         this.nombrePersonajeEmisor=nombrePersonajeEmisor;
+    }
+    public String getAbreviaturaPersonajeReceptor(){
+        return abreviaturaPersonajeReceptor;
+    }
+    public void setAbreviaturaPersonajeReceptor(String abreviaturaPersonajeReceptor){
+        this.abreviaturaPersonajeReceptor=abreviaturaPersonajeReceptor;
     }
     public int getIdMovimiento(){
         return idMovimiento;
