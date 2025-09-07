@@ -1,3 +1,9 @@
+6-9-25.
+update del app
+
+
+
+
 3-9-25
 EXPLIACION DE FUTURA ARQUITECTURA DE CAPAS (PRESENTACION-APLICACION-DB)
 Para mi api me sirve este patron.
