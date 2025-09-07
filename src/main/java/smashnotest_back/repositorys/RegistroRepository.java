@@ -132,8 +132,10 @@ public class RegistroRepository {
                 "                PR.abreviatura as abreviaturaPersonajeReceptor, \n"+
                 "                R.idMovimiento as idMovimiento, \n" +
                 "                M.nombre as nombreMovimiento, \n" +
+                "                M.abreviatura as abreviaturaMovimiento, \n" +
                 "                E.id as idEscenario, \n" +
                 "                E.nombre as nombreEscenario, \n" +
+                "                E.abreviatura as abreviaturaEscenario , \n" +
                 "                R.idPosicion as idPosicion, \n" +
                 "                POS.nombre as nombrePosicion, \n" +
                 "                R.rage as  rage, \n" +

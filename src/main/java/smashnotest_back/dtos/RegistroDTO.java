@@ -10,8 +10,10 @@ public class RegistroDTO
     private String abreviaturaPersonajeReceptor;
     private int idMovimiento;
     private String nombreMovimiento;
+    private String abreviaturaMovimiento;
     private int idEscenario;
     private String nombreEscenario;
+    private String abreviaturaEscenario;
     private int idPosicion;
     private String nombrePosicion;
     private int rage;
@@ -29,8 +31,10 @@ public class RegistroDTO
             String abreviaturaPersonajeReceptor,
             int idMovimiento,
             String nombreMovimiento,
+            String abreviaturaMovimiento,
             int idEscenario,
             String nombreEscenario,
+            String abreviaturaEscenario,
             int idPosicion,
             String nombrePosicion,
             int rage,
@@ -48,8 +52,10 @@ public class RegistroDTO
         this.abreviaturaPersonajeReceptor=abreviaturaPersonajeReceptor;
         this.idMovimiento=idMovimiento;
         this.nombreMovimiento=nombreMovimiento;
+        this.abreviaturaMovimiento=abreviaturaMovimiento;
         this.idEscenario=idEscenario;
         this.nombreEscenario=nombreEscenario;
+        this.abreviaturaEscenario=abreviaturaEscenario;
         this.idPosicion=idPosicion;
         this.nombrePosicion=nombrePosicion;
         this.rage=rage;
@@ -110,6 +116,8 @@ public class RegistroDTO
     public void setNombreMovimiento(String nombreMovimiento){
         this.nombreMovimiento=nombreMovimiento;
     }
+    public String getAbreviaturaMovimiento(){return abreviaturaMovimiento;}
+    public void setAbreviaturaMovimiento(String abreviaturaMovimiento){this.abreviaturaMovimiento=abreviaturaMovimiento;}
     public int getIdEscenario(){
         return idEscenario;
     }
@@ -121,6 +129,12 @@ public class RegistroDTO
     }
     public void setNombreEscenario(String nombreEscenario){
         this.nombreEscenario=nombreEscenario;
+    }
+    public String getAbreviaturaEscenario(){
+        return abreviaturaEscenario;
+    }
+    public void setAbreviaturaEscenario(String AbreviaturaEscenario){
+        this.abreviaturaEscenario=abreviaturaEscenario;
     }
     public int getIdPosicion(){
         return idPosicion;
