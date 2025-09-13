@@ -88,6 +88,7 @@ public class SmashnotestBackController {
     //DataSources:
     @GetMapping("/Personajes")
     public String GetListPersonajes() throws SQLException, JsonProcessingException {
+        System.out.println("Hola mundo desde logs PERSONAJES");
         Statement s = Configs.Conexion.createStatement();
         ResultSet rs = s.executeQuery ( "SELECT id, echo, nombre FROM personaje");
         List<Personaje> personajeList = new ArrayList<>();
