@@ -5,7 +5,7 @@ update del app
 
 
 3-9-25
-EXPLIACION DE FUTURA ARQUITECTURA DE CAPAS (PRESENTACION-APLICACION-DB)
+EXPLIACION DE FUTURA ARQUITECTURA DE CAPAS (PRESENTACION-APLICACION-DB)a
 Para mi api me sirve este patron.
 Diagrama tipo matrioshka:
 ┌─────────────────────────────┐
