@@ -105,6 +105,8 @@ public class SmashnotestBackController {
         // Serializamos el objeto a json para enviarlo
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(personajeList);
+        System.out.println("personajes list:");
+        System.out.println(json);
         return json;
     }
 
