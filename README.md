@@ -1,11 +1,19 @@
+Rebuilds To Fix DB:
+2025 Septiembre: 
+sab 13:
+13 05 hh
+13 36 hrs
+14 37 hh fallo
+15hh
+
+
+========================
 6-9-25.
 update del app
 
-
-
-
+≠=============================
 3-9-25
-EXPLIACION DE FUTURA ARQUITECTURA DE CAPAS (PRESENTACION-APLICACION-DB)
+EXPLIACION DE FUTURA ARQUITECTURA DE CAPAS (PRESENTACION-APLICACION-DB)a
 Para mi api me sirve este patron.
 Diagrama tipo matrioshka:
 ┌─────────────────────────────┐
