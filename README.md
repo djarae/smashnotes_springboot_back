@@ -1,4 +1,16 @@
+Conclusion : necsito pasar todo el proyecto a ORM para acabar con los problemas de caida de db , es arta pega..
+
+
+
+
+
 Rebuilds To Fix DB:
+
+
+
+
+
+
 2025 Septiembre: 
 sab 13:
 13 05 hh
