@@ -6,12 +6,9 @@ CREATE TABLE public.escenario (
 );
 
 
-ALTER TABLE public.escenario OWNER TO neondb_owner;
+ALTER TABLE public.escenario OWNER TO postgres;
 
---
--- TOC entry 218 (class 1259 OID 24583)
--- Name: movimiento; Type: TABLE; Schema: public; Owner: neondb_owner
---
+
 
 CREATE TABLE public.movimiento (
     id integer NOT NULL,
@@ -20,12 +17,9 @@ CREATE TABLE public.movimiento (
 );
 
 
-ALTER TABLE public.movimiento OWNER TO neondb_owner;
+ALTER TABLE public.movimiento OWNER TO postgres;
 
---
--- TOC entry 219 (class 1259 OID 24588)
--- Name: personaje; Type: TABLE; Schema: public; Owner: neondb_owner
---
+
 
 CREATE TABLE public.personaje (
     id integer NOT NULL,
@@ -34,12 +28,9 @@ CREATE TABLE public.personaje (
 );
 
 
-ALTER TABLE public.personaje OWNER TO neondb_owner;
+ALTER TABLE public.personaje OWNER TO postgres;
 
---
--- TOC entry 220 (class 1259 OID 24591)
--- Name: personaje2; Type: TABLE; Schema: public; Owner: neondb_owner
---
+
 
 CREATE TABLE public.personaje2 (
     id integer NOT NULL,
@@ -48,12 +39,9 @@ CREATE TABLE public.personaje2 (
 );
 
 
-ALTER TABLE public.personaje2 OWNER TO neondb_owner;
+ALTER TABLE public.personaje2 OWNER TO postgres;
 
---
--- TOC entry 221 (class 1259 OID 24594)
--- Name: personaje2_id_seq; Type: SEQUENCE; Schema: public; Owner: neondb_owner
---
+
 
 CREATE SEQUENCE public.personaje2_id_seq
     AS integer
@@ -64,21 +52,13 @@ CREATE SEQUENCE public.personaje2_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.personaje2_id_seq OWNER TO neondb_owner;
+ALTER SEQUENCE public.personaje2_id_seq OWNER TO postgres;
 
---
--- TOC entry 3369 (class 0 OID 0)
--- Dependencies: 221
--- Name: personaje2_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: neondb_owner
---
+
 
 ALTER SEQUENCE public.personaje2_id_seq OWNED BY public.personaje2.id;
 
 
---
--- TOC entry 222 (class 1259 OID 24595)
--- Name: posicion; Type: TABLE; Schema: public; Owner: neondb_owner
---
 
 CREATE TABLE public.posicion (
     id integer NOT NULL,
@@ -86,12 +66,8 @@ CREATE TABLE public.posicion (
 );
 
 
-ALTER TABLE public.posicion OWNER TO neondb_owner;
+ALTER TABLE public.posicion OWNER TO postgres;
 
---
--- TOC entry 223 (class 1259 OID 24600)
--- Name: registro; Type: TABLE; Schema: public; Owner: neondb_owner
---
 
 CREATE TABLE public.registro (
     id integer NOT NULL,
@@ -106,12 +82,9 @@ CREATE TABLE public.registro (
 );
 
 
-ALTER TABLE public.registro OWNER TO neondb_owner;
+ALTER TABLE public.registro OWNER TO postgres;
 
---
--- TOC entry 3207 (class 2604 OID 24603)
--- Name: personaje2 id; Type: DEFAULT; Schema: public; Owner: neondb_owner
---
+
 
 ALTER TABLE ONLY public.personaje2 ALTER COLUMN id SET DEFAULT nextval('public.personaje2_id_seq'::regclass);
 
@@ -270,38 +243,23 @@ INSERT INTO public.registro (id, idpersonajeemisor, idpersonajereceptor, idmovim
 SELECT pg_catalog.setval('public.personaje2_id_seq', 1, false);
 
 
---
--- TOC entry 3209 (class 2606 OID 24582)
--- Name: escenario escenario_pkey; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
---
+
 
 ALTER TABLE ONLY public.escenario
     ADD CONSTRAINT escenario_pkey PRIMARY KEY (id);
 
 
---
--- TOC entry 3211 (class 2606 OID 24605)
--- Name: movimiento movimiento_pkey; Type: CONSTRAINT; Schema: public; Owner: neondb_owner
---
 
 ALTER TABLE ONLY public.movimiento
     ADD CONSTRAINT movimiento_pkey PRIMARY KEY (id);
 
 
---
--- TOC entry 2065 (class 826 OID 16392)
--- Name: DEFAULT PRIVILEGES FOR SEQUENCES; Type: DEFAULT ACL; Schema: public; Owner: cloud_admin
---
-
-ALTER DEFAULT PRIVILEGES FOR ROLE cloud_admin IN SCHEMA public GRANT ALL ON SEQUENCES TO neon_superuser WITH GRANT OPTION;
 
 
---
--- TOC entry 2064 (class 826 OID 16391)
--- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: public; Owner: cloud_admin
---
+# ALTER DEFAULT PRIVILEGES FOR ROLE cloud_admin IN SCHEMA public GRANT ALL ON SEQUENCES TO neon_superuser WITH GRANT OPTION;
 
-ALTER DEFAULT PRIVILEGES FOR ROLE cloud_admin IN SCHEMA public GRANT ALL ON TABLES TO neon_superuser WITH GRANT OPTION;
+
+# ALTER DEFAULT PRIVILEGES FOR ROLE cloud_admin IN SCHEMA public GRANT ALL ON TABLES TO neon_superuser WITH GRANT OPTION;
 
 
 
