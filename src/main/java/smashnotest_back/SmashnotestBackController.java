@@ -22,6 +22,13 @@ public class SmashnotestBackController {
     @Autowired
     private Personaje2Repository personaje2Repository;
 
+
+    //Constructor:(A FUTURO BORRARLO )
+
+    public  SmashnotestBackController()
+    {
+        Configs.ConexionDB();
+    }
     
         //Ruta de testing , importante para comprobar que funciona app sin conexion bd:
         @GetMapping(value = "/tLocalDeploy" )
