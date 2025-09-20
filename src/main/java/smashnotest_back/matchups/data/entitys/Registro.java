@@ -7,48 +7,45 @@ import jakarta.persistence.*;
 public class Registro {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // o SEQUENCE si lo tienes así
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "idPersonajeEmisor")
-    private int idPersonajeEmisor;
-
-    @Column(name = "idPersonajeReceptor")
-    private int idPersonajeReceptor;
-
-    @Column(name = "idMovimiento")
-    private int idMovimiento;
-
-    @Column(name = "idEscenario")
-    private int idEscenario;
-
-    @Column(name = "idPosicion")
-    private int idPosicion;
-
     private int rage;
-
     private boolean di;
-
-    @Column(name = "porcentajeKO")
     private int porcentajeKO;
 
-    // 👉 Constructor vacío requerido por JPA
-    public Registro() {}
+    // Solo guardamos IDs, no dependencias
+    private Integer idEscenario;
+    private Integer idMovimiento;
+    private Integer idPersonajeEmisor;
+    private Integer idPersonajeReceptor;
+    private Integer idPosicion;
 
-    // Constructor completo
-    public Registro(int id, int idPersonajeEmisor, int idPersonajeReceptor,
-                    int idMovimiento, int idEscenario, int idPosicion,
-                    int rage, boolean di, int porcentajeKO) {
-        this.id = id;
-        this.idPersonajeEmisor = idPersonajeEmisor;
-        this.idPersonajeReceptor = idPersonajeReceptor;
-        this.idMovimiento = idMovimiento;
-        this.idEscenario = idEscenario;
-        this.idPosicion = idPosicion;
-        this.rage = rage;
-        this.di = di;
-        this.porcentajeKO = porcentajeKO;
-    }
+    // Getters y setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    // getters y setters...
+    public int getRage() { return rage; }
+    public void setRage(int rage) { this.rage = rage; }
+
+    public boolean getDi() { return di; }
+    public void setDi(boolean di) { this.di = di; }
+
+    public int getPorcentajeKO() { return porcentajeKO; }
+    public void setPorcentajeKO(int porcentajeKO) { this.porcentajeKO = porcentajeKO; }
+
+    public int getIdPersonajeEmisor() { return idPersonajeEmisor; }
+    public void setIdPersonajeEmisor(int idPersonajeEmisor) { this.idPersonajeEmisor = idPersonajeEmisor; }
+
+    public int getIdPersonajeReceptor() { return idPersonajeReceptor; }
+    public void setIdPersonajeReceptor(int idPersonajeReceptor) { this.idPersonajeReceptor = idPersonajeReceptor; }
+
+    public int getIdMovimiento() { return idMovimiento; }
+    public void setIdMovimiento(int idMovimiento) { this.idMovimiento = idMovimiento; }
+
+    public int getIdEscenario() { return idEscenario; }
+    public void setIdEscenario(int idEscenario) { this.idEscenario = idEscenario; }
+
+    public int getIdPosicion() { return idPosicion; }
+    public void setIdPosicion(int idPosicion) { this.idPosicion = idPosicion; }
 }
