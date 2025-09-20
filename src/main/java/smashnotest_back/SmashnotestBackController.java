@@ -8,7 +8,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import smashnotest_back.configs.Configs;
 import smashnotest_back.matchups.data.entitys.Personaje;
-import smashnotest_back.model.Escenario;
+import smashnotest_back.matchups.data.entitys.Escenario;
+import smashnotest_back.matchups.data.repositorys.EscenarioRepository;
+//import smashnotest_back.model.Escenario;
+import smashnotest_back.matchups.data.entitys.Posicion;
+import smashnotest_back.matchups.data.repositorys.PosicionRepository;
 import smashnotest_back.model.Registro;
 import smashnotest_back.matchups.data.repositorys.PersonajeRepository;
 import smashnotest_back.services.RegistroService;
@@ -25,6 +29,13 @@ public class SmashnotestBackController {
 
     @Autowired
     private MovimientoRepository movimientoRepository;
+
+
+    @Autowired
+    private EscenarioRepository escenarioRepository;
+
+    @Autowired
+    private PosicionRepository posicionRepository;
 
 
     //Constructor:(A FUTURO BORRARLO )
@@ -95,23 +106,12 @@ public class SmashnotestBackController {
     //DataSources:
 
 
-    @GetMapping("/Escenarios")
-    public String GetListEscenarios() throws SQLException, JsonProcessingException {
-        Statement s = Configs.Conexion.createStatement();
-        ResultSet rs = s.executeQuery ( "SELECT id, nombre FROM escenario where id=1 or id=2 or id=5");
-        List<Escenario> escenarioList = new ArrayList<>();
-        while (rs.next()) {
-            Escenario itemEscenario = new Escenario(
-                    rs.getInt("id"),
-                    rs.getString("nombre"));
-            escenarioList.add(itemEscenario);
-        }
-        // Serializamos el objeto a json para enviarlo
-        ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString(escenarioList);
-        return json;
-    }
 
+    // Obtener todos los escenarios
+    @GetMapping("/Escenarios")
+    public List<Escenario> getListEscenarios() {
+        return escenarioRepository.findAll();
+    }
 
 
     @GetMapping("/Personajes")
@@ -137,6 +137,13 @@ public class SmashnotestBackController {
 
         return json;
     }
+
+    // Obtener todas las posiciones
+    @GetMapping("/Posiciones")
+    public List<Posicion> getListPosiciones() {
+        return posicionRepository.findAll();
+    }
+
 
 }
 
