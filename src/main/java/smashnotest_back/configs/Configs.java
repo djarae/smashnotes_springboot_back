@@ -5,11 +5,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Configs {
-    public static String url = "jdbc:postgresql://aws-1-us-east-2.pooler.supabase.com:6543/postgres?sslmode=require";
-    public static String user = "postgres.bqdxudzlrisjvswtqpox";
-    public static String password = "prueba1234";
+   // public static String url = "jdbc:postgresql://aws-1-us-east-2.pooler.supabase.com:6543/postgres?sslmode=require";
+   // public static String user = "postgres.bqdxudzlrisjvswtqpox";
+   // public static String password = "prueba1234";
 
-//a
+    // Configuración de conexión a PostgreSQL (correcta)
+    public static String url = "jdbc:postgresql://ep-spring-water-af90xnsw-pooler.c-2.us-west-2.aws.neon.tech:5432/neondb?sslmode=require&channelBinding=require";
+    public static String user = "neondb_owner";
+    public static String password = "npg_ioWd4GHDzj7J";
+
+
+    //a
     public static Connection Conexion = null;
 
     public static void ConexionDB() {
