@@ -7,10 +7,10 @@ import java.sql.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import smashnotest_back.configs.Configs;
-import smashnotest_back.matchups.data.entitys.Personaje2;
+import smashnotest_back.matchups.data.entitys.Personaje;
 import smashnotest_back.model.Escenario;
 import smashnotest_back.model.Registro;
-import smashnotest_back.matchups.data.repositorys.Personaje2Repository;
+import smashnotest_back.matchups.data.repositorys.PersonajeRepository;
 import smashnotest_back.services.RegistroService;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ import smashnotest_back.matchups.data.repositorys.MovimientoRepository;
 @RequestMapping("apiSmash")
 public class SmashnotestBackController {
     @Autowired
-    private Personaje2Repository personaje2Repository;
+    private PersonajeRepository personajeRepository;
 
     @Autowired
     private MovimientoRepository movimientoRepository;
@@ -116,7 +116,7 @@ public class SmashnotestBackController {
 
     @GetMapping("/Personajes")
     public String getListPersonajes() throws JsonProcessingException {
-        List<Personaje2> personajeList = personaje2Repository.findAll(); // Obtiene todos los personajes desde la base de datos
+        List<Personaje> personajeList = personajeRepository.findAll(); // Obtiene todos los personajes desde la base de datos
 
         // Serializamos el objeto a JSON para enviarlo
         ObjectMapper mapper = new ObjectMapper();
