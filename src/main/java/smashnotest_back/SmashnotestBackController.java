@@ -7,20 +7,24 @@ import java.sql.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import smashnotest_back.configs.Configs;
-import smashnotest_back.entity.Personaje2;
+import smashnotest_back.matchups.data.entitys.Personaje2;
 import smashnotest_back.model.Escenario;
-import smashnotest_back.model.Movimiento;
-import smashnotest_back.model.Personaje;
 import smashnotest_back.model.Registro;
-import smashnotest_back.repositorys.Personaje2Repository;
+import smashnotest_back.matchups.data.repositorys.Personaje2Repository;
 import smashnotest_back.services.RegistroService;
 import java.util.ArrayList;
 import java.util.List;
+import smashnotest_back.matchups.data.entitys.Movimiento;
+import smashnotest_back.matchups.data.repositorys.MovimientoRepository;
+
 @RestController
 @RequestMapping("apiSmash")
 public class SmashnotestBackController {
     @Autowired
     private Personaje2Repository personaje2Repository;
+
+    @Autowired
+    private MovimientoRepository movimientoRepository;
 
 
     //Constructor:(A FUTURO BORRARLO )
@@ -89,29 +93,7 @@ public class SmashnotestBackController {
         }
 
     //DataSources:
-    @GetMapping("/Personajes")
-    public String GetListPersonajes() throws SQLException, JsonProcessingException {
-        System.out.println("Hola mundo desde logs PERSONAJES");
-        Statement s = Configs.Conexion.createStatement();
-        ResultSet rs = s.executeQuery ( "SELECT id, echo, nombre FROM personaje");
-        List<Personaje> personajeList = new ArrayList<>();
-        while (rs.next()) {
-          //  System.out.println ("agregamos data al listado de ojbetos de escenario");
-            Personaje itemPersonaje = new Personaje(
-                    rs.getInt("id"),
-                    rs.getInt("echo"),
-                    rs.getString("nombre"));
-            personajeList.add(itemPersonaje);
-          //  System.out.println (rs.getInt("id"));
-           // System.out.println (rs.getString("nombre"));
-        }
-        // Serializamos el objeto a json para enviarlo
-        ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString(personajeList);
-        System.out.println("personajes list:");
-        System.out.println(json);
-        return json;
-    }
+
 
     @GetMapping("/Escenarios")
     public String GetListEscenarios() throws SQLException, JsonProcessingException {
@@ -130,28 +112,9 @@ public class SmashnotestBackController {
         return json;
     }
 
-    @GetMapping("/Movimientos")
-    public String GetListMovimientos() throws SQLException, JsonProcessingException {
-        Statement s = Configs.Conexion.createStatement();
-        ResultSet rs = s.executeQuery("SELECT id, nombre, abreviatura FROM movimiento");
 
-        List<Movimiento> movimientoList = new ArrayList<>();
-        while (rs.next()) {
-            Movimiento itemMovimiento = new Movimiento(
-                    rs.getInt("id"),
-                    rs.getString("nombre"),
-                    rs.getString("abreviatura"));
-            movimientoList.add(itemMovimiento);
-        }
-        System.out.println("movs list");
-        System.out.println(movimientoList);
 
-        ObjectMapper mapper = new ObjectMapper();
-        String json = mapper.writeValueAsString(movimientoList);
-        return json;
-    }
-
-    @GetMapping("/personajes2")
+    @GetMapping("/Personajes")
     public String getListPersonajes() throws JsonProcessingException {
         List<Personaje2> personajeList = personaje2Repository.findAll(); // Obtiene todos los personajes desde la base de datos
 
@@ -162,6 +125,18 @@ public class SmashnotestBackController {
         return json;
     }
 
+
+    // Obtener todos los movimientos
+    @GetMapping("/Movimientos")
+    public String getMovimientos() throws JsonProcessingException {
+        List<Movimiento> movimientoList = movimientoRepository.findAll(); // Usa el nombre correcto
+
+        // Serializamos el objeto a JSON
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(movimientoList);
+
+        return json;
+    }
 
 }
 

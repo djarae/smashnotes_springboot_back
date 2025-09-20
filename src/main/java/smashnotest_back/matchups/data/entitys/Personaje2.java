@@ -1,4 +1,4 @@
-package smashnotest_back.entity;
+package smashnotest_back.matchups.data.entitys;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
