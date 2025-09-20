@@ -10,41 +10,26 @@ public class Personaje {
 
     @Id
     private Integer id;
-    private Integer echo;
     private String nombre;
+    private String abreviatura;  // ya estaba faltando esto
 
     // Constructor vacío
     public Personaje() {}
 
     // Constructor con parámetros
-    public Personaje(Integer id, Integer echo, String nombre) {
+    public Personaje(Integer id, String nombre, String abreviatura) {
         this.id = id;
-        this.echo = echo;
         this.nombre = nombre;
+        this.abreviatura = abreviatura;
     }
 
     // Getters y setters
-    public Integer getId() {
-        return id;
-    }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public Integer getEcho() {
-        return echo;
-    }
-
-    public void setEcho(Integer echo) {
-        this.echo = echo;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public String getAbreviatura() { return abreviatura; }
+    public void setAbreviatura(String abreviatura) { this.abreviatura = abreviatura; }
 }

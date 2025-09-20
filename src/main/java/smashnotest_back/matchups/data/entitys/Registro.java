@@ -14,14 +14,12 @@ public class Registro {
     private boolean di;
     private int porcentajeKO;
 
-    // Solo guardamos IDs, no dependencias
     private Integer idEscenario;
     private Integer idMovimiento;
     private Integer idPersonajeEmisor;
     private Integer idPersonajeReceptor;
     private Integer idPosicion;
 
-    // Getters y setters
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -34,18 +32,18 @@ public class Registro {
     public int getPorcentajeKO() { return porcentajeKO; }
     public void setPorcentajeKO(int porcentajeKO) { this.porcentajeKO = porcentajeKO; }
 
-    public int getIdPersonajeEmisor() { return idPersonajeEmisor; }
-    public void setIdPersonajeEmisor(int idPersonajeEmisor) { this.idPersonajeEmisor = idPersonajeEmisor; }
+    public Integer getIdEscenario() { return idEscenario; }
+    public void setIdEscenario(Integer idEscenario) { this.idEscenario = idEscenario; }
 
-    public int getIdPersonajeReceptor() { return idPersonajeReceptor; }
-    public void setIdPersonajeReceptor(int idPersonajeReceptor) { this.idPersonajeReceptor = idPersonajeReceptor; }
+    public Integer getIdMovimiento() { return idMovimiento; }
+    public void setIdMovimiento(Integer idMovimiento) { this.idMovimiento = idMovimiento; }
 
-    public int getIdMovimiento() { return idMovimiento; }
-    public void setIdMovimiento(int idMovimiento) { this.idMovimiento = idMovimiento; }
+    public Integer getIdPersonajeEmisor() { return idPersonajeEmisor; }
+    public void setIdPersonajeEmisor(Integer idPersonajeEmisor) { this.idPersonajeEmisor = idPersonajeEmisor; }
 
-    public int getIdEscenario() { return idEscenario; }
-    public void setIdEscenario(int idEscenario) { this.idEscenario = idEscenario; }
+    public Integer getIdPersonajeReceptor() { return idPersonajeReceptor; }
+    public void setIdPersonajeReceptor(Integer idPersonajeReceptor) { this.idPersonajeReceptor = idPersonajeReceptor; }
 
-    public int getIdPosicion() { return idPosicion; }
-    public void setIdPosicion(int idPosicion) { this.idPosicion = idPosicion; }
+    public Integer getIdPosicion() { return idPosicion; }
+    public void setIdPosicion(Integer idPosicion) { this.idPosicion = idPosicion; }
 }

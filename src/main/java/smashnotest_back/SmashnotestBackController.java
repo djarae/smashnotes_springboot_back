@@ -2,6 +2,7 @@ package smashnotest_back;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import smashnotest_back.dtos.RegistroDTO;
 import smashnotest_back.matchups.data.entitys.Registro;
 import smashnotest_back.services.RegistroService;
 
@@ -44,9 +45,24 @@ public class SmashnotestBackController {
     private RegistroService registroService;
 
     @GetMapping("/Registro")
-    public List<Registro> getListRegistros() {
-        return registroService.getAllRegistros();
+    public List<RegistroDTO> getListRegistros() {
+        System.out.println("desde el controller antes de getRegistrosFiltrados");
+        // Trae todos los registros, sin filtros
+        List<RegistroDTO> resultados = registroService.getRegistrosFiltrados(null, null, null, null, null, null);
+
+        System.out.println("Cantidad de registros obtenidos: " + resultados.size());
+        resultados.forEach(r -> System.out.println(
+                "RegistroDTO: id=" + r.getId() +
+                        ", emisor=" + r.getNombrePersonajeEmisor() +
+                        ", receptor=" + r.getNombrePersonajeReceptor() +
+                        ", movimiento=" + r.getNombreMovimiento() +
+                        ", escenario=" + r.getNombreEscenario() +
+                        ", posicion=" + r.getNombrePosicion()
+        ));
+
+        return resultados;
     }
+
 
     @PostMapping("/Registro")
     public Registro insertRegistro(@RequestBody Registro registro) {
