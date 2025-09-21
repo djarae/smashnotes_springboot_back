@@ -1,3 +1,16 @@
+
+# 20-9-25  23:50 hh
+¡Ping recibido! ✅
+
+INSERT: JdbcTemplate con SQL directo.
+
+UPDATE / DELETE: JPQL (Spring Data / @Query).
+
+Queda marcado y listo para implementar más adelante.
+
+============================================================================================================================================
+
+
 Conclusion : necsito pasar todo el proyecto a ORM para acabar con los problemas de caida de db , es arta pega..
 
 
