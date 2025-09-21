@@ -1,6 +1,7 @@
 package smashnotest_back;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import smashnotest_back.dtos.RegistroDTO;
 import smashnotest_back.matchups.data.entitys.*;
@@ -10,7 +11,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import smashnotest_back.dtos.RegistroCreateDTO;
-
+import smashnotest_back.dtos.RegistroUpdateDTO;
 
 import java.util.List;
 
@@ -70,14 +71,44 @@ public class SmashnotestBackController {
 
 
     @PutMapping("/Registro")
-    public Registro updateRegistro(@RequestBody Registro registro) {
-        return registroService.actualizarRegistro(registro);
+    public ResponseEntity<String> updateRegistro(@RequestBody RegistroUpdateDTO dto) {
+        Registro registro = new Registro();
+        registro.setId(dto.id);
+
+        Personaje emisor = new Personaje();
+        emisor.setId(dto.idPersonajeEmisor);
+        registro.setIdPersonajeEmisor(emisor);
+
+        Personaje receptor = new Personaje();
+        receptor.setId(dto.idPersonajeReceptor);
+        registro.setIdPersonajeReceptor(receptor);
+
+        Movimiento movimiento = new Movimiento();
+        movimiento.setId(dto.idMovimiento);
+        registro.setIdMovimiento(movimiento);
+
+        Escenario escenario = new Escenario();
+        escenario.setId(dto.idEscenario);
+        registro.setIdEscenario(escenario);
+
+        Posicion posicion = new Posicion();
+        posicion.setId(dto.idPosicion != null ? dto.idPosicion : 1);
+        registro.setIdPosicion(posicion);
+
+        registro.setPorcentajeKO(dto.porcentajeKO);
+        registro.setRage(dto.rage);
+        registro.setDi(dto.di);
+
+        registroService.actualizarRegistro(registro);
+
+        return ResponseEntity.ok("Registro actualizado correctamente");
     }
 
     @DeleteMapping("/Registro/{id}")
     public void deleteRegistro(@PathVariable Long id) {
         registroService.eliminarRegistro(id);
     }
+
 
     @GetMapping("/Escenarios")
     public List<Escenario> getListEscenarios() {
