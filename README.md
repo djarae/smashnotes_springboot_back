@@ -1,9 +1,9 @@
 # 21-9-25  3:00 hh
 Errores que no quiero corregir ahora
 Estructurales:
-Inserts, updates y deletes en controlller
-Dividir el controller y no tener uno general
-Dto Registro deberia tener list dto como nombre
+1 Inserts, updates y deletes en controlller y deberia ir el codigo en services.
+2 Dividir el controller en controllers chiquitos por funcion.
+3 Dto Registro deberia tener list dto como nombre
 Eso , no es mucho pero es desorden
 
 ============================================================================================================================================
