@@ -3,37 +3,44 @@ package smashnotest_back.matchups.data.entitys;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "registro")
 public class Registro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "id_personaje_emisor")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_personaje_emisor", nullable = false)
     private Personaje idPersonajeEmisor;
 
-    @ManyToOne
-    @JoinColumn(name = "id_personaje_receptor")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_personaje_receptor", nullable = false)
     private Personaje idPersonajeReceptor;
 
-    @ManyToOne
-    @JoinColumn(name = "id_movimiento")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_movimiento", nullable = false)
     private Movimiento idMovimiento;
 
-    @ManyToOne
-    @JoinColumn(name = "id_escenario")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_escenario", nullable = false)
     private Escenario idEscenario;
 
-    @ManyToOne
-    @JoinColumn(name = "id_posicion")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_posicion", nullable = false)
     private Posicion idPosicion;
 
-    private Integer rage;
-    private Boolean di;
-    private Integer porcentajeKO;
+    @Column(name = "rage", nullable = false)
+    private Integer rage = 0;
 
-    // Getters y setters
+    @Column(name = "di", nullable = false)
+    private Boolean di = Boolean.FALSE;
+
+    // Mapeo explícito a la columna real en la BD (usa underscore si tu columna es porcentaje_ko)
+    @Column(name = "porcentaje_ko", nullable = false)
+    private Integer porcentajeKO = 0;
+
+    // ---------------- Getters & Setters ----------------
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

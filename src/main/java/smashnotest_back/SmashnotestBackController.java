@@ -32,9 +32,29 @@ public class SmashnotestBackController {
     }
 
     @PostMapping("/Registro")
-    public Registro insertRegistro(@RequestBody Registro registro) {
+    public Registro insertarRegistroFijo() {
+        Registro registro = new Registro();
+
+        Personaje emisor = new Personaje(); emisor.setId(1);
+        Personaje receptor = new Personaje(); receptor.setId(1);
+        Movimiento movimiento = new Movimiento(); movimiento.setId(1);
+        Escenario escenario = new Escenario(); escenario.setId(1);
+        Posicion posicion = new Posicion(); posicion.setId(1);
+
+        registro.setIdPersonajeEmisor(emisor);
+        registro.setIdPersonajeReceptor(receptor);
+        registro.setIdMovimiento(movimiento);
+        registro.setIdEscenario(escenario);
+        registro.setIdPosicion(posicion);
+
+        registro.setRage(1);
+        registro.setDi(true);
+        registro.setPorcentajeKO(1);
+
         return registroService.insertarRegistro(registro);
     }
+
+
 
     @PutMapping("/Registro")
     public Registro updateRegistro(@RequestBody Registro registro) {
