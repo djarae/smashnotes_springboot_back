@@ -1,3 +1,12 @@
+# 21-9-25  3:00 hh
+Errores que no quiero corregir ahora
+Estructurales:
+Inserts, updates y deletes en controlller
+Dividir el controller y no tener uno general
+Dto Registro deberia tener list dto como nombre
+Eso , no es mucho pero es desorden
+
+============================================================================================================================================
 
 # 20-9-25  23:50 hh
 ¡Ping recibido! ✅

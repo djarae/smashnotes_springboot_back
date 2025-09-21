@@ -9,6 +9,9 @@ import smashnotest_back.services.RegistroService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import smashnotest_back.dtos.RegistroCreateDTO;
+
+
 import java.util.List;
 
 @RestController
@@ -32,14 +35,23 @@ public class SmashnotestBackController {
     }
 
     @PostMapping("/Registro")
-    public Registro insertarRegistroFijo() {
+    public Registro insertarRegistro(@RequestBody RegistroCreateDTO dto) {
         Registro registro = new Registro();
 
-        Personaje emisor = new Personaje(); emisor.setId(1);
-        Personaje receptor = new Personaje(); receptor.setId(1);
-        Movimiento movimiento = new Movimiento(); movimiento.setId(1);
-        Escenario escenario = new Escenario(); escenario.setId(1);
-        Posicion posicion = new Posicion(); posicion.setId(1);
+        Personaje emisor = new Personaje();
+        emisor.setId(dto.idPersonajeEmisor);
+
+        Personaje receptor = new Personaje();
+        receptor.setId(dto.idPersonajeReceptor);
+
+        Movimiento movimiento = new Movimiento();
+        movimiento.setId(dto.idMovimiento);
+
+        Escenario escenario = new Escenario();
+        escenario.setId(dto.idEscenario);
+
+        Posicion posicion = new Posicion();
+        posicion.setId(1);
 
         registro.setIdPersonajeEmisor(emisor);
         registro.setIdPersonajeReceptor(receptor);
@@ -47,12 +59,13 @@ public class SmashnotestBackController {
         registro.setIdEscenario(escenario);
         registro.setIdPosicion(posicion);
 
-        registro.setRage(1);
-        registro.setDi(true);
-        registro.setPorcentajeKO(1);
+        registro.setRage(dto.rage);
+        registro.setDi(dto.di);  // ✅ directo, ya es Boolean
+        registro.setPorcentajeKO(dto.porcentajeKO);
 
         return registroService.insertarRegistro(registro);
     }
+
 
 
 
