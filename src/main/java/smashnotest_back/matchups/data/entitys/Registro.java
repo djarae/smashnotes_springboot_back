@@ -3,47 +3,61 @@ package smashnotest_back.matchups.data.entitys;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "registro")
 public class Registro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    private int rage;
-    private boolean di;
-    private int porcentajeKO;
+    @ManyToOne
+    @JoinColumn(name = "id_personaje_emisor")
+    private Personaje idPersonajeEmisor;
 
-    private Integer idEscenario;
-    private Integer idMovimiento;
-    private Integer idPersonajeEmisor;
-    private Integer idPersonajeReceptor;
-    private Integer idPosicion;
+    @ManyToOne
+    @JoinColumn(name = "id_personaje_receptor")
+    private Personaje idPersonajeReceptor;
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    @ManyToOne
+    @JoinColumn(name = "id_movimiento")
+    private Movimiento idMovimiento;
 
-    public int getRage() { return rage; }
-    public void setRage(int rage) { this.rage = rage; }
+    @ManyToOne
+    @JoinColumn(name = "id_escenario")
+    private Escenario idEscenario;
 
-    public boolean getDi() { return di; }
-    public void setDi(boolean di) { this.di = di; }
+    @ManyToOne
+    @JoinColumn(name = "id_posicion")
+    private Posicion idPosicion;
 
-    public int getPorcentajeKO() { return porcentajeKO; }
-    public void setPorcentajeKO(int porcentajeKO) { this.porcentajeKO = porcentajeKO; }
+    private Integer rage;
+    private Boolean di;
+    private Integer porcentajeKO;
 
-    public Integer getIdEscenario() { return idEscenario; }
-    public void setIdEscenario(Integer idEscenario) { this.idEscenario = idEscenario; }
+    // Getters y setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public Integer getIdMovimiento() { return idMovimiento; }
-    public void setIdMovimiento(Integer idMovimiento) { this.idMovimiento = idMovimiento; }
+    public Personaje getIdPersonajeEmisor() { return idPersonajeEmisor; }
+    public void setIdPersonajeEmisor(Personaje idPersonajeEmisor) { this.idPersonajeEmisor = idPersonajeEmisor; }
 
-    public Integer getIdPersonajeEmisor() { return idPersonajeEmisor; }
-    public void setIdPersonajeEmisor(Integer idPersonajeEmisor) { this.idPersonajeEmisor = idPersonajeEmisor; }
+    public Personaje getIdPersonajeReceptor() { return idPersonajeReceptor; }
+    public void setIdPersonajeReceptor(Personaje idPersonajeReceptor) { this.idPersonajeReceptor = idPersonajeReceptor; }
 
-    public Integer getIdPersonajeReceptor() { return idPersonajeReceptor; }
-    public void setIdPersonajeReceptor(Integer idPersonajeReceptor) { this.idPersonajeReceptor = idPersonajeReceptor; }
+    public Movimiento getIdMovimiento() { return idMovimiento; }
+    public void setIdMovimiento(Movimiento idMovimiento) { this.idMovimiento = idMovimiento; }
 
-    public Integer getIdPosicion() { return idPosicion; }
-    public void setIdPosicion(Integer idPosicion) { this.idPosicion = idPosicion; }
+    public Escenario getIdEscenario() { return idEscenario; }
+    public void setIdEscenario(Escenario idEscenario) { this.idEscenario = idEscenario; }
+
+    public Posicion getIdPosicion() { return idPosicion; }
+    public void setIdPosicion(Posicion idPosicion) { this.idPosicion = idPosicion; }
+
+    public Integer getRage() { return rage; }
+    public void setRage(Integer rage) { this.rage = rage; }
+
+    public Boolean getDi() { return di; }
+    public void setDi(Boolean di) { this.di = di; }
+
+    public Integer getPorcentajeKO() { return porcentajeKO; }
+    public void setPorcentajeKO(Integer porcentajeKO) { this.porcentajeKO = porcentajeKO; }
 }

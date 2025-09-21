@@ -1,41 +1,36 @@
 package smashnotest_back.matchups.data.repositorys;
 
+import smashnotest_back.matchups.data.entitys.Registro;
+import smashnotest_back.dtos.RegistroDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
-import smashnotest_back.matchups.data.entitys.Registro;
-import smashnotest_back.dtos.RegistroDTO;
 
 import java.util.List;
 
-@Repository
-public interface RegistroRepository extends JpaRepository<Registro, Integer> {
+public interface RegistroRepository extends JpaRepository<Registro, Long> {
 
-    @Query("""
-        SELECT new smashnotest_back.dtos.RegistroDTO(
-            r.id,
-            pe.id, pe.nombre, pe.abreviatura,
-            pr.id, pr.nombre, pr.abreviatura,
-            m.id, m.nombre, m.abreviatura,
-            e.id, e.nombre, e.abreviatura,
-            pos.id, pos.nombre,
-            r.rage, r.di, r.porcentajeKO
-        )
-        FROM Registro r
-        JOIN Personaje pe ON r.idPersonajeEmisor = pe.id
-        JOIN Personaje pr ON r.idPersonajeReceptor = pr.id
-        JOIN Movimiento m ON r.idMovimiento = m.id
-        JOIN Escenario e ON r.idEscenario = e.id
-        JOIN Posicion pos ON r.idPosicion = pos.id
-        WHERE (:filtroEmisor IS NULL OR pe.nombre LIKE :filtroEmisor)
-          AND (:filtroReceptor IS NULL OR pr.nombre LIKE :filtroReceptor)
-          AND (:filtroMovimiento IS NULL OR m.nombre LIKE :filtroMovimiento)
-          AND (:filtroStage IS NULL OR e.nombre LIKE :filtroStage)
-          AND (:filtroPosicion IS NULL OR pos.nombre LIKE :filtroPosicion)
-          AND (:filtroRage IS NULL OR r.rage = :filtroRage)
-        ORDER BY r.id
-    """)
+    @Query("SELECT " +
+            "r.id as id, " +
+            "pe.id as idPersonajeEmisor, pe.nombre as nombrePersonajeEmisor, pe.abreviatura as abreviaturaEmisor, " +
+            "pr.id as idPersonajeReceptor, pr.nombre as nombrePersonajeReceptor, pr.abreviatura as abreviaturaReceptor, " +
+            "m.id as idMovimiento, m.nombre as nombreMovimiento, m.abreviatura as abreviaturaMovimiento, " +
+            "e.id as idEscenario, e.nombre as nombreEscenario, e.abreviatura as abreviaturaEscenario, " +
+            "pos.id as idPosicion, pos.nombre as nombrePosicion, " +
+            "r.rage as rage, r.di as di, r.porcentajeKO as porcentajeKO " +
+            "FROM Registro r " +
+            "JOIN r.idPersonajeEmisor pe " +
+            "JOIN r.idPersonajeReceptor pr " +
+            "JOIN r.idMovimiento m " +
+            "JOIN r.idEscenario e " +
+            "JOIN r.idPosicion pos " +
+            "WHERE (:filtroEmisor IS NULL OR pe.nombre LIKE :filtroEmisor) " +
+            "AND (:filtroReceptor IS NULL OR pr.nombre LIKE :filtroReceptor) " +
+            "AND (:filtroMovimiento IS NULL OR m.nombre LIKE :filtroMovimiento) " +
+            "AND (:filtroStage IS NULL OR e.nombre LIKE :filtroStage) " +
+            "AND (:filtroPosicion IS NULL OR pos.nombre LIKE :filtroPosicion) " +
+            "AND (:filtroRage IS NULL OR r.rage = :filtroRage) " +
+            "ORDER BY r.id")
     List<RegistroDTO> findRegistrosFiltrados(
             @Param("filtroEmisor") String filtroEmisor,
             @Param("filtroReceptor") String filtroReceptor,
