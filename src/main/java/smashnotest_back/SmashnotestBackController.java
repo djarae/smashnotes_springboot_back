@@ -31,9 +31,26 @@ public class SmashnotestBackController {
     private RegistroService registroService;
 
     @GetMapping("/Registro")
-    public List<RegistroDTO> getListRegistros() {
-        return registroService.getRegistrosFiltrados(null, null, null, null, null, null);
+    public List<RegistroDTO> getListRegistros(
+            @RequestParam(required = false) String filtroEmisor,
+            @RequestParam(required = false) String filtroReceptor,
+            @RequestParam(required = false) String filtroMovimiento,
+            @RequestParam(required = false) String filtroStage,
+            @RequestParam(required = false) String filtroPosicion,
+            @RequestParam(required = false) Integer filtroRage
+    ) {
+        // System.out.println para depuración
+        System.out.println("desde el controller el valor de filtroEmisor es: " + filtroEmisor);
+        System.out.println("desde el controller el valor de filtroReceptor es: " + filtroReceptor);
+        System.out.println("desde el controller el valor de filtroMovimiento es: " + filtroMovimiento);
+        System.out.println("desde el controller el valor de filtroStage es: " + filtroStage);
+        System.out.println("desde el controller el valor de filtroPosicion es: " + filtroPosicion);
+        System.out.println("desde el controller el valor de filtroRage es: " + filtroRage);
+
+        // Llamada al service
+        return registroService.getRegistrosFiltrados(filtroEmisor, filtroReceptor, filtroMovimiento, filtroStage, filtroPosicion, filtroRage);
     }
+
 
     @PostMapping("/Registro")
     public Registro insertarRegistro(@RequestBody RegistroCreateDTO dto) {

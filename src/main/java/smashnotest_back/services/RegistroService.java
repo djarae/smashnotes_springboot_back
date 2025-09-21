@@ -34,12 +34,21 @@ public class RegistroService {
             String filtroPosicion,
             Integer filtroRage
     ) {
+        // Imprimir todos los filtros para debug
+        System.out.println("Filtros recibidos desde serice:");
+        System.out.println("filtroEmisor: " + filtroEmisor);
+        System.out.println("filtroReceptor: " + filtroReceptor);
+        System.out.println("filtroMovimiento: " + filtroMovimiento);
+        System.out.println("filtroStage: " + filtroStage);
+        System.out.println("filtroPosicion: " + filtroPosicion);
+        System.out.println("filtroRage: " + filtroRage);
+
         return registroRepository.findRegistrosFiltrados(
-                filtroEmisor != null ? "%" + filtroEmisor + "%" : null,
-                filtroReceptor != null ? "%" + filtroReceptor + "%" : null,
-                filtroMovimiento != null ? "%" + filtroMovimiento + "%" : null,
-                filtroStage != null ? "%" + filtroStage + "%" : null,
-                filtroPosicion != null ? "%" + filtroPosicion + "%" : null,
+                filtroEmisor,
+                filtroReceptor,
+                filtroMovimiento,
+                filtroStage,
+                filtroPosicion,
                 filtroRage
         );
     }
