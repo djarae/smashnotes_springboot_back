@@ -37,7 +37,7 @@ public class SmashnotestBackController {
             @RequestParam(required = false) String filtroMovimiento,
             @RequestParam(required = false) String filtroStage,
             @RequestParam(required = false) String filtroPosicion,
-            @RequestParam(required = false) Integer filtroRage
+            @RequestParam(required = false) String filtroRage
     ) {
         // System.out.println para depuración
         System.out.println("desde el controller el valor de filtroEmisor es: " + filtroEmisor);

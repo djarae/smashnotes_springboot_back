@@ -32,10 +32,26 @@ public class RegistroService {
             String filtroMovimiento,
             String filtroStage,
             String filtroPosicion,
-            Integer filtroRage
+            String filtroRageStr
     ) {
-        // Imprimir todos los filtros para debug
-        System.out.println("Filtros recibidos desde serice:");
+
+        // Normalizar filtros: null si está vacío o "undefined"
+        filtroEmisor = (filtroEmisor == null || filtroEmisor.isEmpty() || filtroEmisor.equals("undefined")) ? null : filtroEmisor;
+        filtroReceptor = (filtroReceptor == null || filtroReceptor.isEmpty() || filtroReceptor.equals("undefined")) ? null : filtroReceptor;
+        filtroMovimiento = (filtroMovimiento == null || filtroMovimiento.isEmpty() || filtroMovimiento.equals("undefined")) ? null : filtroMovimiento;
+        filtroStage = (filtroStage == null || filtroStage.isEmpty() || filtroStage.equals("undefined")) ? null : filtroStage;
+        filtroPosicion = (filtroPosicion == null || filtroPosicion.isEmpty() || filtroPosicion.equals("undefined")) ? null : filtroPosicion;
+
+        Integer filtroRage = null;
+        if (filtroRageStr != null && !filtroRageStr.isEmpty() && !filtroRageStr.equals("undefined")) {
+            try {
+                filtroRage = Integer.parseInt(filtroRageStr);
+            } catch (NumberFormatException e) {
+                filtroRage = null; // fallback seguro
+            }
+        }
+
+        System.out.println("Filtros recibidos desde Service:");
         System.out.println("filtroEmisor: " + filtroEmisor);
         System.out.println("filtroReceptor: " + filtroReceptor);
         System.out.println("filtroMovimiento: " + filtroMovimiento);
@@ -44,12 +60,10 @@ public class RegistroService {
         System.out.println("filtroRage: " + filtroRage);
 
         return registroRepository.findRegistrosFiltrados(
-                filtroEmisor,
-                filtroReceptor,
-                filtroMovimiento,
-                filtroStage,
-                filtroPosicion,
-                filtroRage
+                filtroEmisor, filtroReceptor, filtroMovimiento,
+                filtroStage, filtroPosicion, filtroRage
         );
     }
+
+
 }

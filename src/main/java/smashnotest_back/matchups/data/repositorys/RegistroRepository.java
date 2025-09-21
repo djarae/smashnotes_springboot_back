@@ -24,11 +24,11 @@ public interface RegistroRepository extends JpaRepository<Registro, Long> {
             "JOIN r.idMovimiento m " +
             "JOIN r.idEscenario e " +
             "JOIN r.idPosicion pos " +
-            "WHERE (:filtroEmisor IS NULL OR pe.nombre LIKE :filtroEmisor) " +
-            "AND (:filtroReceptor IS NULL OR pr.nombre LIKE :filtroReceptor) " +
-            "AND (:filtroMovimiento IS NULL OR m.nombre LIKE :filtroMovimiento) " +
-            "AND (:filtroStage IS NULL OR e.nombre LIKE :filtroStage) " +
-            "AND (:filtroPosicion IS NULL OR pos.nombre LIKE :filtroPosicion) " +
+            "WHERE (:filtroEmisor IS NULL OR pe.nombre LIKE %:filtroEmisor%) " +
+            "AND (:filtroReceptor IS NULL OR pr.nombre LIKE %:filtroReceptor%) " +
+            "AND (:filtroMovimiento IS NULL OR m.nombre LIKE %:filtroMovimiento%) " +
+            "AND (:filtroStage IS NULL OR e.nombre LIKE %:filtroStage%) " +
+            "AND (:filtroPosicion IS NULL OR pos.nombre LIKE %:filtroPosicion%) " +
             "AND (:filtroRage IS NULL OR r.rage = :filtroRage) " +
             "ORDER BY r.id")
     List<RegistroDTO> findRegistrosFiltrados(
@@ -39,4 +39,5 @@ public interface RegistroRepository extends JpaRepository<Registro, Long> {
             @Param("filtroPosicion") String filtroPosicion,
             @Param("filtroRage") Integer filtroRage
     );
+
 }
