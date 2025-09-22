@@ -30,6 +30,19 @@ public class SmashnotestBackController {
     @Autowired
     private RegistroService registroService;
 
+
+       //Ruta de testing , importante para comprobar que funciona app sin conexion bd:
+        @GetMapping(value = "/tLocalDeploy" )
+        public String testLocalDeploy() {
+            System.out.println("Hola mundo desde logs");
+            return "Hola22!Empoleon:ruta => http://127.0.0.1:8080/apiSmash/tLocalDeploy";
+        }
+        @GetMapping(value = "/tCloudDeploy" )
+        public String testCloudDeploy() {
+            System.out.println("Hola mundo desde logs");
+            return "Hola11 !Torterra:ruta=> https://smashnotes-springboot-back-1.onrender.com/apiSmash/tCloudDeploy";
+        }
+
     @GetMapping("/Registro")
     public List<RegistroDTO> getListRegistros(
             @RequestParam(required = false) String filtroEmisor,
