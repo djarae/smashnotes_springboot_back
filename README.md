@@ -4,7 +4,11 @@ Estructurales:
 1 Inserts, updates y deletes en controlller y deberia ir el codigo en services.
 2 Dividir el controller en controllers chiquitos por funcion.
 3 Dto Registro deberia tener list dto como nombre
+4 Los dtos y services deberian ir en las carpeta scorrectas
 Eso , no es mucho pero es desorden
+5 Filtro por di -si o no.
+
+
 
 ============================================================================================================================================
 
