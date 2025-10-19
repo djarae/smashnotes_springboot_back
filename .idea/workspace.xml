@@ -6,7 +6,31 @@
   <component name="ChangeListManager">
     <list default="true" id="0b678c1c-d866-4ea3-8eae-7dd365ae89b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/EstructuraCarpetasRecomendaciones.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/MVVM-ReduxYPatronesEnTiposDeApps.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/PatronAUsarHexagonalCleanSimple.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/beforeAugust2025/1-Readmes/IDEAS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/beforeAugust2025/1-Readmes/Simbologia &amp; Informe.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/beforeAugust2025/1-Readmes/ideasTestUnitarios.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/beforeAugust2025/1-Readmes/readmeHardStudy29-31DIC24.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/beforeAugust2025/ReadmeMaster.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/beforeAugust2025/Simbologias/SimbologiaTbPersonaje.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/beforeAugust2025/Simbologias/SimbologiaTbPosicionEscenario.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/beforeAugust2025/TiposAvances.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentacion/puntoNet_api_microservicio_stargg_argumento_separacion_responsabilidades.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/FoldersExplain.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/FoldersExplain.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/SmashnotestBackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/dtos/RegistroCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/matchups/presentation/dtos/RegistroCreateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/dtos/RegistroDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/matchups/presentation/dtos/RegistroDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/dtos/RegistroUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/matchups/presentation/dtos/RegistroUpdateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/matchups/data/repositorys/RegistroRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/matchups/data/repositorys/RegistroRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/matchups/modules.readme" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Escenario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Movimiento.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Personaje.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/model/Posicion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/smashnotest_back/services/RegistroService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/smashnotest_back/matchups/business/services/RegistroService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +76,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\src\main\java\smashnotest_back" />
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion\beforeAugust2025" />
       <recent name="C:\Users\nidok\OneDrive\Documentos\REPOSITORIOS\smashnotes_springboot_back\Documentacion" />
     </key>

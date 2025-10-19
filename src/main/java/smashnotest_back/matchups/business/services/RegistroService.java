@@ -1,10 +1,10 @@
-package smashnotest_back.services;
+package smashnotest_back.matchups.business.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import smashnotest_back.matchups.data.repositorys.RegistroRepository;
 import smashnotest_back.matchups.data.entitys.Registro;
-import smashnotest_back.dtos.RegistroDTO;
+import smashnotest_back.matchups.presentation.dtos.RegistroDTO;
 
 import java.util.List;
 

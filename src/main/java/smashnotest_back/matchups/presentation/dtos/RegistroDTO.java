@@ -1,4 +1,4 @@
-package smashnotest_back.dtos;
+package smashnotest_back.matchups.presentation.dtos;
 
 public interface RegistroDTO {
     Long getId();

@@ -1,7 +1,7 @@
 package smashnotest_back.matchups.data.repositorys;
 
 import smashnotest_back.matchups.data.entitys.Registro;
-import smashnotest_back.dtos.RegistroDTO;
+import smashnotest_back.matchups.presentation.dtos.RegistroDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -23,5 +23,10 @@ TIPOS DE AVANCES:
 5 Estilo 
 
 
+=============================================================================================================
+# esto es un sample de como debe ir este modulo a futuro
+idealmente aplicar los cambios a angular app tambien ,es decir pasar de llamarse matchups a
+registros el modulo ,queda mejor
+
 
 

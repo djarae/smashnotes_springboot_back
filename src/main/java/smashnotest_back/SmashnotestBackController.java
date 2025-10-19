@@ -3,15 +3,15 @@ package smashnotest_back;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import smashnotest_back.dtos.RegistroDTO;
+import smashnotest_back.matchups.presentation.dtos.RegistroDTO;
 import smashnotest_back.matchups.data.entitys.*;
 import smashnotest_back.matchups.data.repositorys.*;
-import smashnotest_back.services.RegistroService;
+import smashnotest_back.matchups.business.services.RegistroService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import smashnotest_back.dtos.RegistroCreateDTO;
-import smashnotest_back.dtos.RegistroUpdateDTO;
+import smashnotest_back.matchups.presentation.dtos.RegistroCreateDTO;
+import smashnotest_back.matchups.presentation.dtos.RegistroUpdateDTO;
 
 import java.util.List;
 

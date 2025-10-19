@@ -1,3 +1,71 @@
+# 17-10-2025 "Tickets futuros"
+
+- Modulo "auth" 
+ Me angustia tenerlo
+
+- Modulo de informes:
+  Me seria MUY util tener un informe completo del UPAIR que exporte a PDF lindo para verlo
+
+- Modulo mantenedores:
+  Por ejemplo ,el mantenedor de movimientos/combos se esta volviendo clave.
+
+- Modulo "Startgg Integracion:
+ Paranalisis es avanzado ,que pereza
+
+-Modulo "contactos":
+ Registro de contactos para practicar de cada personaje  
+
+
+
+============================================================================================================================================
+# 14-10-2025 (Mas simple) 
+REGLA:
+1 a 100      => Kill Percent
+101 a 200    => Tumbling Percent
+201 a 300    => Move Damage
+1000 o  mas  => Kill-Combos  (KiCom) o Damage-Combos (DmCom). Se representa con abreviatura "KiCom" o "DmCom" .Ademas en el nombre debe terminar con "KC" para combos de daño o "DC"
+
+Mas facil
+ * SQL   : Anadir un combo ,tumbling o move damage deseado por medio de un insert en DB.
+ * UI    : If idMovimiento > 999 => Utilizar "nombreMovimiento" en lugar de "abreviaturaMovimiento"
+ * UI    : If idMovimiento > 999 => Utilizar un "td" con ancho fijo , cosa que se hagan saltos de linea por cada palabra
+
+
+# PD:Representacion para flojos. No quiero tocar el api ,asi que representarlo asi como en db es mas facil. 
+ Ejemplo1 : Ftilt => JabLock => Fsmash (KC)
+ Ejemplo2 : DGrab => Dair => Dgrab => UpSmash (DC) 
+
+ Esto yo entiendo que significa, ademas lo puedo entender
+
+
+============================================================================================================================================
+# 12-10-2025
+# Soporte para registrar "Combos" percent
+
+Tarea: De la forma mas simple , se debe permitir que la app pueda agregar "combos"
+Forma facil: 
+    * SQL: Modificar la tabla "Movimientos" campo "nombre" para que soporte 100 caracteres 
+    * SQL: Crear tabla "tipo" ,con los tipos : "Movimiento" "Combo" "Damage" "Tumbling
+    * SQL: Crear FK y campo "id_tipo" en la tabla "registros" que logicamente cargue el tipo
+    * SQL: Insertar desde los movs 100 en adelante los combos(300-infinite) y TUMBLINGS(200-299) , damages (100-199)  
+    * SQL: Agregar el FTILT (tumbling) abrev FTTmb 
+    * SQL :Agregar 1 combo en el 201   
+    * API: Crear entidad "tipo" 
+    * API: Modificar el select para obtener el campo TIPO correctamente (en el HTML procesamos el correcto)
+    * UI:  Agregrar un "IF" en el Front HTML :
+               IF TIPO = "COMBO" agregamos el "nombre"
+               ELSE => Agregamos "abrevacion"
+               NOTA: Logicamente la abreviacion para combos sera NULL o COMBO
+  
+# (FUTURO) Ordenar el API por capas 
+# (FUTURO) Crear AUTH con LOGIN y REGISTER(HASHED)
+============================================================================================================================================
+# 22-9-25  3:00 hh
+Next tickets (leer los errores estruccturales de abajo too)
+App smashData:
+Rama: Refacctor: para ordenar mi codig
+Rama: AUTH: para auth solo con login ; register y guardar auth token en front/back de forma SAFE  Y SIMPLE
+============================================================================================================================================
 # 21-9-25  3:00 hh
 Errores que no quiero corregir ahora
 Estructurales:
@@ -7,48 +75,24 @@ Estructurales:
 4 Los dtos y services deberian ir en las carpeta scorrectas
 Eso , no es mucho pero es desorden
 5 Filtro por di -si o no.
-
-
-
 ============================================================================================================================================
-
 # 20-9-25  23:50 hh
 ¡Ping recibido! ✅
-
 INSERT: JdbcTemplate con SQL directo.
-
 UPDATE / DELETE: JPQL (Spring Data / @Query).
-
 Queda marcado y listo para implementar más adelante.
-
 ============================================================================================================================================
-
-
 Conclusion : necsito pasar todo el proyecto a ORM para acabar con los problemas de caida de db , es arta pega..
-
-
-
-
-
 Rebuilds To Fix DB:
-
-
-
-
-
-
 2025 Septiembre: 
 sab 13:
 13 05 hh
 13 36 hrs
 14 37 hh fallo
 15hh
-
-
 ========================
 6-9-25.
 update del app
-
 ≠=============================
 3-9-25
 EXPLIACION DE FUTURA ARQUITECTURA DE CAPAS (PRESENTACION-APLICACION-DB)a
