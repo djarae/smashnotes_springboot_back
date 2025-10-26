@@ -1,3 +1,26 @@
+# 26-10-2025
+En dbeaver: 
+ De 3 12 0 a 3 12 9 ,registro todos los angulos de DI para ver como son para el upair 
+  de ivysaur, pero en este caso solo para IVYSAUR -CLOUD
+
+UpAir id => 12 
+
+
+
+
+
+
+
+
+# 19-10-2025
+
+TICKET  FUTUROS:
+Utilizar APP! LLENAR APP : UpAir IVY /UpGrab Zard/ A-lot-of-moves: Cloud
+Auth estaria joya
+
+
+
+============================================================================================================================================
 # 17-10-2025 "Tickets futuros"
 
 - Modulo "auth" 
