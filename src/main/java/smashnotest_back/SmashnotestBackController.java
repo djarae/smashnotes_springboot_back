@@ -82,7 +82,7 @@ public class SmashnotestBackController {
         escenario.setId(dto.idEscenario);
 
         Posicion posicion = new Posicion();
-        posicion.setId(1);
+        posicion.setId(dto.idPosicion != null ? dto.idPosicion : 1);
 
         registro.setIdPersonajeEmisor(emisor);
         registro.setIdPersonajeReceptor(receptor);

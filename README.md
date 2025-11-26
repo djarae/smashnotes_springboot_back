@@ -4,7 +4,23 @@ En dbeaver:
   de ivysaur, pero en este caso solo para IVYSAUR -CLOUD
 
 UpAir id => 12 
+UGrab id => 20
 
+
+3120 => primer digito 3 => codigo base de dis ; 12 => id del movimiento ; 0 => di neutro
+3121 = primer digito 3 => codigo base de dis ; 12 => id del movimiento ; 1  => di afuera
+3122 = primer digito 3 => codigo base de dis ; 12 => id del movimiento ; 1  => di afuera abajo
+
+
+select * from MOVIMIENTO
+
+
+INSERT INTO movimiento (id, nombre, abreviatura) VALUES (3120, 'Forward Throw', 'FGrab');
+INSERT INTO movimiento (id, nombre, abreviatura) VALUES (19, 'Back Throw', 'BGrab');
+INSERT INTO movimiento (id, nombre, abreviatura) VALUES (20, 'Up Throw', 'UGrab');
+INSERT INTO movimiento (id, nombre, abreviatura) VALUES (21, 'Down Throw', 'DGrab');
+
+INSERT INTO movimiento (id, nombre, abreviatura) VALUES (, 'Down Throw', 'DGrab');
 
 
 
