@@ -7,6 +7,8 @@ public class RegistroCreateDTO {
     public Integer idMovimiento;
     public Integer idPosicion;
     public Integer rage;
-    public Boolean di;          // 👈 ahora Boolean, no Integer
+    public Boolean di; // 👈 ahora Boolean, no Integer
     public Integer porcentajeKO;
+    public String tipoAtaque;
+    public Long idCombo;
 }
