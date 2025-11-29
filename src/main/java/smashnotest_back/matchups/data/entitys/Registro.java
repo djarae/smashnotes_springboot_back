@@ -15,6 +15,77 @@ public class Registro {
     private Personaje idPersonajeEmisor;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_personaje_receptor", nullable = false)
+    private Personaje idPersonajeReceptor;
+
+    @Column(name = "tipo_ataque")
+    private String tipoAtaque; // 'movimiento' o 'combo'
+
+    @Column(name = "id_ataque")
+    private Long idAtaque;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_escenario", nullable = false)
+    private Escenario idEscenario;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_posicion", nullable = false)
+    private Posicion idPosicion;
+
+    @Column(name = "rage", nullable = false)
+    private Integer rage = 0;
+
+    @Column(name = "di", nullable = false)
+    private Boolean di = Boolean.FALSE;
+
+    @Column(name = "porcentaje_ko", nullable = false)
+    private Integer porcentajeKO = 0;
+
+    // ---------------- Getters & Setters ----------------
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Personaje getIdPersonajeEmisor() {
+        return idPersonajeEmisor;
+    }
+
+    public void setIdPersonajeEmisor(Personaje idPersonajeEmisor) {
+        this.idPersonajeEmisor = idPersonajeEmisor;
+    }
+
+    public Personaje getIdPersonajeReceptor() {
+        return idPersonajeReceptor;
+    }
+
+    public void setIdPersonajeReceptor(Personaje idPersonajeReceptor) {
+        this.idPersonajeReceptor = idPersonajeReceptor;
+    }
+
+    public String getTipoAtaque() {
+        return tipoAtaque;
+    }
+
+    public void setTipoAtaque(String tipoAtaque) {
+        this.tipoAtaque = tipoAtaque;
+    }
+
+    public Long getIdAtaque() {
+        return idAtaque;
+    }
+
+    public void setIdAtaque(Long idAtaque) {
+        this.idAtaque = idAtaque;
+    }
+
+    public Escenario getIdEscenario() {
+        return idEscenario;
+    }
+
     public void setIdEscenario(Escenario idEscenario) {
         this.idEscenario = idEscenario;
     }

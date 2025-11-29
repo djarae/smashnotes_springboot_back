@@ -4,7 +4,7 @@ public class RegistroCreateDTO {
     public Integer idPersonajeEmisor;
     public Integer idPersonajeReceptor;
     public Long idAtaque;
-    public Long idEscenario;
+    public Integer idEscenario;
     public Integer idPosicion;
     public Integer rage;
     public Boolean di; // 👈 ahora Boolean, no Integer
