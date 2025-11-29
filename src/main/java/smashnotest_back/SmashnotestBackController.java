@@ -16,7 +16,7 @@ import smashnotest_back.matchups.presentation.dtos.RegistroUpdateDTO;
 import java.util.List;
 
 @RestController
-@RequestMapping("apiSmash")
+@RequestMapping("/apiSmash")
 public class SmashnotestBackController {
 
     @Autowired
