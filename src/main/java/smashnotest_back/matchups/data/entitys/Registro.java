@@ -18,11 +18,9 @@ public class Registro {
     @JoinColumn(name = "id_personaje_receptor", nullable = false)
     private Personaje idPersonajeReceptor;
 
-    @Column(name = "tipo_ataque")
-    private String tipoAtaque; // 'movimiento' o 'combo'
-
-    @Column(name = "id_ataque")
-    private Long idAtaque;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_movimiento", nullable = false)
+    private Movimiento idMovimiento;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_escenario", nullable = false)
@@ -38,87 +36,35 @@ public class Registro {
     @Column(name = "di", nullable = false)
     private Boolean di = Boolean.FALSE;
 
+    // Mapeo explícito a la columna real en la BD (usa underscore si tu columna es porcentaje_ko)
     @Column(name = "porcentaje_ko", nullable = false)
     private Integer porcentajeKO = 0;
 
     // ---------------- Getters & Setters ----------------
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public Personaje getIdPersonajeEmisor() { return idPersonajeEmisor; }
+    public void setIdPersonajeEmisor(Personaje idPersonajeEmisor) { this.idPersonajeEmisor = idPersonajeEmisor; }
 
-    public Personaje getIdPersonajeEmisor() {
-        return idPersonajeEmisor;
-    }
+    public Personaje getIdPersonajeReceptor() { return idPersonajeReceptor; }
+    public void setIdPersonajeReceptor(Personaje idPersonajeReceptor) { this.idPersonajeReceptor = idPersonajeReceptor; }
 
-    public void setIdPersonajeEmisor(Personaje idPersonajeEmisor) {
-        this.idPersonajeEmisor = idPersonajeEmisor;
-    }
+    public Movimiento getIdMovimiento() { return idMovimiento; }
+    public void setIdMovimiento(Movimiento idMovimiento) { this.idMovimiento = idMovimiento; }
 
-    public Personaje getIdPersonajeReceptor() {
-        return idPersonajeReceptor;
-    }
+    public Escenario getIdEscenario() { return idEscenario; }
+    public void setIdEscenario(Escenario idEscenario) { this.idEscenario = idEscenario; }
 
-    public void setIdPersonajeReceptor(Personaje idPersonajeReceptor) {
-        this.idPersonajeReceptor = idPersonajeReceptor;
-    }
+    public Posicion getIdPosicion() { return idPosicion; }
+    public void setIdPosicion(Posicion idPosicion) { this.idPosicion = idPosicion; }
 
-    public String getTipoAtaque() {
-        return tipoAtaque;
-    }
+    public Integer getRage() { return rage; }
+    public void setRage(Integer rage) { this.rage = rage; }
 
-    public void setTipoAtaque(String tipoAtaque) {
-        this.tipoAtaque = tipoAtaque;
-    }
+    public Boolean getDi() { return di; }
+    public void setDi(Boolean di) { this.di = di; }
 
-    public Long getIdAtaque() {
-        return idAtaque;
-    }
-
-    public void setIdAtaque(Long idAtaque) {
-        this.idAtaque = idAtaque;
-    }
-
-    public Escenario getIdEscenario() {
-        return idEscenario;
-    }
-
-    public void setIdEscenario(Escenario idEscenario) {
-        this.idEscenario = idEscenario;
-    }
-
-    public Posicion getIdPosicion() {
-        return idPosicion;
-    }
-
-    public void setIdPosicion(Posicion idPosicion) {
-        this.idPosicion = idPosicion;
-    }
-
-    public Integer getRage() {
-        return rage;
-    }
-
-    public void setRage(Integer rage) {
-        this.rage = rage;
-    }
-
-    public Boolean getDi() {
-        return di;
-    }
-
-    public void setDi(Boolean di) {
-        this.di = di;
-    }
-
-    public Integer getPorcentajeKO() {
-        return porcentajeKO;
-    }
-
-    public void setPorcentajeKO(Integer porcentajeKO) {
-        this.porcentajeKO = porcentajeKO;
-    }
+    public Integer getPorcentajeKO() { return porcentajeKO; }
+    public void setPorcentajeKO(Integer porcentajeKO) { this.porcentajeKO = porcentajeKO; }
 }

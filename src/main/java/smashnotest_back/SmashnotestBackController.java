@@ -16,7 +16,7 @@ import smashnotest_back.matchups.presentation.dtos.RegistroUpdateDTO;
 import java.util.List;
 
 @RestController
-@RequestMapping("/apiSmash")
+@RequestMapping("apiSmash")
 public class SmashnotestBackController {
 
     @Autowired
@@ -30,18 +30,18 @@ public class SmashnotestBackController {
     @Autowired
     private RegistroService registroService;
 
-    // Ruta de testing , importante para comprobar que funciona app sin conexion bd:
-    @GetMapping(value = "/tLocalDeploy")
-    public String testLocalDeploy() {
-        System.out.println("Hola mundo desde logs");
-        return "Hola22!Empoleon:ruta => http://127.0.0.1:8080/apiSmash/tLocalDeploy";
-    }
 
-    @GetMapping(value = "/tCloudDeploy")
-    public String testCloudDeploy() {
-        System.out.println("Hola mundo desde logs");
-        return "Hola11 !Torterra:ruta=> https://smashnotes-springboot-back-1.onrender.com/apiSmash/tCloudDeploy";
-    }
+       //Ruta de testing , importante para comprobar que funciona app sin conexion bd:
+        @GetMapping(value = "/tLocalDeploy" )
+        public String testLocalDeploy() {
+            System.out.println("Hola mundo desde logs");
+            return "Hola22!Empoleon:ruta => http://127.0.0.1:8080/apiSmash/tLocalDeploy";
+        }
+        @GetMapping(value = "/tCloudDeploy" )
+        public String testCloudDeploy() {
+            System.out.println("Hola mundo desde logs");
+            return "Hola11 !Torterra:ruta=> https://smashnotes-springboot-back-1.onrender.com/apiSmash/tCloudDeploy";
+        }
 
     @GetMapping("/Registro")
     public List<RegistroDTO> getListRegistros(
@@ -50,7 +50,8 @@ public class SmashnotestBackController {
             @RequestParam(required = false) String filtroMovimiento,
             @RequestParam(required = false) String filtroStage,
             @RequestParam(required = false) String filtroPosicion,
-            @RequestParam(required = false) String filtroRage) {
+            @RequestParam(required = false) String filtroRage
+    ) {
         // System.out.println para depuración
         System.out.println("desde el controller el valor de filtroEmisor es: " + filtroEmisor);
         System.out.println("desde el controller el valor de filtroReceptor es: " + filtroReceptor);
@@ -60,9 +61,9 @@ public class SmashnotestBackController {
         System.out.println("desde el controller el valor de filtroRage es: " + filtroRage);
 
         // Llamada al service
-        return registroService.getRegistrosFiltrados(filtroEmisor, filtroReceptor, filtroMovimiento, filtroStage,
-                filtroPosicion, filtroRage);
+        return registroService.getRegistrosFiltrados(filtroEmisor, filtroReceptor, filtroMovimiento, filtroStage, filtroPosicion, filtroRage);
     }
+
 
     @PostMapping("/Registro")
     public Registro insertarRegistro(@RequestBody RegistroCreateDTO dto) {
@@ -70,29 +71,34 @@ public class SmashnotestBackController {
 
         Personaje emisor = new Personaje();
         emisor.setId(dto.idPersonajeEmisor);
-        registro.setIdPersonajeEmisor(emisor);
 
         Personaje receptor = new Personaje();
         receptor.setId(dto.idPersonajeReceptor);
-        registro.setIdPersonajeReceptor(receptor);
 
-        registro.setTipoAtaque(dto.tipoAtaque);
-        registro.setIdAtaque(dto.idAtaque);
+        Movimiento movimiento = new Movimiento();
+        movimiento.setId(dto.idMovimiento);
 
         Escenario escenario = new Escenario();
         escenario.setId(dto.idEscenario);
-        registro.setIdEscenario(escenario);
 
         Posicion posicion = new Posicion();
-        posicion.setId(dto.idPosicion != null ? dto.idPosicion : 1);
+        posicion.setId(1);
+
+        registro.setIdPersonajeEmisor(emisor);
+        registro.setIdPersonajeReceptor(receptor);
+        registro.setIdMovimiento(movimiento);
+        registro.setIdEscenario(escenario);
         registro.setIdPosicion(posicion);
 
         registro.setRage(dto.rage);
-        registro.setDi(dto.di);
+        registro.setDi(dto.di);  // ✅ directo, ya es Boolean
         registro.setPorcentajeKO(dto.porcentajeKO);
 
         return registroService.insertarRegistro(registro);
     }
+
+
+
 
     @PutMapping("/Registro")
     public ResponseEntity<String> updateRegistro(@RequestBody RegistroUpdateDTO dto) {
@@ -107,8 +113,9 @@ public class SmashnotestBackController {
         receptor.setId(dto.idPersonajeReceptor);
         registro.setIdPersonajeReceptor(receptor);
 
-        registro.setTipoAtaque(dto.tipoAtaque);
-        registro.setIdAtaque(dto.idAtaque);
+        Movimiento movimiento = new Movimiento();
+        movimiento.setId(dto.idMovimiento);
+        registro.setIdMovimiento(movimiento);
 
         Escenario escenario = new Escenario();
         escenario.setId(dto.idEscenario);
@@ -131,6 +138,7 @@ public class SmashnotestBackController {
     public void deleteRegistro(@PathVariable Long id) {
         registroService.eliminarRegistro(id);
     }
+
 
     @GetMapping("/Escenarios")
     public List<Escenario> getListEscenarios() {
