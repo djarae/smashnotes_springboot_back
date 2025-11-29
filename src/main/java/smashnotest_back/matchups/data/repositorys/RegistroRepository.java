@@ -23,12 +23,13 @@ public interface RegistroRepository extends JpaRepository<Registro, Long> {
                         "CASE WHEN r.tipoAtaque = 'movimiento' THEN m.nombre " +
                         "     WHEN r.tipoAtaque = 'combo' THEN c.nombre " +
                         "     ELSE 'Desconocido' END as nombreAtaque, " +
-                        "r.tipoAtaque as tipoAtaque " +
+                        "r.tipoAtaque as tipoAtaque, " +
+                        "r.idAtaque as idAtaque " +
                         "FROM Registro r " +
                         "JOIN r.idPersonajeEmisor pe " +
                         "JOIN r.idPersonajeReceptor pr " +
-                        "LEFT JOIN r.idMovimiento m " +
-                        "LEFT JOIN r.idCombo c " +
+                        "LEFT JOIN Movimiento m ON (r.idAtaque = m.id AND r.tipoAtaque = 'movimiento') " +
+                        "LEFT JOIN Combo c ON (r.idAtaque = c.id AND r.tipoAtaque = 'combo') " +
                         "JOIN r.idEscenario e " +
                         "JOIN r.idPosicion pos " +
                         "WHERE (:filtroEmisor IS NULL OR pe.nombre LIKE %:filtroEmisor%) " +

@@ -77,16 +77,7 @@ public class SmashnotestBackController {
         registro.setIdPersonajeReceptor(receptor);
 
         registro.setTipoAtaque(dto.tipoAtaque);
-
-        if ("movimiento".equals(dto.tipoAtaque) && dto.idMovimiento != null) {
-            Movimiento movimiento = new Movimiento();
-            movimiento.setId(dto.idMovimiento);
-            registro.setIdMovimiento(movimiento);
-        } else if ("combo".equals(dto.tipoAtaque) && dto.idCombo != null) {
-            Combo combo = new Combo();
-            combo.setId(dto.idCombo);
-            registro.setIdCombo(combo);
-        }
+        registro.setIdAtaque(dto.idAtaque);
 
         Escenario escenario = new Escenario();
         escenario.setId(dto.idEscenario);
@@ -117,16 +108,7 @@ public class SmashnotestBackController {
         registro.setIdPersonajeReceptor(receptor);
 
         registro.setTipoAtaque(dto.tipoAtaque);
-
-        if ("movimiento".equals(dto.tipoAtaque) && dto.idMovimiento != null) {
-            Movimiento movimiento = new Movimiento();
-            movimiento.setId(dto.idMovimiento);
-            registro.setIdMovimiento(movimiento);
-        } else if ("combo".equals(dto.tipoAtaque) && dto.idCombo != null) {
-            Combo combo = new Combo();
-            combo.setId(dto.idCombo);
-            registro.setIdCombo(combo);
-        }
+        registro.setIdAtaque(dto.idAtaque);
 
         Escenario escenario = new Escenario();
         escenario.setId(dto.idEscenario);
