@@ -44,8 +44,6 @@ public class Registro {
     @Column(name = "di", nullable = false)
     private Boolean di = Boolean.FALSE;
 
-    // Mapeo explícito a la columna real en la BD (usa underscore si tu columna es
-    // porcentaje_ko)
     @Column(name = "porcentaje_ko", nullable = false)
     private Integer porcentajeKO = 0;
 
@@ -96,6 +94,22 @@ public class Registro {
 
     public void setIdPosicion(Posicion idPosicion) {
         this.idPosicion = idPosicion;
+    }
+
+    public Ataque getIdAtaque() {
+        return idAtaque;
+    }
+
+    public void setIdAtaque(Ataque idAtaque) {
+        this.idAtaque = idAtaque;
+    }
+
+    public Combo getIdCombo() {
+        return idCombo;
+    }
+
+    public void setIdCombo(Combo idCombo) {
+        this.idCombo = idCombo;
     }
 
     public Integer getRage() {
