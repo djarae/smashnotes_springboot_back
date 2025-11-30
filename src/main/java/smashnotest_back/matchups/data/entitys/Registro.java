@@ -19,7 +19,7 @@ public class Registro {
     private Personaje idPersonajeReceptor;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_movimiento", nullable = false)
+    @JoinColumn(name = "id_movimiento")
     private Movimiento idMovimiento;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -37,6 +37,9 @@ public class Registro {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_combo")
     private Combo idCombo;
+
+    @Column(name = "tipo_ataque")
+    private String tipoAtaque;
 
     @Column(name = "rage", nullable = false)
     private Integer rage = 0;
@@ -110,6 +113,14 @@ public class Registro {
 
     public void setIdCombo(Combo idCombo) {
         this.idCombo = idCombo;
+    }
+
+    public String getTipoAtaque() {
+        return tipoAtaque;
+    }
+
+    public void setTipoAtaque(String tipoAtaque) {
+        this.tipoAtaque = tipoAtaque;
     }
 
     public Integer getRage() {

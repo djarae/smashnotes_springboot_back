@@ -26,21 +26,31 @@ public class RegistroService {
         registroRepository.deleteById(id);
     }
 
+    public Registro obtenerRegistroPorId(Long id) {
+        return registroRepository.findById(id).orElse(null);
+    }
+
     public List<RegistroDTO> getRegistrosFiltrados(
             String filtroEmisor,
             String filtroReceptor,
             String filtroMovimiento,
             String filtroStage,
             String filtroPosicion,
-            String filtroRageStr
-    ) {
+            String filtroRageStr) {
 
         // Normalizar filtros: null si está vacío o "undefined"
-        filtroEmisor = (filtroEmisor == null || filtroEmisor.isEmpty() || filtroEmisor.equals("undefined")) ? null : filtroEmisor;
-        filtroReceptor = (filtroReceptor == null || filtroReceptor.isEmpty() || filtroReceptor.equals("undefined")) ? null : filtroReceptor;
-        filtroMovimiento = (filtroMovimiento == null || filtroMovimiento.isEmpty() || filtroMovimiento.equals("undefined")) ? null : filtroMovimiento;
-        filtroStage = (filtroStage == null || filtroStage.isEmpty() || filtroStage.equals("undefined")) ? null : filtroStage;
-        filtroPosicion = (filtroPosicion == null || filtroPosicion.isEmpty() || filtroPosicion.equals("undefined")) ? null : filtroPosicion;
+        filtroEmisor = (filtroEmisor == null || filtroEmisor.isEmpty() || filtroEmisor.equals("undefined")) ? null
+                : filtroEmisor;
+        filtroReceptor = (filtroReceptor == null || filtroReceptor.isEmpty() || filtroReceptor.equals("undefined"))
+                ? null
+                : filtroReceptor;
+        filtroMovimiento = (filtroMovimiento == null || filtroMovimiento.isEmpty()
+                || filtroMovimiento.equals("undefined")) ? null : filtroMovimiento;
+        filtroStage = (filtroStage == null || filtroStage.isEmpty() || filtroStage.equals("undefined")) ? null
+                : filtroStage;
+        filtroPosicion = (filtroPosicion == null || filtroPosicion.isEmpty() || filtroPosicion.equals("undefined"))
+                ? null
+                : filtroPosicion;
 
         Integer filtroRage = null;
         if (filtroRageStr != null && !filtroRageStr.isEmpty() && !filtroRageStr.equals("undefined")) {
@@ -61,9 +71,7 @@ public class RegistroService {
 
         return registroRepository.findRegistrosFiltrados(
                 filtroEmisor, filtroReceptor, filtroMovimiento,
-                filtroStage, filtroPosicion, filtroRage
-        );
+                filtroStage, filtroPosicion, filtroRage);
     }
-
 
 }

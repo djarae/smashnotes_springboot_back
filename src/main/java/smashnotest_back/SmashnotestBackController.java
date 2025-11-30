@@ -95,6 +95,7 @@ public class SmashnotestBackController {
             movimiento.setId(dto.idAtaque);
             registro.setIdMovimiento(movimiento);
             registro.setIdCombo(null);
+            registro.setTipoAtaque("1");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
@@ -107,6 +108,7 @@ public class SmashnotestBackController {
             combo.setId(dto.idAtaque);
             registro.setIdCombo(combo);
             registro.setIdMovimiento(null);
+            registro.setTipoAtaque("2");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);
@@ -128,8 +130,10 @@ public class SmashnotestBackController {
         System.out.println("DTO idAtaque: " + dto.idAtaque);
         System.out.println("DTO tipoAtaque: " + dto.tipoAtaque);
 
-        Registro registro = new Registro();
-        registro.setId(dto.id);
+        Registro registro = registroService.obtenerRegistroPorId(dto.id);
+        if (registro == null) {
+            return ResponseEntity.badRequest().body("Registro no encontrado");
+        }
 
         Personaje emisor = new Personaje();
         emisor.setId(dto.idPersonajeEmisor);
@@ -155,12 +159,18 @@ public class SmashnotestBackController {
             movimiento.setId(dto.idAtaque);
             registro.setIdMovimiento(movimiento);
             registro.setIdCombo(null);
+            registro.setTipoAtaque("1");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
             System.out.println("Ataque encontrado (Movimiento): " + (ataque != null ? ataque.getId() : "NULL"));
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
+            } else {
+                // Fallback: Si no se encuentra el ataque, intentamos mantener el existente si
+                // coincide el tipo, o lo dejamos null
+                System.out.println("WARNING: No se encontró Ataque para Movimiento ID: " + dto.idAtaque);
+                registro.setIdAtaque(null);
             }
         } else if ("2".equals(dto.tipoAtaque)) {
             System.out.println("Procesando como COMBO");
@@ -169,12 +179,16 @@ public class SmashnotestBackController {
             combo.setId(dto.idAtaque);
             registro.setIdCombo(combo);
             registro.setIdMovimiento(null);
+            registro.setTipoAtaque("2");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);
             System.out.println("Ataque encontrado (Combo): " + (ataque != null ? ataque.getId() : "NULL"));
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
+            } else {
+                System.out.println("WARNING: No se encontró Ataque para Combo ID: " + dto.idAtaque);
+                registro.setIdAtaque(null);
             }
         } else {
             System.out.println("Tipo de ataque no reconocido o nulo: " + dto.tipoAtaque);
