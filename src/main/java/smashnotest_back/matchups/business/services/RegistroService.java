@@ -19,13 +19,16 @@ public class RegistroService {
     }
 
     public Registro actualizarRegistro(Registro registro) {
-        System.out.println("en registro service registro id ataque***************************************************************************************"+registro.getIdAtaque());
-        System.out.println("en registro service registro id ataque***************************************************************************************"+registro.getIdAtaque());
-        System.out.println("en registro service registro id ataque***************************************************************************************"+registro.getIdAtaque());
-        System.out.println("en registro service registro id ataque***************************************************************************************"+registro.getIdAtaque());
-        System.out.println("en registro service registro id ataque***************************************************************************************"+registro.getIdAtaque());
-
-
+        System.out.println(
+                "en registro service registro id ataque****************" + registro.getIdAtaque());
+        System.out.println(
+                "en registro service registro id ataque****************" + registro.getIdAtaque());
+        System.out.println(
+                "en registro service registro id ataque****************" + registro.getIdAtaque());
+        System.out.println(
+                "en registro service registro id ataque****************" + registro.getIdAtaque());
+        System.out.println(
+                "en registro service registro id ataque****************" + registro.getIdAtaque());
 
         return registroRepository.save(registro);
     }

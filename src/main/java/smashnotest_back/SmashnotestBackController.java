@@ -116,6 +116,10 @@ public class SmashnotestBackController {
     public ResponseEntity<String> updateRegistro(@RequestBody RegistroUpdateDTO dto) {
         System.out.println("Dto´de ataque" + dto.idAtaque);
         System.out.println("Dto´de ataquezz" + dto.tipoAtaque);
+        System.out.println("******");
+        System.out.println("******");
+        System.out.println("******");
+        System.out.println("******");
 
         Registro registro = registroService.obtenerRegistroPorId(dto.id);
         if (registro == null) {
