@@ -19,8 +19,8 @@ public interface RegistroRepository extends JpaRepository<Registro, Long> {
                         "m.id as idMovimiento, m.nombre as nombreMovimiento, m.abreviatura as abreviaturaMovimiento, " +
                         "e.id as idEscenario, e.nombre as nombreEscenario, e.abreviatura as abreviaturaEscenario, " +
                         "pos.id as idPosicion, pos.nombre as nombrePosicion, " +
-                        "a.id as idAtaque, a.nombre as nombreAtaque, a.abreviatura as abreviaturaAtaque, " +
-                        "c.id as idCombo, c.nombre as nombreCombo, c.abreviatura as abreviaturaCombo, " +
+                        "a.id as idAtaque, am.nombre as nombreAtaque, am.abreviatura as abreviaturaAtaque, " +
+                        "ac.id as idCombo, ac.nombre as nombreCombo, ac.abreviatura as abreviaturaCombo, " +
                         "r.rage as rage, r.di as di, r.porcentajeKO as porcentajeKO " +
                         "FROM Registro r " +
                         "JOIN r.idPersonajeEmisor pe " +
@@ -29,7 +29,8 @@ public interface RegistroRepository extends JpaRepository<Registro, Long> {
                         "JOIN r.idEscenario e " +
                         "JOIN r.idPosicion pos " +
                         "LEFT JOIN r.idAtaque a " +
-                        "LEFT JOIN r.idCombo c " +
+                        "LEFT JOIN a.idMovimiento am " +
+                        "LEFT JOIN a.idCombo ac " +
                         "WHERE (:filtroEmisor IS NULL OR pe.nombre LIKE %:filtroEmisor%) " +
                         "AND (:filtroReceptor IS NULL OR pr.nombre LIKE %:filtroReceptor%) " +
                         "AND (:filtroMovimiento IS NULL OR m.nombre LIKE %:filtroMovimiento%) " +
@@ -37,6 +38,7 @@ public interface RegistroRepository extends JpaRepository<Registro, Long> {
                         "AND (:filtroPosicion IS NULL OR pos.nombre LIKE %:filtroPosicion%) " +
                         "AND (:filtroRage IS NULL OR r.rage = :filtroRage) " +
                         "ORDER BY r.id")
+
         List<RegistroDTO> findRegistrosFiltrados(
                         @Param("filtroEmisor") String filtroEmisor,
                         @Param("filtroReceptor") String filtroReceptor,
