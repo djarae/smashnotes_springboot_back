@@ -20,9 +20,6 @@ public class Ataque {
     @Column(name = "tipo_ataque")
     private String tipoAtaque;
 
-    @Column(name = "id_propiedad")
-    private Integer idPropiedad;
-
     public Ataque() {
     }
 
@@ -56,14 +53,6 @@ public class Ataque {
 
     public void setTipoAtaque(String tipoAtaque) {
         this.tipoAtaque = tipoAtaque;
-    }
-
-    public Integer getIdPropiedad() {
-        return idPropiedad;
-    }
-
-    public void setIdPropiedad(Integer idPropiedad) {
-        this.idPropiedad = idPropiedad;
     }
 
 }

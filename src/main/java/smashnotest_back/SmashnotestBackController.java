@@ -32,6 +32,8 @@ public class SmashnotestBackController {
     @Autowired
     private AtaqueRepository ataqueRepository;
     @Autowired
+    private AtaquePropiedadRepository ataquePropiedadRepository;
+    @Autowired
     private RegistroService registroService;
 
     // Ruta de testing , importante para comprobar que funciona app sin conexion bd:
@@ -85,15 +87,20 @@ public class SmashnotestBackController {
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
-                registro.setTipoAtaque("movimiento");
             }
         } else if ("2".equals(dto.tipoAtaque)) {
             // Es un Combo - buscar en tabla ataque donde id_combo = dto.idAtaque
             Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
-                registro.setTipoAtaque("combo");
             }
+        }
+
+        // Asignar propiedad del ataque
+        if (dto.idPropiedadAtaque != null) {
+            AtaquePropiedad propiedad = new AtaquePropiedad();
+            propiedad.setId(dto.idPropiedadAtaque);
+            registro.setIdPropiedadAtaque(propiedad);
         }
 
         registro.setRage(dto.rage);
@@ -137,7 +144,6 @@ public class SmashnotestBackController {
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
-                registro.setTipoAtaque("movimiento");
             } else {
                 registro.setIdAtaque(null);
             }
@@ -146,10 +152,16 @@ public class SmashnotestBackController {
             Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
-                registro.setTipoAtaque("combo");
             } else {
                 registro.setIdAtaque(null);
             }
+        }
+
+        // Asignar propiedad del ataque
+        if (dto.idPropiedadAtaque != null) {
+            AtaquePropiedad propiedad = new AtaquePropiedad();
+            propiedad.setId(dto.idPropiedadAtaque);
+            registro.setIdPropiedadAtaque(propiedad);
         }
 
         registro.setPorcentajeKO(dto.porcentajeKO);
@@ -192,5 +204,10 @@ public class SmashnotestBackController {
     public String getCombos() throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.writeValueAsString(comboRepository.findAll());
+    }
+
+    @GetMapping("/AtaquePropiedades")
+    public List<AtaquePropiedad> getAtaquePropiedades() {
+        return ataquePropiedadRepository.findAll();
     }
 }
