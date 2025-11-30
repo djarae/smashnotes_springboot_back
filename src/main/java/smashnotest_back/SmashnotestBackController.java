@@ -81,30 +81,18 @@ public class SmashnotestBackController {
 
         // Lógica para Ataque (Movimiento o Combo)
         if ("1".equals(dto.tipoAtaque)) {
-            // Es un Movimiento
-            Movimiento movimiento = new Movimiento();
-            movimiento.setId(dto.idAtaque);
-            registro.setIdMovimiento(movimiento);
-            registro.setIdCombo(null);
-            registro.setTipoAtaque("1");
-
-            // Buscar Ataque correspondiente
+            // Es un Movimiento - buscar en tabla ataque donde id_movimiento = dto.idAtaque
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
+                registro.setTipoAtaque("movimiento");
             }
         } else if ("2".equals(dto.tipoAtaque)) {
-            // Es un Combo
-            Combo combo = new Combo();
-            combo.setId(dto.idAtaque);
-            registro.setIdCombo(combo);
-            registro.setIdMovimiento(null);
-            registro.setTipoAtaque("2");
-
-            // Buscar Ataque correspondiente
+            // Es un Combo - buscar en tabla ataque donde id_combo = dto.idAtaque
             Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
+                registro.setTipoAtaque("combo");
             }
         }
 
@@ -145,38 +133,23 @@ public class SmashnotestBackController {
 
         // Lógica para Ataque (Movimiento o Combo)
         if ("1".equals(dto.tipoAtaque)) {
-            // Es un Movimiento
-            Movimiento movimiento = new Movimiento();
-            movimiento.setId(dto.idAtaque);
-            registro.setIdMovimiento(movimiento);
-            registro.setIdCombo(null);
-            registro.setTipoAtaque("1");
-
-            // Buscar Ataque correspondiente
+            // Es un Movimiento - buscar en tabla ataque donde id_movimiento = dto.idAtaque
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
+                registro.setTipoAtaque("movimiento");
             } else {
-                // Fallback: Si no se encuentra el ataque, intentamos mantener el existente si
-                // coincide el tipo, o lo dejamos null
                 registro.setIdAtaque(null);
             }
         } else if ("2".equals(dto.tipoAtaque)) {
-            // Es un Combo
-            Combo combo = new Combo();
-            combo.setId(dto.idAtaque);
-            registro.setIdCombo(combo);
-            registro.setIdMovimiento(null);
-            registro.setTipoAtaque("2");
-
-            // Buscar Ataque correspondiente
+            // Es un Combo - buscar en tabla ataque donde id_combo = dto.idAtaque
             Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
+                registro.setTipoAtaque("combo");
             } else {
                 registro.setIdAtaque(null);
             }
-        } else {
         }
 
         registro.setPorcentajeKO(dto.porcentajeKO);

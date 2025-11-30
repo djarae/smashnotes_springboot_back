@@ -19,10 +19,6 @@ public class Registro {
     private Personaje idPersonajeReceptor;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_movimiento")
-    private Movimiento idMovimiento;
-
-    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_escenario", nullable = false)
     private Escenario idEscenario;
 
@@ -33,10 +29,6 @@ public class Registro {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_ataque")
     private Ataque idAtaque;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_combo")
-    private Combo idCombo;
 
     @Column(name = "tipo_ataque")
     private String tipoAtaque;
@@ -75,14 +67,6 @@ public class Registro {
         this.idPersonajeReceptor = idPersonajeReceptor;
     }
 
-    public Movimiento getIdMovimiento() {
-        return idMovimiento;
-    }
-
-    public void setIdMovimiento(Movimiento idMovimiento) {
-        this.idMovimiento = idMovimiento;
-    }
-
     public Escenario getIdEscenario() {
         return idEscenario;
     }
@@ -105,14 +89,6 @@ public class Registro {
 
     public void setIdAtaque(Ataque idAtaque) {
         this.idAtaque = idAtaque;
-    }
-
-    public Combo getIdCombo() {
-        return idCombo;
-    }
-
-    public void setIdCombo(Combo idCombo) {
-        this.idCombo = idCombo;
     }
 
     public String getTipoAtaque() {

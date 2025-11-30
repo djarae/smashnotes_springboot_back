@@ -15,8 +15,6 @@ public interface RegistroDTO {
 
     String getAbreviaturaReceptor();
 
-    Long getIdMovimiento();
-
     String getNombreMovimiento();
 
     String getAbreviaturaMovimiento();
@@ -34,12 +32,6 @@ public interface RegistroDTO {
     String getAbreviaturaPosicion();
 
     Long getIdAtaque();
-
-    String getNombreAtaque();
-
-    String getAbreviaturaAtaque();
-
-    Long getIdCombo();
 
     String getNombreCombo();
 
