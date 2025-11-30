@@ -31,8 +31,8 @@ public class Registro {
     private Ataque idAtaque;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_propiedad_ataque")
-    private AtaquePropiedad idPropiedadAtaque;
+    @JoinColumn(name = "id_ataque_propiedad")
+    private AtaquePropiedad idAtaquePropiedad;
 
     @Column(name = "rage", nullable = false)
     private Integer rage = 0;
@@ -92,12 +92,12 @@ public class Registro {
         this.idAtaque = idAtaque;
     }
 
-    public AtaquePropiedad getIdPropiedadAtaque() {
-        return idPropiedadAtaque;
+    public AtaquePropiedad getIdAtaquePropiedad() {
+        return idAtaquePropiedad;
     }
 
-    public void setIdPropiedadAtaque(AtaquePropiedad idPropiedadAtaque) {
-        this.idPropiedadAtaque = idPropiedadAtaque;
+    public void setIdAtaquePropiedad(AtaquePropiedad idAtaquePropiedad) {
+        this.idAtaquePropiedad = idAtaquePropiedad;
     }
 
     public Integer getRage() {

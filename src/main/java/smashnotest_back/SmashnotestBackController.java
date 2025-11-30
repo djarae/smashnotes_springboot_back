@@ -97,10 +97,10 @@ public class SmashnotestBackController {
         }
 
         // Asignar propiedad del ataque
-        if (dto.idPropiedadAtaque != null) {
+        if (dto.idAtaquePropiedad != null) {
             AtaquePropiedad propiedad = new AtaquePropiedad();
-            propiedad.setId(dto.idPropiedadAtaque);
-            registro.setIdPropiedadAtaque(propiedad);
+            propiedad.setId(dto.idAtaquePropiedad);
+            registro.setIdAtaquePropiedad(propiedad);
         }
 
         registro.setRage(dto.rage);
@@ -158,10 +158,10 @@ public class SmashnotestBackController {
         }
 
         // Asignar propiedad del ataque
-        if (dto.idPropiedadAtaque != null) {
+        if (dto.idAtaquePropiedad != null) {
             AtaquePropiedad propiedad = new AtaquePropiedad();
-            propiedad.setId(dto.idPropiedadAtaque);
-            registro.setIdPropiedadAtaque(propiedad);
+            propiedad.setId(dto.idAtaquePropiedad);
+            registro.setIdAtaquePropiedad(propiedad);
         }
 
         registro.setPorcentajeKO(dto.porcentajeKO);

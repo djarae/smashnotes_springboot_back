@@ -6,7 +6,7 @@ public class RegistroCreateDTO {
     public Integer idEscenario;
     public Integer idAtaque;
     public String tipoAtaque;
-    public Integer idPropiedadAtaque;
+    public Integer idAtaquePropiedad;
     public Integer idPosicion;
     public Integer rage;
     public Boolean di; // 👈 ahora Boolean, no Integer

@@ -20,6 +20,8 @@ public interface RegistroRepository extends JpaRepository<Registro, Long> {
                         "e.id as idEscenario, e.nombre as nombreEscenario, e.abreviatura as abreviaturaEscenario, " +
                         "pos.id as idPosicion, pos.nombre as nombrePosicion, pos.abreviatura as abreviaturaPosicion, " +
                         "ac.nombre as nombreCombo, ac.abreviatura as abreviaturaCombo, " +
+                        "ap.id as idAtaquePropiedad, ap.nombre as nombreAtaquePropiedad, ap.abreviatura as abreviaturaAtaquePropiedad, "
+                        +
                         "r.rage as rage, r.di as di, r.porcentajeKO as porcentajeKO " +
                         "FROM Registro r " +
                         "JOIN r.idPersonajeEmisor pe " +
@@ -29,6 +31,7 @@ public interface RegistroRepository extends JpaRepository<Registro, Long> {
                         "LEFT JOIN r.idAtaque a " +
                         "LEFT JOIN a.idMovimiento am " +
                         "LEFT JOIN a.idCombo ac " +
+                        "LEFT JOIN r.idAtaquePropiedad ap " +
                         "WHERE (:filtroEmisor IS NULL OR pe.nombre LIKE %:filtroEmisor%) " +
                         "AND (:filtroReceptor IS NULL OR pr.nombre LIKE %:filtroReceptor%) " +
                         "AND (:filtroMovimiento IS NULL OR am.nombre LIKE %:filtroMovimiento% OR ac.nombre LIKE %:filtroMovimiento%) "

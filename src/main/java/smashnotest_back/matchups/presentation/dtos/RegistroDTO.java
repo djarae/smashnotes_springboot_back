@@ -42,4 +42,10 @@ public interface RegistroDTO {
     Boolean getDi();
 
     Integer getPorcentajeKO();
+
+    Integer getIdAtaquePropiedad();
+
+    String getNombreAtaquePropiedad();
+
+    String getAbreviaturaAtaquePropiedad();
 }
