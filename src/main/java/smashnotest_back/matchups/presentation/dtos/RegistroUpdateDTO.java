@@ -11,5 +11,6 @@ public class RegistroUpdateDTO {
     public Integer porcentajeKO;
     public Integer rage;
     public Boolean di;
+    public Integer idAtaque;
+    public String tipoAtaque;
 }
-

@@ -74,31 +74,46 @@ public class SmashnotestBackController {
 
         Personaje emisor = new Personaje();
         emisor.setId(dto.idPersonajeEmisor);
+        registro.setIdPersonajeEmisor(emisor);
 
         Personaje receptor = new Personaje();
         receptor.setId(dto.idPersonajeReceptor);
-
-        Movimiento movimiento = new Movimiento();
-        movimiento.setId(dto.idAtaque); // Ahora usamos idAtaque como idMovimiento
+        registro.setIdPersonajeReceptor(receptor);
 
         Escenario escenario = new Escenario();
         escenario.setId(dto.idEscenario);
+        registro.setIdEscenario(escenario);
 
         Posicion posicion = new Posicion();
         posicion.setId(dto.idPosicion != null ? dto.idPosicion : 1);
-
-        // Setear idAtaque directamente
-        if (dto.idAtaque != null && dto.idAtaque > 0) {
-            Ataque ataque = new Ataque();
-            ataque.setId(dto.idAtaque);
-            registro.setIdAtaque(ataque);
-        }
-
-        registro.setIdPersonajeEmisor(emisor);
-        registro.setIdPersonajeReceptor(receptor);
-        registro.setIdMovimiento(movimiento);
-        registro.setIdEscenario(escenario);
         registro.setIdPosicion(posicion);
+
+        // Lógica para Ataque (Movimiento o Combo)
+        if ("1".equals(dto.tipoAtaque)) {
+            // Es un Movimiento
+            Movimiento movimiento = new Movimiento();
+            movimiento.setId(dto.idAtaque);
+            registro.setIdMovimiento(movimiento);
+            registro.setIdCombo(null);
+
+            // Buscar Ataque correspondiente
+            Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
+            if (ataque != null) {
+                registro.setIdAtaque(ataque);
+            }
+        } else if ("2".equals(dto.tipoAtaque)) {
+            // Es un Combo
+            Combo combo = new Combo();
+            combo.setId(dto.idAtaque);
+            registro.setIdCombo(combo);
+            registro.setIdMovimiento(null);
+
+            // Buscar Ataque correspondiente
+            Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);
+            if (ataque != null) {
+                registro.setIdAtaque(ataque);
+            }
+        }
 
         registro.setRage(dto.rage);
         registro.setDi(dto.di);
@@ -109,6 +124,10 @@ public class SmashnotestBackController {
 
     @PutMapping("/Registro")
     public ResponseEntity<String> updateRegistro(@RequestBody RegistroUpdateDTO dto) {
+        System.out.println("UPDATE REGISTRO - START");
+        System.out.println("DTO idAtaque: " + dto.idAtaque);
+        System.out.println("DTO tipoAtaque: " + dto.tipoAtaque);
+
         Registro registro = new Registro();
         registro.setId(dto.id);
 
@@ -120,10 +139,6 @@ public class SmashnotestBackController {
         receptor.setId(dto.idPersonajeReceptor);
         registro.setIdPersonajeReceptor(receptor);
 
-        Movimiento movimiento = new Movimiento();
-        movimiento.setId(dto.idMovimiento);
-        registro.setIdMovimiento(movimiento);
-
         Escenario escenario = new Escenario();
         escenario.setId(dto.idEscenario);
         registro.setIdEscenario(escenario);
@@ -132,11 +147,45 @@ public class SmashnotestBackController {
         posicion.setId(dto.idPosicion != null ? dto.idPosicion : 1);
         registro.setIdPosicion(posicion);
 
+        // Lógica para Ataque (Movimiento o Combo)
+        if ("1".equals(dto.tipoAtaque)) {
+            System.out.println("Procesando como MOVIMIENTO");
+            // Es un Movimiento
+            Movimiento movimiento = new Movimiento();
+            movimiento.setId(dto.idAtaque);
+            registro.setIdMovimiento(movimiento);
+            registro.setIdCombo(null);
+
+            // Buscar Ataque correspondiente
+            Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
+            System.out.println("Ataque encontrado (Movimiento): " + (ataque != null ? ataque.getId() : "NULL"));
+            if (ataque != null) {
+                registro.setIdAtaque(ataque);
+            }
+        } else if ("2".equals(dto.tipoAtaque)) {
+            System.out.println("Procesando como COMBO");
+            // Es un Combo
+            Combo combo = new Combo();
+            combo.setId(dto.idAtaque);
+            registro.setIdCombo(combo);
+            registro.setIdMovimiento(null);
+
+            // Buscar Ataque correspondiente
+            Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);
+            System.out.println("Ataque encontrado (Combo): " + (ataque != null ? ataque.getId() : "NULL"));
+            if (ataque != null) {
+                registro.setIdAtaque(ataque);
+            }
+        } else {
+            System.out.println("Tipo de ataque no reconocido o nulo: " + dto.tipoAtaque);
+        }
+
         registro.setPorcentajeKO(dto.porcentajeKO);
         registro.setRage(dto.rage);
         registro.setDi(dto.di);
 
         registroService.actualizarRegistro(registro);
+        System.out.println("UPDATE REGISTRO - END");
 
         return ResponseEntity.ok("Registro actualizado correctamente");
     }
