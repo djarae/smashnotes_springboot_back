@@ -63,6 +63,7 @@ public class SmashnotestBackController {
 
     @PostMapping("/Registro")
     public ResponseEntity<String> insertarRegistro(@RequestBody RegistroCreateDTO dto) {
+
         Registro registro = new Registro();
 
         Personaje emisor = new Personaje();
@@ -85,8 +86,23 @@ public class SmashnotestBackController {
         if ("1".equals(dto.tipoAtaque)) {
             // Es un Movimiento - buscar en tabla ataque donde id_movimiento = dto.idAtaque
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
+
+            System.out.println("Prueba"+dto.tipoAtaque);
+
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
+                System.out.println("en registro controller registro id ataque****************" + registro.getIdAtaque());
+                System.out.println("//////////////////////////////////////");
+                System.out.println("//////////////////////////////////////");
+                System.out.println("//////////////////////////////////////");
+                System.out.println("//////////////////////////////////////");
+
+                System.out.println("//////////////////////////////////////");
+                System.out.println("//////////////////////////////////////");
+                System.out.println("//////////////////////////////////////");
+                System.out.println("//////////////////////////////////////");
+                System.out.println("//////////////////////////////////////");
+
             }
         } else if ("2".equals(dto.tipoAtaque)) {
             // Es un Combo - buscar en tabla ataque donde id_combo = dto.idAtaque
@@ -106,6 +122,26 @@ public class SmashnotestBackController {
         registro.setRage(dto.rage);
         registro.setDi(dto.di);
         registro.setPorcentajeKO(dto.porcentajeKO);
+
+        System.out.println("registro tipo ataque " + registro.getIdAtaque());
+
+
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+        System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
 
         registroService.insertarRegistro(registro);
 

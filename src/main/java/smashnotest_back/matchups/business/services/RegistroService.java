@@ -3,6 +3,7 @@ package smashnotest_back.matchups.business.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import smashnotest_back.matchups.data.repositorys.RegistroRepository;
+import smashnotest_back.matchups.data.entitys.Ataque;
 import smashnotest_back.matchups.data.entitys.Registro;
 import smashnotest_back.matchups.presentation.dtos.RegistroDTO;
 
@@ -15,6 +16,35 @@ public class RegistroService {
     private RegistroRepository registroRepository;
 
     public Registro insertarRegistro(Registro registro) {
+
+        System.out.println("en registro service registro id ataque****************" + registro.getIdAtaque());
+
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+        System.out.println("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+
+        // Ataque prueba = new Ataque();
+        // prueba.setId(1); // O el ID que sepas que existe en tu BD
+        // registro.setIdAtaque(prueba);
+
         return registroRepository.save(registro);
     }
 
