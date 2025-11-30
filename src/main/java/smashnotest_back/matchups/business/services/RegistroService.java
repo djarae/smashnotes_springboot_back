@@ -19,6 +19,14 @@ public class RegistroService {
     }
 
     public Registro actualizarRegistro(Registro registro) {
+        System.out.println("en registro service registro id ataque***************************************************************************************"+registro.getIdAtaque());
+        System.out.println("en registro service registro id ataque***************************************************************************************"+registro.getIdAtaque());
+        System.out.println("en registro service registro id ataque***************************************************************************************"+registro.getIdAtaque());
+        System.out.println("en registro service registro id ataque***************************************************************************************"+registro.getIdAtaque());
+        System.out.println("en registro service registro id ataque***************************************************************************************"+registro.getIdAtaque());
+
+
+
         return registroRepository.save(registro);
     }
 
@@ -60,14 +68,6 @@ public class RegistroService {
                 filtroRage = null; // fallback seguro
             }
         }
-
-        System.out.println("Filtros recibidos desde Service:");
-        System.out.println("filtroEmisor: " + filtroEmisor);
-        System.out.println("filtroReceptor: " + filtroReceptor);
-        System.out.println("filtroMovimiento: " + filtroMovimiento);
-        System.out.println("filtroStage: " + filtroStage);
-        System.out.println("filtroPosicion: " + filtroPosicion);
-        System.out.println("filtroRage: " + filtroRage);
 
         return registroRepository.findRegistrosFiltrados(
                 filtroEmisor, filtroReceptor, filtroMovimiento,

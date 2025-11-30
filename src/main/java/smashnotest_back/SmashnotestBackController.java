@@ -37,13 +37,11 @@ public class SmashnotestBackController {
     // Ruta de testing , importante para comprobar que funciona app sin conexion bd:
     @GetMapping(value = "/tLocalDeploy")
     public String testLocalDeploy() {
-        System.out.println("Hola mundo desde logs");
         return "Hola22!Empoleon:ruta => http://127.0.0.1:8080/apiSmash/tLocalDeploy";
     }
 
     @GetMapping(value = "/tCloudDeploy")
     public String testCloudDeploy() {
-        System.out.println("Hola mundo desde logs");
         return "Hola11 !Torterra:ruta=> https://smashnotes-springboot-back-1.onrender.com/apiSmash/tCloudDeploy";
     }
 
@@ -55,13 +53,6 @@ public class SmashnotestBackController {
             @RequestParam(required = false) String filtroStage,
             @RequestParam(required = false) String filtroPosicion,
             @RequestParam(required = false) String filtroRage) {
-        // System.out.println para depuración
-        System.out.println("desde el controller el valor de filtroEmisor es: " + filtroEmisor);
-        System.out.println("desde el controller el valor de filtroReceptor es: " + filtroReceptor);
-        System.out.println("desde el controller el valor de filtroMovimiento es: " + filtroMovimiento);
-        System.out.println("desde el controller el valor de filtroStage es: " + filtroStage);
-        System.out.println("desde el controller el valor de filtroPosicion es: " + filtroPosicion);
-        System.out.println("desde el controller el valor de filtroRage es: " + filtroRage);
 
         // Llamada al service
         return registroService.getRegistrosFiltrados(filtroEmisor, filtroReceptor, filtroMovimiento, filtroStage,
@@ -95,7 +86,7 @@ public class SmashnotestBackController {
             movimiento.setId(dto.idAtaque);
             registro.setIdMovimiento(movimiento);
             registro.setIdCombo(null);
-            registro.setTipoAtaque("1");
+            registro.setTipoAtaque("movimiento");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
@@ -108,7 +99,7 @@ public class SmashnotestBackController {
             combo.setId(dto.idAtaque);
             registro.setIdCombo(combo);
             registro.setIdMovimiento(null);
-            registro.setTipoAtaque("2");
+            registro.setTipoAtaque("combo");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);
@@ -126,9 +117,8 @@ public class SmashnotestBackController {
 
     @PutMapping("/Registro")
     public ResponseEntity<String> updateRegistro(@RequestBody RegistroUpdateDTO dto) {
-        System.out.println("UPDATE REGISTRO - START");
-        System.out.println("DTO idAtaque: " + dto.idAtaque);
-        System.out.println("DTO tipoAtaque: " + dto.tipoAtaque);
+        System.out.println("Dto´de ataque" + dto.idAtaque);
+        System.out.println("Dto´de ataquezz" + dto.tipoAtaque);
 
         Registro registro = registroService.obtenerRegistroPorId(dto.id);
         if (registro == null) {
@@ -153,45 +143,38 @@ public class SmashnotestBackController {
 
         // Lógica para Ataque (Movimiento o Combo)
         if ("1".equals(dto.tipoAtaque)) {
-            System.out.println("Procesando como MOVIMIENTO");
             // Es un Movimiento
             Movimiento movimiento = new Movimiento();
             movimiento.setId(dto.idAtaque);
             registro.setIdMovimiento(movimiento);
             registro.setIdCombo(null);
-            registro.setTipoAtaque("1");
+            registro.setTipoAtaque("movimiento");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
-            System.out.println("Ataque encontrado (Movimiento): " + (ataque != null ? ataque.getId() : "NULL"));
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
             } else {
                 // Fallback: Si no se encuentra el ataque, intentamos mantener el existente si
                 // coincide el tipo, o lo dejamos null
-                System.out.println("WARNING: No se encontró Ataque para Movimiento ID: " + dto.idAtaque);
                 registro.setIdAtaque(null);
             }
         } else if ("2".equals(dto.tipoAtaque)) {
-            System.out.println("Procesando como COMBO");
             // Es un Combo
             Combo combo = new Combo();
             combo.setId(dto.idAtaque);
             registro.setIdCombo(combo);
             registro.setIdMovimiento(null);
-            registro.setTipoAtaque("2");
+            registro.setTipoAtaque("combo");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);
-            System.out.println("Ataque encontrado (Combo): " + (ataque != null ? ataque.getId() : "NULL"));
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
             } else {
-                System.out.println("WARNING: No se encontró Ataque para Combo ID: " + dto.idAtaque);
                 registro.setIdAtaque(null);
             }
         } else {
-            System.out.println("Tipo de ataque no reconocido o nulo: " + dto.tipoAtaque);
         }
 
         registro.setPorcentajeKO(dto.porcentajeKO);
@@ -199,7 +182,6 @@ public class SmashnotestBackController {
         registro.setDi(dto.di);
 
         registroService.actualizarRegistro(registro);
-        System.out.println("UPDATE REGISTRO - END");
 
         return ResponseEntity.ok("Registro actualizado correctamente");
     }
