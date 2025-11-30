@@ -60,7 +60,7 @@ public class SmashnotestBackController {
     }
 
     @PostMapping("/Registro")
-    public Registro insertarRegistro(@RequestBody RegistroCreateDTO dto) {
+    public ResponseEntity<String> insertarRegistro(@RequestBody RegistroCreateDTO dto) {
         Registro registro = new Registro();
 
         Personaje emisor = new Personaje();
@@ -86,7 +86,7 @@ public class SmashnotestBackController {
             movimiento.setId(dto.idAtaque);
             registro.setIdMovimiento(movimiento);
             registro.setIdCombo(null);
-            registro.setTipoAtaque("movimiento");
+            registro.setTipoAtaque("1");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
@@ -99,7 +99,7 @@ public class SmashnotestBackController {
             combo.setId(dto.idAtaque);
             registro.setIdCombo(combo);
             registro.setIdMovimiento(null);
-            registro.setTipoAtaque("combo");
+            registro.setTipoAtaque("2");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);
@@ -112,7 +112,9 @@ public class SmashnotestBackController {
         registro.setDi(dto.di);
         registro.setPorcentajeKO(dto.porcentajeKO);
 
-        return registroService.insertarRegistro(registro);
+        registroService.insertarRegistro(registro);
+
+        return ResponseEntity.ok("Registro creado correctamente");
     }
 
     @PutMapping("/Registro")
@@ -148,7 +150,7 @@ public class SmashnotestBackController {
             movimiento.setId(dto.idAtaque);
             registro.setIdMovimiento(movimiento);
             registro.setIdCombo(null);
-            registro.setTipoAtaque("movimiento");
+            registro.setTipoAtaque("1");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
@@ -165,7 +167,7 @@ public class SmashnotestBackController {
             combo.setId(dto.idAtaque);
             registro.setIdCombo(combo);
             registro.setIdMovimiento(null);
-            registro.setTipoAtaque("combo");
+            registro.setTipoAtaque("2");
 
             // Buscar Ataque correspondiente
             Ataque ataque = ataqueRepository.findByIdCombo(dto.idAtaque).orElse(null);

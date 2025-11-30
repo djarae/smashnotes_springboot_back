@@ -25,15 +25,17 @@ public interface RegistroRepository extends JpaRepository<Registro, Long> {
                         "FROM Registro r " +
                         "JOIN r.idPersonajeEmisor pe " +
                         "JOIN r.idPersonajeReceptor pr " +
-                        "JOIN r.idMovimiento m " +
+                        "LEFT JOIN r.idMovimiento m " +
                         "JOIN r.idEscenario e " +
                         "JOIN r.idPosicion pos " +
                         "LEFT JOIN r.idAtaque a " +
                         "LEFT JOIN a.idMovimiento am " +
+                        "LEFT JOIN r.idCombo cb " +
                         "LEFT JOIN a.idCombo ac " +
                         "WHERE (:filtroEmisor IS NULL OR pe.nombre LIKE %:filtroEmisor%) " +
                         "AND (:filtroReceptor IS NULL OR pr.nombre LIKE %:filtroReceptor%) " +
-                        "AND (:filtroMovimiento IS NULL OR m.nombre LIKE %:filtroMovimiento%) " +
+                        "AND (:filtroMovimiento IS NULL OR m.nombre LIKE %:filtroMovimiento% OR cb.nombre LIKE %:filtroMovimiento%) "
+                        +
                         "AND (:filtroStage IS NULL OR e.nombre LIKE %:filtroStage%) " +
                         "AND (:filtroPosicion IS NULL OR pos.nombre LIKE %:filtroPosicion%) " +
                         "AND (:filtroRage IS NULL OR r.rage = :filtroRage) " +
