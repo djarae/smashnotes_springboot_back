@@ -9,9 +9,9 @@ import java.util.Optional;
 
 public interface AtaqueRepository extends JpaRepository<Ataque, Integer> {
 
-    @Query("SELECT a FROM Ataque a WHERE a.idMovimiento.id = :idMovimiento AND a.tipoAtaque = '1'")
+    @Query("SELECT a FROM Ataque a WHERE a.idMovimiento.id = :idMovimiento AND a.tipoAtaque = 'movimiento'")
     Optional<Ataque> findByIdMovimiento(@Param("idMovimiento") Integer idMovimiento);
 
-    @Query("SELECT a FROM Ataque a WHERE a.idCombo.id = :idCombo AND a.tipoAtaque = '2'")
+    @Query("SELECT a FROM Ataque a WHERE a.idCombo.id = :idCombo AND a.tipoAtaque = 'combo'")
     Optional<Ataque> findByIdCombo(@Param("idCombo") Integer idCombo);
 }
