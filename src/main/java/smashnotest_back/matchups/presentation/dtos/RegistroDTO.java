@@ -31,6 +31,8 @@ public interface RegistroDTO {
 
     String getNombrePosicion();
 
+    String getAbreviaturaPosicion();
+
     Long getIdAtaque();
 
     String getNombreAtaque();

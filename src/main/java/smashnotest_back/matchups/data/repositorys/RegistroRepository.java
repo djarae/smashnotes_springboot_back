@@ -18,7 +18,7 @@ public interface RegistroRepository extends JpaRepository<Registro, Long> {
                         +
                         "m.id as idMovimiento, m.nombre as nombreMovimiento, m.abreviatura as abreviaturaMovimiento, " +
                         "e.id as idEscenario, e.nombre as nombreEscenario, e.abreviatura as abreviaturaEscenario, " +
-                        "pos.id as idPosicion, pos.nombre as nombrePosicion, " +
+                        "pos.id as idPosicion, pos.nombre as nombrePosicion, pos.abreviatura as abreviaturaPosicion, " +
                         "a.id as idAtaque, am.nombre as nombreAtaque, am.abreviatura as abreviaturaAtaque, " +
                         "ac.id as idCombo, ac.nombre as nombreCombo, ac.abreviatura as abreviaturaCombo, " +
                         "r.rage as rage, r.di as di, r.porcentajeKO as porcentajeKO " +
