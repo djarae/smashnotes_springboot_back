@@ -11,15 +11,16 @@ public class Posicion {
     @Id
     private Integer id;
     private String nombre;
-
+    private String eje; // puede ser "vertical" u "horizontal"
     private String abreviatura;
 
     public Posicion() {
     }
 
-    public Posicion(Integer id, String nombre, String abreviatura) {
+    public Posicion(Integer id, String nombre, String eje, String abreviatura) {
         this.id = id;
         this.nombre = nombre;
+        this.eje = eje;
         this.abreviatura = abreviatura;
     }
 
@@ -37,6 +38,14 @@ public class Posicion {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getEje() {
+        return eje;
+    }
+
+    public void setEje(String eje) {
+        this.eje = eje;
     }
 
     public String getAbreviatura() {

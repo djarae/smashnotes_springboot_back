@@ -87,11 +87,12 @@ public class SmashnotestBackController {
             // Es un Movimiento - buscar en tabla ataque donde id_movimiento = dto.idAtaque
             Ataque ataque = ataqueRepository.findByIdMovimiento(dto.idAtaque).orElse(null);
 
-            System.out.println("Prueba"+dto.tipoAtaque);
+            System.out.println("Prueba" + dto.tipoAtaque);
 
             if (ataque != null) {
                 registro.setIdAtaque(ataque);
-                System.out.println("en registro controller registro id ataque****************" + registro.getIdAtaque());
+                System.out
+                        .println("en registro controller registro id ataque****************" + registro.getIdAtaque());
                 System.out.println("//////////////////////////////////////");
                 System.out.println("//////////////////////////////////////");
                 System.out.println("//////////////////////////////////////");
@@ -124,7 +125,6 @@ public class SmashnotestBackController {
         registro.setPorcentajeKO(dto.porcentajeKO);
 
         System.out.println("registro tipo ataque " + registro.getIdAtaque());
-
 
         System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
         System.out.println("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
@@ -243,5 +243,10 @@ public class SmashnotestBackController {
     @GetMapping("/AtaquePropiedades")
     public List<AtaquePropiedad> getAtaquePropiedades() {
         return ataquePropiedadRepository.findAll();
+    }
+
+    @GetMapping("/Ataques")
+    public List<Ataque> getAtaques() {
+        return ataqueRepository.findAll();
     }
 }
