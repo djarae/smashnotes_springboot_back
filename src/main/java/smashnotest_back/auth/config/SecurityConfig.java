@@ -45,8 +45,10 @@ public class SecurityConfig {
 
                 // Configurar autorizaciones
                 .authorizeHttpRequests(auth -> auth
-                        // Endpoints públicos (solo login)
+                        // Endpoints públicos (solo login y test deploy)
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/apiSmash/tLocalDeploy").permitAll()
+                        .requestMatchers("/apiSmash/tCloudDeploy").permitAll()
 
                         // TODOS los endpoints de la API requieren autenticación
                         // (GET, POST, PUT, DELETE - todo protegido)
